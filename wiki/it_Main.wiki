@@ -1,4 +1,4 @@
-#summary themonoSPOT - Cos'è e come si installa...
+#summary monoSIM - gestisci i contatti della tua sim card direttamente dal tuo computer.
 
 = monosim: Come installare =
 
