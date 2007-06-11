@@ -1,10 +1,12 @@
+#summary themonoSPOT - Cos'è e come si installa...
+
 = monosim: Come installare =
 
 *Piattaforma LINUX:*
   * _*PASSO 1*: Installare *MONO Framework* (rel. 1.2.4 o superiore - web site: http://www.mono-project.com) _
   * _*PASSO 2*: Installare *GTK#* (rel. 2.8.3 o superiore)_
-  * _*PASSO 3*: Installare *PCSC-Lite* (web site: http://pcsclite.alioth.debian.org)
-  * _*PASSO 4*: Installare i *Driver PCSC per linux* del lettore di smartcard utilizzato
+  * _*PASSO 3*: Installare *PCSC-Lite* (web site: http://pcsclite.alioth.debian.org) _
+  * _*PASSO 4*: Installare i *Driver PCSC per linux* del lettore di smartcard utilizzato _
   * _*PASSO 5*: Scarica dalla sezione [http://code.google.com/p/monosim/downloads/list DOWNLOAD] l'ultima release di monosim per linux _
 
   * _Adesso puoi avviare monosim con la seguente riga di comando: *$mono <monosim path>/monoSIM.exe* _
@@ -13,8 +15,7 @@
 
 *Piattaforma WINDOWS:*
   * _*PASSO 1*: Installare *MONO Framework* (rel. 1.2.4 o superiore - web site: http://www.mono-project.com/Downloads) _
-  * _*PASSO 2*: Installare i *Driver PCSC per windows* del lettore di smartcard utilizzato
+  * _*PASSO 2*: Installare i *Driver PCSC per windows* del lettore di smartcard utilizzato _
   * _*PASSO 3*: Scarica dalla sezione [http://code.google.com/p/monosim/downloads/list DOWNLOAD] l'ultima release di monosim per windows (rel. consigliata con INSALLER) _
 
   * _Se hai scaricato la versione senza installer, puoi avviare monosim con la seguente riga di comando: mono <monosim path>/monoSIM.exe* _
-
