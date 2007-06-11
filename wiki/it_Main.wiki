@@ -1,5 +1,7 @@
 #summary monoSIM - gestisci i contatti della tua sim card direttamente dal tuo computer.
 
+http://img152.imageshack.us/img152/8272/monosim48tj8.png
+
 = monosim: Come installare =
 
 *Piattaforma LINUX:*
