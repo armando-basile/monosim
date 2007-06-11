@@ -1,0 +1,23 @@
+#summary monoSIM - manage your sim card contacts from pc application.
+
+http://img152.imageshack.us/img152/8272/monosim48tj8.png
+
+= monosim: Install it =
+
+*LINUX Platform:*
+  * _*STEP 1*: Install *MONO Framework* (rel. 1.2.4 or higher - web site: http://www.mono-project.com) _
+  * _*STEP 2*: Install *GTK#* (rel. 2.8.3 or higher)_
+  * _*STEP 3*: Install *PCSC-Lite* (web site: http://pcsclite.alioth.debian.org) _
+  * _*STEP 4*: Install *Driver PCSC for linux* of smartcard reader used _
+  * _*STEP 5*: Download from [http://code.google.com/p/monosim/downloads/list DOWNLOAD] section of last release of monosim for linux _
+
+  * _Now you can start monosim with follow command: *$mono <monosim path>/monoSIM.exe* _
+
+
+
+*WINDOWS Platform:*
+  * _*STEP 1*: Install *MONO Framework* (rel. 1.2.4 o superiore - web site: http://www.mono-project.com/Downloads) _
+  * _*STEP 2*: Install *Driver PCSC for windows* of smartcard reader used _
+  * _*STEP 3*: Download from [http://code.google.com/p/monosim/downloads/list DOWNLOAD] section of last release of monosim for windows (try rel. INSALLER for first) _
+
+  * _If you have release without installer, you can start monosim with the follow command: mono <monosim path>/monoSIM.exe* _
