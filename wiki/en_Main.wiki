@@ -9,7 +9,7 @@ http://img152.imageshack.us/img152/8272/monosim48tj8.png
   * _*STEP 2*: Install *GTK#* (rel. 2.8.3 or higher)_
   * _*STEP 3*: Install *PCSC-Lite* (web site: http://pcsclite.alioth.debian.org) _
   * _*STEP 4*: Install *Driver PCSC for linux* of smartcard reader used _
-  * _*STEP 5*: Download from [http://code.google.com/p/monosim/downloads/list DOWNLOAD] section of last release of monosim for linux _
+  * _*STEP 5*: Download from [http://code.google.com/p/monosim/downloads/list DOWNLOAD] section of last release of monosim for linux (if you download ALL IN ONE package, begin from STEP 3)_
 
   * _Now you can start monosim with follow command: *$mono <monosim path>/monoSIM.exe* _
 
