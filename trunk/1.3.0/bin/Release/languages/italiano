@@ -1,0 +1,103 @@
+# File di lingua per monosim
+#
+# TRADUTTORE: hman
+# LINGUA    : ITALIANO
+# DATA      : 25-06-2007
+# 
+# Versioni di monoSIM supportate
+# 1.2.0; 1.3.0
+#
+
+# Menu File
+000001=File
+000002=Nuova rubrica su file
+000003=Apri rubrica su file
+000004=Salva rubrica file su file
+000005=Salva rubrica file su sim
+000006=Esci
+
+# Menu Sim
+000007=Sim
+000008=Connetti la sim
+000009=Salva rubrica sim su sim
+000010=Salva rubrica sim su file
+000071=Cancella tutta la rubrica su sim
+
+# Menu Language
+000011=Linguaggi
+
+# Menu Help
+000012=Aiuto
+000013=Informazioni su...
+
+# ToolTipText
+000014=Apri rubrica su file
+000015=Salva rubrica file su file
+000016=Salva rubrica file su sim
+000017=Apri rubrica su sim
+000018=Salva rubrica sim su file
+000019=Salva rubrica sim su sim
+000020=Esci dall'applicazione
+
+# Frames Text
+000021=rubrica file
+000022=rubrica sim
+000023=descrizione
+000024=numero di telefono
+
+# Buttons
+000025=Apri file
+000026=Salva file
+000027=Salva sim
+000028=Connetti sim
+000029=Salva file
+000030=Salva sim
+000031=Esci
+
+# Contacts PopMenu
+000032=Aggiungi
+000033=Elimina
+000034=Copia i contatti selezionati sulla rubrica sim
+000035=Copia i contatti selezionati sulla rubrica file
+
+# Dialog Button
+000036=Annulla
+000037=Apri
+000038=Salva
+
+
+
+
+# Messages
+000101=Totale contatti trovati sul file:
+000102=Totale contatti trovati sulla sim:
+000103=Nessun lettore di smartcard standard PCSC trovato sul pc
+000104=Sei sicuro ?
+000105=Esci
+000106=Seleziona il file .monosim da aprire
+000107=Seleziona il file .monosim su cui salvare i contatti della rubrica file
+000108=Seleziona il file .monosim su cui salvare i contatti della rubrica sim
+000109=Lettura dei contatti sulla sim...
+000110=Il PIN e' abilitato. Per usare monoSIM devi disabilitarlo
+000111=Lettura della rubrica in posizione
+000112=Scrittura dei contatti sulla sim...
+000113=Verifica delle posizioni vuote sulla sim...
+000114=Spazio insufficiente sulla sim...
+000115=Aggiornamento della sim in posizione
+000116=Sim card aggiornata...
+000117=Lunghezza inattesa
+000118=Risposta inattesa
+000119=Nuovo Contatto
+000120=inserisci numero telefonico e descrizione:
+000121=descriz.:
+000122=num. tel.:
+000123=Scegli il lettore pcsc da usare:
+000124=Lettori standard PC/SC
+000125=Sei sicuro di voler cancellare tutti i contatti sulla tua sim card ?
+000126=Cancellazione contatti sim card
+000127=Cancellazione della sim in posizione
+000128=Cancellazione eseguita
+
+
+
+
