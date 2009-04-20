@@ -1,22 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" ctype="Workspace" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" ctype="Workspace" />
   <MonoDevelop.Ide.DebuggingService>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService>
-  <MonoDevelop.Ide.Workbench ActiveDocument="src/Main.cs" ctype="Workbench">
-    <Files>
-      <File FileName="src/Main.cs" Line="1054" Column="4" />
-    </Files>
+  <MonoDevelop.Ide.Workbench ctype="Workbench">
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True">
+        <State expanded="True" selected="True">
           <Node name="monoSIM" expanded="True">
-            <Node name="languages" expanded="True" />
-            <Node name="src" expanded="True">
-              <Node name="components" expanded="True" />
-              <Node name="glade_files" expanded="True" />
-              <Node name="Main.cs" selected="True" />
-            </Node>
+            <Node name="src" expanded="True" />
           </Node>
         </State>
       </Pad>
