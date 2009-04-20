@@ -120,16 +120,19 @@
   <Import Project="$(SharpDevelopBinPath)\SharpDevelop.Build.CSharp.targets" />
   <ItemGroup>
     <None Include="languages\english">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="languages\italiano">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="copying.gpl" />
     <None Include="images\monosim.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="ChangeLog" />
+    <None Include="images\monosim.desktop">
+      <DeployService-TargetDirectoryId>Linux.DesktopApplications</DeployService-TargetDirectoryId>
+    </None>
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>
@@ -139,6 +142,15 @@
             <MessageStyle LineAlign="0" />
           </ChangeLogPolicy>
         </Policies>
+        <MonoDevelop.Autotools.MakefileInfo RelativeMakefileName="Makefile.am" IsAutotoolsProject="true" RelativeConfigureInPath=".">
+          <BuildFilesVar />
+          <DeployFilesVar />
+          <ResourcesVar />
+          <OthersVar />
+          <GacRefVar />
+          <AsmRefVar />
+          <ProjectRefVar />
+        </MonoDevelop.Autotools.MakefileInfo>
       </Properties>
     </MonoDevelop>
   </ProjectExtensions>
