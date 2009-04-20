@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "monoSIM", "monoSIM.csproj", "{EE8A39A1-CCF2-4C50-889A-1C35350B185B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE8A39A1-CCF2-4C50-889A-1C35350B185B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE8A39A1-CCF2-4C50-889A-1C35350B185B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE8A39A1-CCF2-4C50-889A-1C35350B185B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE8A39A1-CCF2-4C50-889A-1C35350B185B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		version = 1.4.0
+		StartupItem = monoSIM.csproj
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = None
+		$1.ResourceNamePolicy = FileFormatDefault
+		$0.StandardHeader = $2
+		$2.Text = 
+		$2.inheritsSet = MITX11License
+		$0.TextStylePolicy = $3
+		$3.FileWidth = 120
+		$3.TabWidth = 4
+		$3.TabsToSpaces = False
+		$3.NoTabsAfterNonTabs = False
+		$3.RemoveTrailingWhitespace = False
+		$3.EolMarker = Native
+		$0.VersionControlPolicy = $4
+		$4.inheritsSet = Mono
+		$0.ChangeLogPolicy = $5
+		$5.UpdateMode = ProjectRoot
+		$5.MessageStyle = $6
+		$6.LineAlign = 0
+		$5.inheritsSet = Mono
+	EndGlobalSection
+EndGlobal

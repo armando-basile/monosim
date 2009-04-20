@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{EE8A39A1-CCF2-4C50-889A-1C35350B185B}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>monoSIM</AssemblyName>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <StartArguments>%24{TargetPath}</StartArguments>
+    <StartWorkingDirectory>%24{TargetDir}</StartWorkingDirectory>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ApplicationIcon>images\monosim_win.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>False</Optimize>
+    <StartAction>Program</StartAction>
+    <StartProgram>c:\Programmi\Mono-2.0.1\bin\mono.exe</StartProgram>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+    <StartAction>Program</StartAction>
+    <StartProgram>c:\Programmi\Mono-2.0.1\bin\mono.exe</StartProgram>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\chip_16.png">
+      <LogicalName>chip_16.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="images\chip_26.png">
+      <LogicalName>chip_26.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="images\monosim_16.png">
+      <LogicalName>monosim_16.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="images\monosim_32.png">
+      <LogicalName>monosim_32.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="images\monosim_48.png">
+      <LogicalName>monosim_48.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="images\monologo.png">
+      <LogicalName>monologo.png</LogicalName>
+    </EmbeddedResource>
+    <Compile Include="src\AssemblyInfo.cs" />
+    <Compile Include="src\Main.cs" />
+    <EmbeddedResource Include="src\glade_files\infowin.glade">
+      <LogicalName>infowin.glade</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\glade_files\mainwin.glade">
+      <LogicalName>mainwin.glade</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\glade_files\msgdialog.glade">
+      <LogicalName>msgdialog.glade</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\glade_files\newitemwin.glade">
+      <LogicalName>newitemwin.glade</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\glade_files\readers.glade">
+      <LogicalName>readers.glade</LogicalName>
+    </EmbeddedResource>
+    <Compile Include="src\components\clsInfoDialog.cs" />
+    <Compile Include="src\components\clsLanguageHelper.cs" />
+    <Compile Include="src\components\clsMsgDialog.cs" />
+    <Compile Include="src\components\clsNewItemDlg.cs" />
+    <Compile Include="src\components\clsReadersDlg.cs" />
+    <Compile Include="src\components\clsSerializableObject.cs" />
+    <Compile Include="src\components\clsSerializationHelper.cs" />
+    <Compile Include="src\components\clsSettings.cs" />
+    <Compile Include="src\components\clsTreeViewHelper.cs" />
+    <EmbeddedResource Include="images\lock_16.png">
+      <LogicalName>lock_16.png</LogicalName>
+    </EmbeddedResource>
+    <Compile Include="src\components\clsInputDialog.cs" />
+    <EmbeddedResource Include="src\glade_files\inputdialog.glade">
+      <LogicalName>inputdialog.glade</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="gtk-sharp" />
+    <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="monoPCSCLib, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>externals\monoPCSCLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(SharpDevelopBinPath)\SharpDevelop.Build.CSharp.targets" />
+  <ItemGroup>
+    <None Include="languages\english">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="languages\italiano">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="copying.gpl" />
+    <None Include="images\monosim.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ChangeLog" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <ChangeLogPolicy UpdateMode="ProjectRoot" inheritsSet="Mono">
+            <MessageStyle LineAlign="0" />
+          </ChangeLogPolicy>
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=monosim
+GenericName=monosim
+Comment=monoSIM - manage your SIM Card contacts
+Icon=monosim
+Exec=monosim
+Categories=Office;ContactManagement;GTK;GNOME;
+Name[it_IT]=monosim
+Comment[it_IT]=monoSIM - gestisce i contatti sulla tua SIM Card
+Terminal=false
+Type=Application
+StartupNotify=true
