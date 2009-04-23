@@ -1,3 +1,7 @@
+2009-04-23  Armando Basile  <hmandevteam@gmail.com>
+
+	* images/monosim.desktop: fix exec permission on .desktop file
+
 2009-04-17  Armando Basile  <hmandevteam@gmail.com>
 
 * issue n.4 - add PIN1 enable/disable feature
