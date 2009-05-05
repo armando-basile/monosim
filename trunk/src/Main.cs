@@ -1025,6 +1025,7 @@ public class GladeApp
 			}
 			
 			// Check PIN
+			Console.WriteLine("3F00 Response = " + pcscResult);
 			if ( Convert.ToInt32(pcscResult.Substring(26, 1), 16) < 8)
 				P1 = true;
 			else
@@ -1118,16 +1119,21 @@ public class GladeApp
 				                                           "PIN1", 
 				                                           translator.readTranslatedString(130));
 				if (RetWin != 1)
-					return;				
+					return;		
+			
+				pcscResult = ChangePin(false);
+
+				if (pcscResult != "")
+				{
+					endReading("ERROR: " + pcscResult);
+					return;
+				}
+			
 			}
 		
-			pcscResult = ChangePin(false);
 			
-			if (pcscResult != "")
-			{
-				endReading("ERROR: " + pcscResult);
-				return;
-			}
+			
+
 		
 		
 			// Manage Creation of context
