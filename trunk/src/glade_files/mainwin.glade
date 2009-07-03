@@ -1,46 +1,33 @@
 <?xml version="1.0"?>
 <glade-interface>
-  <requires-version lib="gtk+" version="2.12"/>
+  <!-- interface-requires gtk+ 2.16 -->
+  <!-- interface-naming-policy toplevel-contextual -->
   <widget class="GtkMenu" id="popmenuSim">
     <property name="visible">True</property>
     <property name="border_width">2</property>
     <child>
       <widget class="GtkImageMenuItem" id="popmenuSimAdd">
+        <property name="label">gtk-add</property>
         <property name="visible">True</property>
-        <property name="label" translatable="yes">gtk-add</property>
         <property name="use_underline">True</property>
-        <child internal-child="image">
-          <widget class="GtkImage" id="menu-item-image17">
-            <property name="stock">gtk-add</property>
-          </widget>
-        </child>
+        <property name="use_stock">True</property>
       </widget>
     </child>
     <child>
       <widget class="GtkImageMenuItem" id="popmenuSimDel">
+        <property name="label">gtk-delete</property>
         <property name="visible">True</property>
-        <property name="label" translatable="yes">gtk-delete</property>
         <property name="use_underline">True</property>
+        <property name="use_stock">True</property>
         <signal name="button_release_event" handler="On_Del_button_release_event" object="popmenuSim"/>
-        <child internal-child="image">
-          <widget class="GtkImage" id="menu-item-image18">
-            <property name="stock">gtk-delete</property>
-          </widget>
-        </child>
       </widget>
     </child>
     <child>
       <widget class="GtkImageMenuItem" id="popmenuSimVFile">
+        <property name="label">...</property>
         <property name="visible">True</property>
-        <property name="label" translatable="yes">...</property>
         <property name="use_underline">True</property>
-        <child internal-child="image">
-          <widget class="GtkImage" id="menu-item-image4">
-            <property name="visible">True</property>
-            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK | GDK_ENTER_NOTIFY_MASK</property>
-            <property name="stock">gtk-go-up</property>
-          </widget>
-        </child>
+        <property name="use_stock">True</property>
       </widget>
     </child>
   </widget>
@@ -49,41 +36,27 @@
     <property name="border_width">2</property>
     <child>
       <widget class="GtkImageMenuItem" id="popmenuFileAdd">
+        <property name="label">gtk-add</property>
         <property name="visible">True</property>
-        <property name="label" translatable="yes">gtk-add</property>
         <property name="use_underline">True</property>
-        <child internal-child="image">
-          <widget class="GtkImage" id="menu-item-image16">
-            <property name="stock">gtk-add</property>
-          </widget>
-        </child>
+        <property name="use_stock">True</property>
       </widget>
     </child>
     <child>
       <widget class="GtkImageMenuItem" id="popmenuFileDel">
+        <property name="label">gtk-delete</property>
         <property name="visible">True</property>
-        <property name="label" translatable="yes">gtk-delete</property>
         <property name="use_underline">True</property>
+        <property name="use_stock">True</property>
         <signal name="button_release_event" handler="On_Del_button_release_event" object="popmenuFileDel"/>
-        <child internal-child="image">
-          <widget class="GtkImage" id="menu-item-image15">
-            <property name="stock">gtk-delete</property>
-          </widget>
-        </child>
       </widget>
     </child>
     <child>
       <widget class="GtkImageMenuItem" id="popmenuFileVSim">
+        <property name="label">...</property>
         <property name="visible">True</property>
-        <property name="label" translatable="yes">...</property>
         <property name="use_underline">True</property>
-        <child internal-child="image">
-          <widget class="GtkImage" id="menu-item-image1">
-            <property name="visible">True</property>
-            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK | GDK_ENTER_NOTIFY_MASK</property>
-            <property name="stock">gtk-go-down</property>
-          </widget>
-        </child>
+        <property name="use_stock">True</property>
       </widget>
     </child>
   </widget>
@@ -92,7 +65,7 @@
     <property name="height_request">500</property>
     <property name="visible">True</property>
     <property name="title" translatable="yes">Glade Window</property>
-    <property name="window_position">GTK_WIN_POS_CENTER</property>
+    <property name="window_position">center</property>
     <property name="default_width">600</property>
     <property name="default_height">500</property>
     <signal name="key_release_event" handler="OnKeyReleaseEvent"/>
@@ -115,62 +88,41 @@
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                     <child>
                       <widget class="GtkImageMenuItem" id="item_NewFile">
-                        <property name="visible">True</property>
                         <property name="label">_New phonebook on file</property>
+                        <property name="visible">True</property>
                         <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
                         <signal name="button_release_event" handler="On_NewFile_Press"/>
-                        <child internal-child="image">
-                          <widget class="GtkImage" id="menu-item-image5">
-                            <property name="visible">True</property>
-                            <property name="stock">gtk-missing-image</property>
-                          </widget>
-                        </child>
                       </widget>
                     </child>
                     <child>
                       <widget class="GtkImageMenuItem" id="item_OpenFile">
-                        <property name="visible">True</property>
                         <property name="label">_Open phonebook on file</property>
+                        <property name="visible">True</property>
                         <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
                         <signal name="button_release_event" handler="On_OpenFile_Press"/>
-                        <child internal-child="image">
-                          <widget class="GtkImage" id="menu-item-image6">
-                            <property name="visible">True</property>
-                            <property name="stock">gtk-missing-image</property>
-                          </widget>
-                        </child>
                       </widget>
                     </child>
                     <child>
                       <widget class="GtkImageMenuItem" id="item_SaveFile">
+                        <property name="label">Save file phonebook on _file</property>
                         <property name="visible">True</property>
                         <property name="sensitive">False</property>
-                        <property name="label">Save file phonebook on _file</property>
                         <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
                         <signal name="button_release_event" handler="On_SaveFile_Press"/>
-                        <child internal-child="image">
-                          <widget class="GtkImage" id="menu-item-image7">
-                            <property name="visible">True</property>
-                            <property name="stock">gtk-missing-image</property>
-                          </widget>
-                        </child>
                       </widget>
                     </child>
                     <child>
                       <widget class="GtkImageMenuItem" id="item_SaveFileSim">
+                        <property name="label">Save file phonebook on _sim</property>
                         <property name="visible">True</property>
                         <property name="sensitive">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-                        <property name="label" translatable="yes">Save file phonebook on _sim</property>
                         <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
                         <signal name="button_release_event" handler="On_SaveFileSim_Press"/>
-                        <child internal-child="image">
-                          <widget class="GtkImage" id="menu-item-image3">
-                            <property name="visible">True</property>
-                            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-                            <property name="stock">gtk-missing-image</property>
-                          </widget>
-                        </child>
                       </widget>
                     </child>
                     <child>
@@ -180,16 +132,11 @@
                     </child>
                     <child>
                       <widget class="GtkImageMenuItem" id="item_Exit">
-                        <property name="visible">True</property>
                         <property name="label">Exit</property>
+                        <property name="visible">True</property>
                         <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
                         <signal name="button_release_event" handler="On_Exit_Press"/>
-                        <child internal-child="image">
-                          <widget class="GtkImage" id="menu-item-image8">
-                            <property name="visible">True</property>
-                            <property name="stock">gtk-missing-image</property>
-                          </widget>
-                        </child>
                       </widget>
                     </child>
                   </widget>
@@ -207,78 +154,51 @@
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                     <child>
                       <widget class="GtkImageMenuItem" id="item_ConnectSim">
-                        <property name="visible">True</property>
                         <property name="label">_Connect to sim</property>
+                        <property name="visible">True</property>
                         <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
                         <signal name="button_release_event" handler="On_ConnectSim_Press"/>
-                        <child internal-child="image">
-                          <widget class="GtkImage" id="menu-item-image9">
-                            <property name="visible">True</property>
-                            <property name="stock">gtk-missing-image</property>
-                          </widget>
-                        </child>
                       </widget>
                     </child>
                     <child>
                       <widget class="GtkImageMenuItem" id="item_Pin">
+                        <property name="label">Change _PIN status</property>
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">Change _PIN status</property>
                         <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
                         <signal name="button_release_event" handler="On_Pin_Change_Press"/>
-                        <child internal-child="image">
-                          <widget class="GtkImage" id="menu-item-image21">
-                            <property name="visible">True</property>
-                            <property name="stock">gtk-missing-image</property>
-                          </widget>
-                        </child>
                       </widget>
                     </child>
                     <child>
                       <widget class="GtkImageMenuItem" id="item_SaveSimFile">
+                        <property name="label">Save sim phonebook on _file</property>
                         <property name="visible">True</property>
                         <property name="sensitive">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-                        <property name="label" translatable="yes">Save sim phonebook on _file</property>
                         <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
                         <signal name="button_release_event" handler="On_SaveSimFile_Press"/>
-                        <child internal-child="image">
-                          <widget class="GtkImage" id="menu-item-image11">
-                            <property name="visible">True</property>
-                            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-                            <property name="stock">gtk-missing-image</property>
-                          </widget>
-                        </child>
                       </widget>
                     </child>
                     <child>
                       <widget class="GtkImageMenuItem" id="item_SaveSim">
+                        <property name="label">Save sim phonebook on _sim</property>
                         <property name="visible">True</property>
                         <property name="sensitive">False</property>
-                        <property name="label">Save sim phonebook on _sim</property>
                         <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
                         <signal name="button_release_event" handler="On_SaveSim_Press"/>
-                        <child internal-child="image">
-                          <widget class="GtkImage" id="menu-item-image10">
-                            <property name="visible">True</property>
-                            <property name="stock">gtk-missing-image</property>
-                          </widget>
-                        </child>
                       </widget>
                     </child>
                     <child>
                       <widget class="GtkImageMenuItem" id="item_DeleteSim">
+                        <property name="label">Delete all sim contacts</property>
                         <property name="visible">True</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-                        <property name="label" translatable="yes">Delete all sim contacts</property>
                         <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
                         <signal name="button_release_event" handler="On_DeleteSim_Press"/>
-                        <child internal-child="image">
-                          <widget class="GtkImage" id="menu-item-image20">
-                            <property name="visible">True</property>
-                            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-                            <property name="stock">gtk-missing-image</property>
-                          </widget>
-                        </child>
                       </widget>
                     </child>
                   </widget>
@@ -310,16 +230,11 @@
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                     <child>
                       <widget class="GtkImageMenuItem" id="item_InfoHelp">
-                        <property name="visible">True</property>
                         <property name="label">_About</property>
+                        <property name="visible">True</property>
                         <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
                         <signal name="button_release_event" handler="On_InfoHelp_Press"/>
-                        <child internal-child="image">
-                          <widget class="GtkImage" id="menu-item-image12">
-                            <property name="visible">True</property>
-                            <property name="stock">gtk-missing-image</property>
-                          </widget>
-                        </child>
                       </widget>
                     </child>
                   </widget>
@@ -329,6 +244,7 @@
           </widget>
           <packing>
             <property name="expand">False</property>
+            <property name="position">0</property>
           </packing>
         </child>
         <child>
@@ -344,6 +260,7 @@
                 <signal name="clicked" handler="On_tbOpenFile_Clicked"/>
               </widget>
               <packing>
+                <property name="expand">False</property>
                 <property name="homogeneous">True</property>
               </packing>
             </child>
@@ -358,6 +275,7 @@
                 <signal name="clicked" handler="On_tbSaveFile_Clicked"/>
               </widget>
               <packing>
+                <property name="expand">False</property>
                 <property name="homogeneous">True</property>
               </packing>
             </child>
@@ -365,6 +283,9 @@
               <widget class="GtkSeparatorToolItem" id="tbSeparator1">
                 <property name="visible">True</property>
               </widget>
+              <packing>
+                <property name="expand">False</property>
+              </packing>
             </child>
             <child>
               <widget class="GtkToolButton" id="tbConnectSim">
@@ -376,6 +297,7 @@
                 <signal name="clicked" handler="On_tbConnectSim_Clicked"/>
               </widget>
               <packing>
+                <property name="expand">False</property>
                 <property name="homogeneous">True</property>
               </packing>
             </child>
@@ -390,6 +312,7 @@
                 <signal name="clicked" handler="On_tbSaveSimFile_Clicked"/>
               </widget>
               <packing>
+                <property name="expand">False</property>
                 <property name="homogeneous">True</property>
               </packing>
             </child>
@@ -397,6 +320,9 @@
               <widget class="GtkSeparatorToolItem" id="tbSeparator2">
                 <property name="visible">True</property>
               </widget>
+              <packing>
+                <property name="expand">False</property>
+              </packing>
             </child>
             <child>
               <widget class="GtkToolButton" id="tbExit">
@@ -407,6 +333,7 @@
                 <signal name="clicked" handler="On_tbExit_Clicked"/>
               </widget>
               <packing>
+                <property name="expand">False</property>
                 <property name="homogeneous">True</property>
               </packing>
             </child>
@@ -433,6 +360,7 @@
                   </widget>
                   <packing>
                     <property name="expand">False</property>
+                    <property name="position">0</property>
                   </packing>
                 </child>
                 <child>
@@ -448,6 +376,7 @@
                       </widget>
                       <packing>
                         <property name="expand">False</property>
+                        <property name="position">0</property>
                       </packing>
                     </child>
                     <child>
@@ -465,8 +394,8 @@
                               <widget class="GtkScrolledWindow" id="scrolledwindow1">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
-                                <property name="hscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
-                                <property name="vscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
+                                <property name="hscrollbar_policy">automatic</property>
+                                <property name="vscrollbar_policy">automatic</property>
                                 <child>
                                   <widget class="GtkTreeView" id="listFile">
                                     <property name="visible">True</property>
@@ -531,6 +460,7 @@
               </widget>
               <packing>
                 <property name="expand">False</property>
+                <property name="position">0</property>
               </packing>
             </child>
           </widget>
@@ -555,6 +485,7 @@
                   </widget>
                   <packing>
                     <property name="expand">False</property>
+                    <property name="position">0</property>
                   </packing>
                 </child>
                 <child>
@@ -570,6 +501,7 @@
                       </widget>
                       <packing>
                         <property name="expand">False</property>
+                        <property name="position">0</property>
                       </packing>
                     </child>
                     <child>
@@ -587,8 +519,8 @@
                               <widget class="GtkScrolledWindow" id="scrolledwindow2">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
-                                <property name="hscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
-                                <property name="vscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
+                                <property name="hscrollbar_policy">automatic</property>
+                                <property name="vscrollbar_policy">automatic</property>
                                 <child>
                                   <widget class="GtkTreeView" id="listSim">
                                     <property name="visible">True</property>
@@ -652,6 +584,7 @@
               </widget>
               <packing>
                 <property name="expand">False</property>
+                <property name="position">0</property>
               </packing>
             </child>
           </widget>
@@ -668,6 +601,9 @@
                 <property name="visible">True</property>
                 <property name="has_resize_grip">False</property>
               </widget>
+              <packing>
+                <property name="position">0</property>
+              </packing>
             </child>
             <child>
               <widget class="GtkAlignment" id="alignment5">
@@ -689,7 +625,7 @@
           <packing>
             <property name="expand">False</property>
             <property name="fill">False</property>
-            <property name="pack_type">GTK_PACK_END</property>
+            <property name="pack_type">end</property>
             <property name="position">4</property>
           </packing>
         </child>
