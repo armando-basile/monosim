@@ -112,7 +112,7 @@
     <Reference Include="gtk-sharp" />
     <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <Reference Include="monoPCSCLib, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null">
+    <Reference Include="monoPCSCLib, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>externals\monoPCSCLib.dll</HintPath>
     </Reference>
@@ -126,13 +126,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="copying.gpl" />
-    <None Include="images\monosim.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="images\monosim.png" />
     <None Include="ChangeLog" />
-    <None Include="images\monosim.desktop">
-      <DeployService-TargetDirectoryId>Linux.DesktopApplications</DeployService-TargetDirectoryId>
-    </None>
+    <None Include="images\monosim.desktop" />
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>
