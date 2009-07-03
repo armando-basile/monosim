@@ -1,5 +1,10 @@
 2009-07-03  Armando Basile  <hmandevteam@gmail.com>
 
+	* images/monosim.desktop: - minor bug fixed: Comment item in
+	desktop file
+
+2009-07-03  Armando Basile  <hmandevteam@gmail.com>
+
 	* externals/monoPCSCLib.dll:
 	* src/glade_files/mainwin.glade: 
 
