@@ -1,3 +1,7 @@
+2009-07-04  Armando Basile  <hmandevteam@gmail.com>
+
+	* externals/monoPCSCLib.dll: - bug fixed: issue 6 #11
+
 2009-07-03  Armando Basile  <hmandevteam@gmail.com>
 
 	* externals/monoPCSCLib.dll: - bug fixed: SCardStatus bug fix
