@@ -1,0 +1,49 @@
+2009-07-04  Armando Basile  <hmandevteam@gmail.com>
+
+	* externals/monoPCSCLib.dll: - bug fixed: issue 6 #11
+
+2009-07-03  Armando Basile  <hmandevteam@gmail.com>
+
+	* externals/monoPCSCLib.dll: - bug fixed: SCardStatus bug fix
+	  on all 2 interfaces (win/linux)
+
+2009-07-03  Armando Basile  <hmandevteam@gmail.com>
+
+	* monoSIM.csproj: - optimize tarball
+
+2009-07-03  Armando Basile  <hmandevteam@gmail.com>
+
+	* externals/monoPCSCLib.dll: 
+
+	- bug fixed: SCardStatus
+	  (SCARD_E_INSUFFICIENT_BUFFER on first exchange)
+
+2009-07-03  Armando Basile  <hmandevteam@gmail.com>
+
+	* images/monosim.desktop: - minor bug fixed: Comment item in
+	desktop file
+
+2009-07-03  Armando Basile  <hmandevteam@gmail.com>
+
+	* externals/monoPCSCLib.dll:
+	* src/glade_files/mainwin.glade: 
+
+	- bug fixed: 64 bit
+	  compatibility (pcsclite binding improvement)
+
+2009-05-05  Armando Basile  <hmandevteam@gmail.com>
+
+	* src/Main.cs: 
+
+	- bug fixed - Pin1 status detect on phonebook scan
+
+2009-04-23  Armando Basile  <hmandevteam@gmail.com>
+
+	* images/monosim.desktop: fix exec permission on .desktop file
+
+2009-04-17  Armando Basile  <hmandevteam@gmail.com>
+
+* issue n.4 - add PIN1 enable/disable feature
+* settings filename changed in "~/.monosim"
+* settings file type changed in standard xml
+* no more require system.web 
