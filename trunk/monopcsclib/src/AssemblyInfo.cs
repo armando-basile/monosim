@@ -7,11 +7,11 @@ using System.Runtime.CompilerServices;
 // change them to the information which is associated with the assembly
 // you compile.
 
-[assembly: AssemblyTitle("monosim")]
-[assembly: AssemblyDescription("manage your phonebook on your sim card with standard pcsc smartcard reader")]
+[assembly: AssemblyTitle("monopcsclib")]
+[assembly: AssemblyDescription("assembly to manage PC/SC smartcard reader")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Armando Basile")]
-[assembly: AssemblyProduct("monosim")]
+[assembly: AssemblyProduct("")]
 [assembly: AssemblyCopyright("Armando Basile 2007-2009")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -23,7 +23,7 @@ using System.Runtime.CompilerServices;
 // You can specify all values by your own or you can build default build and revision
 // numbers with the '*' character (the default):
 
-[assembly: AssemblyVersion("1.4.4.46")]
+[assembly: AssemblyVersion("2.0.4.46")]
 
 // The following attributes specify the key for the sign of your assembly. See the
 // .NET Framework documentation for more information about signing.
