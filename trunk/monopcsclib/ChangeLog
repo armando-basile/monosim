@@ -1,5 +1,9 @@
 2009-07-05  Armando Basile  <hmandevteam@gmail.com>
 
+	* monopcsclib.csproj: - changelog added
+
+2009-07-05  Armando Basile  <hmandevteam@gmail.com>
+
 	* monopcsclib.csproj: 
 
 	- using one class for all os (dllmap added in app.config)

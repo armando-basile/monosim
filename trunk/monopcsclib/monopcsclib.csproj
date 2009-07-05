@@ -62,5 +62,6 @@
     <None Include="monopcsclib.dll.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="ChangeLog" />
   </ItemGroup>
 </Project>
