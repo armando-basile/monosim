@@ -1,0 +1,23 @@
+[Desktop Entry]
+Categories=Office;ContactManagement;GTK;GNOME;
+Comment[it]=monoSIM - gestisce i contatti sulla tua SIM Card
+Comment=monoSIM - manage your SIM Card contacts
+Comment[it_IT]=monoSIM - gestisce i contatti sulla tua SIM Card
+Encoding=UTF-8
+Exec=monosim
+GenericName[it]=monosim
+GenericName=monosim
+Icon=monosim
+MimeType=
+Name[it]=monosim
+Name=monosim
+Name[it_IT]=monosim
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=
