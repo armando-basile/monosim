@@ -264,20 +264,21 @@ public class GladeApp
 		
 		eDlg.Destroy();
 */
+		a.RetVal = true;
+		
 		int theResp = 0;
 		clsMsgDialog eDlg = new clsMsgDialog(topWindow, DialogFlags.DestroyWithParent,ref theResp, ref translator);
 		
 		if (theResp == 1)
 		{
 			eDlg = null;
-			Application.Quit ();
-			a.RetVal = true;
+			Application.Quit ();			
 			return;
 		}	
 		
-		eDlg = null;
-		a.RetVal = false;
- 		return;
+//		eDlg = null;
+//		a.RetVal = false;
+//		return;
 
 	}
 	
@@ -329,7 +330,7 @@ public class GladeApp
 			// Manage result of dialog box
 			FileBox.Icon = Gdk.Pixbuf.LoadFromResource("monosim_16.png");
 			int retFileBox = FileBox.Run();
-			if (retFileBox == Gtk.ResponseType.Accept.value__)
+			if ((ResponseType)retFileBox == Gtk.ResponseType.Accept)
 			{	
 				// path of a right file returned
 				tmpFName = FileBox.Filename.ToString();
@@ -404,7 +405,7 @@ public class GladeApp
 			// Manage result of dialog box
 			FileBox.Icon = Gdk.Pixbuf.LoadFromResource("monosim_16.png");
 			int retFileBox = FileBox.Run();
-			if (retFileBox == Gtk.ResponseType.Accept.value__)
+			if ((ResponseType)retFileBox == Gtk.ResponseType.Accept)
 			{	
 				// path of a right file returned
 				tmpFName = FileBox.Filename.ToString();
@@ -619,7 +620,7 @@ public class GladeApp
 			// Manage result of dialog box
 			FileBox.Icon = Gdk.Pixbuf.LoadFromResource("monosim_16.png");
 			int retFileBox = FileBox.Run();
-			if (retFileBox == Gtk.ResponseType.Accept.value__)
+			if ((ResponseType)retFileBox == Gtk.ResponseType.Accept)
 			{	
 				// path of a right file returned
 				tmpFName = FileBox.Filename.ToString();
