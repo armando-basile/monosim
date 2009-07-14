@@ -71,8 +71,7 @@ public class GladeApp
 	clsTreeViewHelper tvHelper = new clsTreeViewHelper();
 	ListStore lsListFile;
 	ListStore lsListSim;	
-	// Cursor watchCursor = new Cursor(CursorType.Watch);
-	// Cursor normalCursor = new Cursor(CursorType.LeftPtr);
+	bool DebugModeStatus = false;
 	Gtk.ToolButton tbSaveFileSim = null;
 	Gtk.ToolButton tbSaveSim = null;
 	Gtk.Tooltips tips1 = null;
@@ -93,6 +92,10 @@ public class GladeApp
 	{
 		Application.Init ();
 		Console.WriteLine("application Init");
+		
+		if (args.Length > 0)
+			if (args[0] == "debug")
+				DebugModeStatus = true;
 		
 		// Main Window
 		Glade.XML gxml = new Glade.XML (null, "mainwin.glade", "topWindow", null);
@@ -200,6 +203,7 @@ public class GladeApp
 
 		// Create Instance of pcsc library (for windows or other os)
 		myCard = new clsPCSC();
+		myCard.DebugModeStatus = DebugModeStatus;
 		
 		// Create Context
 		pcscResult = myCard.CreateContext();
@@ -1560,25 +1564,33 @@ public class GladeApp
 			return N1;
 		}
 		
-		private void decodeRecord(string dataIN, ref string out1, ref string out2)
-		{
-			int lenAlpha = (dataIN.Length-28)/2;
-			string alphaID = dataIN.Substring(0, (lenAlpha * 2));
-        	string numLength = dataIN.Substring((lenAlpha * 2), 2);
-        	string TonNpi = dataIN.Substring((lenAlpha * 2) + 2, 2);
-        	string DialNum = dataIN.Substring((lenAlpha * 2) + 4, 20);
-        	string ConfigId = dataIN.Substring((lenAlpha * 2) + 24, 2);
-        	string EXT1Rec = dataIN.Substring((lenAlpha * 2) + 26, 2);
-        	
-        	Console.WriteLine ("alphaID 1 = " + alphaID);
-        	alphaID = myUtility.getAsciiFromHex(alphaID);
-        	alphaID = alphaID.Replace(((char)255).ToString() , "");
-        	DialNum = SwapTel(DialNum, numLength); 
-        	Console.WriteLine (alphaID + " - " + DialNum);
-        	out1 = alphaID;
-        	out2 = DialNum;
-			return;
-		}
+	private void decodeRecord(string dataIN, ref string out1, ref string out2)
+	{
+		if (DebugModeStatus)
+			Console.WriteLine("\r\nHEX = " + dataIN);		
+		
+		int lenAlpha = (dataIN.Length-28)/2;
+		string alphaID = dataIN.Substring(0, (lenAlpha * 2));
+    	string numLength = dataIN.Substring((lenAlpha * 2), 2);
+    	string TonNpi = dataIN.Substring((lenAlpha * 2) + 2, 2);
+    	string DialNum = dataIN.Substring((lenAlpha * 2) + 4, 20);
+    	string ConfigId = dataIN.Substring((lenAlpha * 2) + 24, 2);
+    	string EXT1Rec = dataIN.Substring((lenAlpha * 2) + 26, 2);
+    	
+		int TonNpiNumber = Convert.ToInt32(TonNpi,16);
+		
+    	Console.WriteLine ("alphaID 1 = " + alphaID);
+    	alphaID = myUtility.getAsciiFromHex(alphaID);
+    	alphaID = alphaID.Replace(((char)255).ToString() , "");
+    	DialNum = SwapTel(DialNum, numLength); 
+		if ((TonNpiNumber&16) > 0)
+			DialNum = "+" + DialNum;
+			
+    	Console.WriteLine (alphaID + " - " + DialNum);
+    	out1 = alphaID;
+    	out2 = DialNum;
+		return;
+	}
 
 		
 		private void checkListStatus()
@@ -1627,10 +1639,17 @@ public class GladeApp
 			string phoneLen = "";
 			string outStr = "";
 			int theL = 0;
+			string NewTonNpi = "00";
 			
 			AlphaNew = myUtility.getHexFromAscii(description);			
 			AlphaNew = AlphaNew.PadRight(maxAlfaChar * 2, Convert.ToChar("F"));
 			
+			if (phonenumber.Substring(0,1) == "+")
+			{
+				phonenumber = phonenumber.Substring(1);
+				NewTonNpi = "10";
+			}
+		
 			TelNew = phonenumber.Replace("*", "A");
 			TelNew = TelNew.Replace("#", "B");
         	
@@ -1647,7 +1666,7 @@ public class GladeApp
 			for (int n=0; n<TelNew.Length; n +=2)
 				TelNewOut = TelNewOut + TelNew.Substring(n+1,1) + TelNew.Substring(n,1);
 			
-			outStr = AlphaNew + phoneLen + "00" + TelNewOut + "FFFF";
+			outStr = AlphaNew + phoneLen + NewTonNpi + TelNewOut + "FFFF";
 				
 			return outStr;		
 		}

@@ -1,3 +1,13 @@
+2009-07-14  Armando Basile  <hmandevteam@gmail.com>
+
+	* src/Main.cs:
+	* src/AssemblyInfo.cs: 
+
+	- bug fixed: issue 4/5 - fix verified (pin1 enable/disable)
+	- bug fixed: issue 6 - fix verified (monosim on 64 bit)
+	- bug fixed: issue 7 - fix verified (international numbers)
+	- bug fixed: issue 8 - fix verified (closing main window)
+
 2009-07-06  Armando Basile  <hmandevteam@gmail.com>
 
 	* src/Main.cs:
