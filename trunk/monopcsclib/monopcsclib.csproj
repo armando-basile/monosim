@@ -54,6 +54,7 @@
             <MessageStyle LineAlign="0" />
           </ChangeLogPolicy>
         </Policies>
+        <Deployment.LinuxDeployData generatePcFile="false" />
       </Properties>
     </MonoDevelop>
   </ProjectExtensions>
