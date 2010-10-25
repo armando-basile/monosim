@@ -133,7 +133,6 @@ namespace Utility
 		/// </summary>
 		public string getHexFromInt(int inValue)
 		{
-			int j;
 			string tmpHexOut = "";
 			tmpHexOut = inValue.ToString("X8");
 			
@@ -148,7 +147,7 @@ namespace Utility
 		/// </summary>
 		public string getAsciiFromArray(byte[] inData)
 		{
-			int j, n;
+			int j;
 			string tmpAsciiOut = "";
 			
 			if (inData.Length == 0 )
@@ -171,7 +170,7 @@ namespace Utility
 		/// </summary>
 		public string getAsciiFromArray(byte[] inData, int StartOffSet, int StopOffSet)
 		{
-			int j, n;
+			int j;
 			string tmpAsciiOut = "";
 			
 			if (inData.Length == 0 )
@@ -211,8 +210,8 @@ namespace Utility
 		/// </summary>
 		public int getBytesFromHex(ref byte[] outBArray, string inData)
 		{
-			int j, n;
-			n = 0;
+			int j;
+
 			inData = inData.Trim();
 			
 			if (inData.Length == 0 )

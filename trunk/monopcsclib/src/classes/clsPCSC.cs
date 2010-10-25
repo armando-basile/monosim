@@ -219,7 +219,7 @@ public class clsPCSC
 			return parseError(ret);
 		
 		int startR = 0;
-		int stopR = 0;
+		
 		
 		nReadersCount = nReadersCountptr.ToInt32();
 		

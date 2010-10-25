@@ -1,3 +1,10 @@
+2010-10-25  Armando Basile  <armando.basile@st.com>
+
+	* src/classes/clsPCSC.cs:
+	* src/classes/clsEncoding.cs: 
+
+    - delete unused variables
+
 2009-07-18  Armando Basile  <hmandevteam@gmail.com>
 
 	* monopcsclib.sln:
