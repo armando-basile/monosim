@@ -67,6 +67,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Src\MainClass.cs" />
+    <Compile Include="Src\Gui_Classes\AboutDialogClass.cs" />
+    <Compile Include="Src\Gui_Classes\MainWindowClass.Designer.cs" />
+    <Compile Include="Src\Gui_Classes\MainWindowClass.cs" />
+    <Compile Include="Src\Gui_Classes\SettingsDialogClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\monosim-gtk.desktop">
@@ -77,5 +82,13 @@
     <None Include="..\copying.gpl">
       <Link>copying.gpl</Link>
     </None>
+    <None Include="readme" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Src\Glade_Files\AboutDialog.glade" />
+    <EmbeddedResource Include="Src\Glade_Files\SettingsDialog.glade" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Src\Base_Components\" />
   </ItemGroup>
 </Project>

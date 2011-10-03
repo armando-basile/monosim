@@ -1,0 +1,17 @@
+monosim is a cross platform application to manage sim card contacts
+using PC/SC standard readers and SmartMouse/Phoenix serial reader.
+
+monosim-gtk - GTK application to manage sim card contacts
+=========================================================
+Copyright (c) 2008-2011, Armando Basile
+
+Thank you for using ( or at least trying out :) ) monosim-gtk
+
+monosim-gtk is distributed under the terms of the GNU General Public License (GPLv2)
+See the file COPYING for more information
+
+
+RUN GTK APPLICATION 
+ $ mono monosim-gtk.exe --help                    (for help message)
+ $ mono monosim-gtk.exe                           (to run without log)
+

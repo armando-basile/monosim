@@ -51,11 +51,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Src\Qt_Classes\AboutDialog.cs" />
+    <Compile Include="Src\Qt_Classes\ResManager.cs" />
+    <Compile Include="Src\Qt_Classes\SettingsDialog.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\monosim-qt.desktop">
       <DeployService-TargetDirectoryId>Linux.DesktopApplications</DeployService-TargetDirectoryId>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Src\Qt_Files\AboutDialog.ui" />
+    <None Include="Src\Qt_Files\SettingsDialog.ui" />
+    <None Include="readme" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\copying.gpl">
