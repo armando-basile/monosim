@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 // Change them to the values specific to your project.
 
 [assembly: AssemblyTitle("monosim-qt")]
-[assembly: AssemblyDescription("Qt application to manage sim cards")]
+[assembly: AssemblyDescription("Qt application to manage sim card contacts")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("monosim-qt")]

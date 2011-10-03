@@ -1,31 +1,34 @@
 using System;
-using System.Reflection;
 using System.Collections.Generic;
-
+using System.Reflection;
 using log4net;
-using log4net.Config;
-
-using Gtk;
-using Gdk;
+using Qyoto;
 
 using comexbase;
 
-
-
-namespace monosimgtk
+namespace monosimqt
 {
-	
-	public class MainClass
+	public class MainClass: Qt
 	{
 		
 		
 		// Log4Net object
-        //private static readonly ILog log = LogManager.GetLogger(typeof(monosimgtk.MainClass));
+        private static readonly ILog log = LogManager.GetLogger(typeof(monosimqt.MainClass));
 		
 		
 		private static string retStr = "";
 		
+		
 		public static string AppNameVer = "";
+		
+		
+		
+		public enum MessageType
+		{
+			Info=0,
+			Warning=1,
+			Error=2,
+		}
 		
 		
 		
@@ -46,7 +49,14 @@ namespace monosimgtk
 				return;
 			}
 			
-			Application.Init();
+			
+			// Init resource class manager			
+			Q_INIT_RESOURCE("ResManager");
+			
+			
+			// Create new Qyoto Application
+			new QApplication(args);
+
 			
 			retStr = GlobalObj.Initialize(args);
 			
@@ -57,21 +67,37 @@ namespace monosimgtk
 				if (!retStr.Contains("SCARD_"))
 				{
 					// error detected (not scard problem)
-					ShowMessage("ERROR", retStr, MessageType.Error);
+					ShowMessage(new QWidget(), "ERROR", retStr, MessageType.Error);
+					QApplication.Quit();					
 					return;
 				}
 				else
 				{
 					// warning (scard problem, can use serial reader)
-					ShowMessage("WARNING", retStr, MessageType.Warning);
+					ShowMessage(new QWidget(), "WARNING", retStr, MessageType.Warning);
 				}
 				
 			}
-
-			// create new Gtk Gui for application and show it
+			
+			// Create new Qyoto Desktop Object
+			QDesktopWidget qdw = new QDesktopWidget();
+			
+			// Create MainWindow class manager
 			MainWindowClass mwc = new MainWindowClass();
+			
+			int wWidth = Convert.ToInt32(mwc.Width() / 2);
+			int wHeight = Convert.ToInt32(mwc.Height() / 2);
+			int dWidth = Convert.ToInt32(qdw.Width() / 2);
+			int dHeight = Convert.ToInt32(qdw.Height() / 2);
+			
+			mwc.Move(dWidth - wWidth, dHeight - wHeight - 20);
+			
 			mwc.Show();
-			Application.Run ();
+			
+			
+			// Run Qyoto Application
+			QApplication.Exec();
+			
 		}
 		
 		
@@ -81,22 +107,21 @@ namespace monosimgtk
 		/// <summary>
 		/// Show Message Window
 		/// </summary>
-		public static void ShowMessage(string title, string message, MessageType mt)
+		public static void ShowMessage(QWidget parent, string title, string message, MessageType mt)
 		{
-			
 			// Gui Message
-			MessageDialog mdl = new MessageDialog(null, 
-			                                      DialogFlags.DestroyWithParent, 
-			                                      mt, 
-			                                      ButtonsType.Ok,
-			                                      true,
-			                                      message);
-			mdl.Show();
-			mdl.Title = title;
-	        mdl.Icon = Gdk.Pixbuf.LoadFromResource("monosim.png");
-	        mdl.Run();
-			mdl.Destroy();                  
-	
+			if (mt == MainClass.MessageType.Info)
+			{
+				QMessageBox.Information(parent, title, message);
+			}
+			else if (mt == MainClass.MessageType.Warning)
+			{
+				QMessageBox.Warning(parent, title, message);
+			}
+			else if (mt == MainClass.MessageType.Error)
+			{
+				QMessageBox.Critical(parent, title, message);
+			}			
 		}
 		
 		
@@ -104,15 +129,12 @@ namespace monosimgtk
 		
 		
 		/// <summary>
-		/// Wait for pending GTK processes
+		/// Wait for pending QT processes
 		/// </summary>
-		public static void GtkWait()
+		public static void QtWait()
 		{
 			// Update GUI...
-			while (Gtk.Application.EventsPending ())
-			{
-            	Gtk.Application.RunIteration ();
-			}
+			QApplication.ProcessEvents();
 		}
 		
 		
@@ -136,7 +158,7 @@ namespace monosimgtk
 		/// </summary>
 		private static string GetHelpMsg()
 		{
-			string msg = AppNameVer + " - GTK application to manage sim card contacts\r\n" + 
+			string msg = AppNameVer + " - Qt application to manage sim card contacts\r\n" + 
 				         GlobalObj.AppNameVer + " - base component\r\n\r\n";
 			msg += "   usage:\r\n";
 			msg += "   --log-console     enable log into console\r\n";
@@ -158,7 +180,6 @@ namespace monosimgtk
 		
 	}
 	
-	
-	
-	
 }
+
+

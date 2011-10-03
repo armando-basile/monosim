@@ -10,7 +10,7 @@
     <RootNamespace>monosimqt</RootNamespace>
     <AssemblyName>monosim-qt</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
-    <Description>Qt application to manage sim cards</Description>
+    <Description>Qt application to manage sim card contacts</Description>
     <ReleaseVersion>0.2.0.0</ReleaseVersion>
     <ApplicationIcon>..\resources\monosim_win.ico</ApplicationIcon>
   </PropertyGroup>
@@ -24,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
     <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>none</DebugType>
@@ -33,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
     <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -54,6 +56,11 @@
     <Compile Include="Src\Qt_Classes\AboutDialog.cs" />
     <Compile Include="Src\Qt_Classes\ResManager.cs" />
     <Compile Include="Src\Qt_Classes\SettingsDialog.cs" />
+    <Compile Include="Src\MainClass.cs" />
+    <Compile Include="Src\Gui_Classes\AboutDialogClass.cs" />
+    <Compile Include="Src\Gui_Classes\MainWindowClass.Designer.cs" />
+    <Compile Include="Src\Gui_Classes\MainWindowClass.cs" />
+    <Compile Include="Src\Gui_Classes\SettingsDialogClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\monosim-qt.desktop">
@@ -69,5 +76,8 @@
     <None Include="..\copying.gpl">
       <Link>copying.gpl</Link>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Src\Base_Components\" />
   </ItemGroup>
 </Project>

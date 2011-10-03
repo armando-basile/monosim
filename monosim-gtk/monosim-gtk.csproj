@@ -12,7 +12,7 @@
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <ReleaseVersion>0.2.0.0</ReleaseVersion>
     <ApplicationIcon>..\resources\monosim_win.ico</ApplicationIcon>
-    <Description>GTK application to manage sim cards</Description>
+    <Description>GTK application to manage sim card contacts</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -85,8 +85,20 @@
     <None Include="readme" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Src\Glade_Files\AboutDialog.glade" />
-    <EmbeddedResource Include="Src\Glade_Files\SettingsDialog.glade" />
+    <EmbeddedResource Include="Src\Glade_Files\AboutDialog.glade">
+      <LogicalName>AboutDialog.glade</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Glade_Files\SettingsDialog.glade">
+      <LogicalName>SettingsDialog.glade</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\resources\chip_32.png">
+      <Link>Resources\chip_32.png</Link>
+      <LogicalName>chip_32.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\resources\monosim.png">
+      <Link>Resources\monosim.png</Link>
+      <LogicalName>monosim.png</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Src\Base_Components\" />
