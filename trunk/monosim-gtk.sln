@@ -24,7 +24,7 @@ Global
 		$2.MessageStyle = $3
 		$3.LineAlign = 0
 		$2.inheritsSet = Mono
-		description = GTK application to manage sim cards
+		description = GTK application to manage sim card contacts
 		version = 0.2.0.0
 	EndGlobalSection
 EndGlobal

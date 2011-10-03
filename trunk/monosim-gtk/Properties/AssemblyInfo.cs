@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 // Change them to the values specific to your project.
 
 [assembly: AssemblyTitle("monosim-gtk")]
-[assembly: AssemblyDescription("GTK application to manage sim cards")]
+[assembly: AssemblyDescription("GTK application to manage sim card contacts")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("monosim-gtk")]
