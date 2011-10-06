@@ -4,8 +4,9 @@ using Gtk;
 using Gdk;
 
 using comexbase;
+using monosimbase;
 
-namespace comexgtk
+namespace monosimgtk
 {
 	
 	public class AboutDialogClass
@@ -207,10 +208,10 @@ namespace comexgtk
 			vpTitle.ModifyBg(StateType.Normal, new Gdk.Color(255,255,255));
             
 			// Create and add tab for About info
-            AddLabelTab(ref lblAbout, GlobalObj.LMan.GetString("about"));
+            AddLabelTab(ref lblAbout, GlobalObjUI.LMan.GetString("about"));
             
 			// Create and add tab for Thanks info
-            AddLabelTab(ref lblThanks, GlobalObj.LMan.GetString("thanks"));
+            AddLabelTab(ref lblThanks, GlobalObjUI.LMan.GetString("thanks"));
             
             imgLogo.Pixbuf = Gdk.Pixbuf.LoadFromResource("monosim.png");
             vpLogo.ModifyBg(StateType.Normal, new Gdk.Color(255,255,255));
