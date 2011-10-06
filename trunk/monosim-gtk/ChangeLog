@@ -1,5 +1,12 @@
 2011-10-06  Armando Basile  <hmandevteam@gmail.com>
 
+	* monosim-gtk.csproj:
+	* Contact.cs:
+	* Contacts.cs:
+	* MainWindowClass.cs: - first sim commands implemented
+
+2011-10-06  Armando Basile  <hmandevteam@gmail.com>
+
 	* Languages:
 	* MainClass.cs:
 	* monosim-gtk.csproj:
