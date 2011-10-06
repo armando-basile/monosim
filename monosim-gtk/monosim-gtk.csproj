@@ -82,8 +82,12 @@
     <Compile Include="..\base-components\GlobalConst.cs">
       <Link>Src\Base_Components\GlobalConst.cs</Link>
     </Compile>
-    <Compile Include="Src\Base_Components\Contact.cs" />
-    <Compile Include="Src\Base_Components\Contacts.cs" />
+    <Compile Include="..\base-components\Contact.cs">
+      <Link>Src\Base_Components\Contact.cs</Link>
+    </Compile>
+    <Compile Include="..\base-components\Contacts.cs">
+      <Link>Src\Base_Components\Contacts.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\monosim-gtk.desktop">
