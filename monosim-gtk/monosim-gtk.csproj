@@ -40,8 +40,8 @@
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="comex-base, Version=0.1.8.1, Culture=neutral, PublicKeyToken=f010a30ad7addeec">
-      <Package>comex-base</Package>
       <SpecificVersion>False</SpecificVersion>
+      <Package>comex-base</Package>
     </Reference>
     <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
@@ -72,6 +72,16 @@
     <Compile Include="Src\Gui_Classes\MainWindowClass.Designer.cs" />
     <Compile Include="Src\Gui_Classes\MainWindowClass.cs" />
     <Compile Include="Src\Gui_Classes\SettingsDialogClass.cs" />
+    <Compile Include="..\base-components\LanguageManager.cs">
+      <Link>Src\Base_Components\LanguageManager.cs</Link>
+    </Compile>
+    <Compile Include="Src\Gui_Classes\MainWindowClass.Reactors.cs" />
+    <Compile Include="..\base-components\GlobalObjUI.cs">
+      <Link>Src\Base_Components\GlobalObjUI.cs</Link>
+    </Compile>
+    <Compile Include="..\base-components\GlobalConst.cs">
+      <Link>Src\Base_Components\GlobalConst.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\monosim-gtk.desktop">
@@ -83,6 +93,14 @@
       <Link>copying.gpl</Link>
     </None>
     <None Include="readme" />
+    <None Include="..\Languages\en-US.xml">
+      <Link>Languages\en-US.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Languages\it-IT.xml">
+      <Link>Languages\it-IT.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Src\Glade_Files\AboutDialog.glade">
@@ -99,8 +117,24 @@
       <Link>Resources\monosim.png</Link>
       <LogicalName>monosim.png</LogicalName>
     </EmbeddedResource>
+    <EmbeddedResource Include="Src\Glade_Files\MainWindow.glade">
+      <LogicalName>MainWindow.glade</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\resources\chip_16.png">
+      <Link>Resources\chip_16.png</Link>
+      <LogicalName>chip_16.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\resources\chip_24.png">
+      <Link>Resources\chip_24.png</Link>
+      <LogicalName>chip_24.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\resources\chip_48.png">
+      <Link>Resources\chip_48.png</Link>
+      <LogicalName>chip_48.png</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Src\Base_Components\" />
+    <Folder Include="Languages\" />
   </ItemGroup>
 </Project>

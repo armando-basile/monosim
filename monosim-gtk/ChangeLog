@@ -1,0 +1,12 @@
+2011-10-06  Armando Basile  <hmandevteam@gmail.com>
+
+	* Languages:
+	* MainClass.cs:
+	* monosim-gtk.csproj:
+	* MainWindow.glade:
+	* MainWindowClass.cs:
+	* AboutDialogClass.cs:
+	* MainWindowClass.Designer.cs:
+	* MainWindowClass.Reactors.cs: - improve interface widgets and
+	basic actions
+

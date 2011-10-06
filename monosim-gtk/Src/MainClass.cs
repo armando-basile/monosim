@@ -9,7 +9,7 @@ using Gtk;
 using Gdk;
 
 using comexbase;
-
+using monosimbase;
 
 
 namespace monosimgtk
@@ -20,7 +20,7 @@ namespace monosimgtk
 		
 		
 		// Log4Net object
-        //private static readonly ILog log = LogManager.GetLogger(typeof(monosimgtk.MainClass));
+        private static readonly ILog log = LogManager.GetLogger(typeof(monosimgtk.MainClass));
 		
 		
 		private static string retStr = "";
@@ -67,7 +67,21 @@ namespace monosimgtk
 				}
 				
 			}
-
+			
+			try
+			{
+				// try to set language
+				GlobalObjUI.SetLanguage();
+			}
+			catch (Exception Ex)
+			{
+				// error detected
+				log.Error("GlobalObjUI::SetLanguage: " + Ex.Message + "\r\n" + Ex.StackTrace);
+				ShowMessage("LANGUAGE SET ERROR", Ex.Message, MessageType.Error);
+				return;
+			}
+			
+			
 			// create new Gtk Gui for application and show it
 			MainWindowClass mwc = new MainWindowClass();
 			mwc.Show();
