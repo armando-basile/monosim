@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Settings>
+	<language>
+		<about>informazioni</about>
+		<thanks>ringraziamenti</thanks>
+		<frmabout>informazioni su ...</frmabout>
+		<description>applicazione per la gestione dei contatti su sim card mediante lettori di tipo PC/SC e seriale</description>
+		
+		<filemenulbl>_File</filemenulbl>
+		<newfileact>Nuovo file dei contatti</newfileact>
+		<openfileact>Apri file dei contatti</openfileact>
+		<savefileact>Salva file dei contatti</savefileact>
+		<savefilesimact>Salva file dei contatti su sim</savefilesimact>
+		<closefileact>Chiudi file dei contatti</closefileact>		
+		<settingsact>Configura la porta seriale</settingsact>
+		<exitact>Esci</exitact>
+		
+		<readermenulbl>_Lettore</readermenulbl>
+		
+		<simmenulbl>_Sim card</simmenulbl>
+		<opensimact>Connetti la sim card</opensimact>
+		<closesimact>Disconnetti la sim card</closesimact>
+		<pinsimact>Cambia lo stato del Pin su sim</pinsimact>
+		<savesimact>Salva i contatti sim</savesimact>
+		<savesimfileact>Salva i contatti sim su file</savesimfileact>
+		<deletesimact>Cancella i contatti sim</deletesimact>
+		
+		<helpmenulbl>_Aiuto</helpmenulbl>
+		<infoact>Apri la finestra informazioni su</infoact>
+		
+		<framefile>Contatti su file</framefile>
+		<framesim>Contatti su sim</framesim>
+		
+		<descnumber>descrizione</descnumber>
+		<phonenumber>numbero di telefono</phonenumber>
+		
+		<addcontacts>Aggiungi contatto</addcontacts>
+		<delcontacts>Cancella contatto</delcontacts>
+		<copycontactstosim>Copia contatto su sim</copycontactstosim>
+		<copycontactstofile>Copia contatto su file</copycontactstofile>
+		
+		<openlbl>Apri</openlbl>
+		<cancellbl>Annulla</cancellbl>
+		<savelbl>Salva</savelbl>
+		
+		<needpindisable>Il Pin1 e' abilitato. Per usare monosim devi disabilitarlo</needpindisable>
+		
+		<readcontact>Lettura in corso del contatto n. </readcontact>
+		<recordnoempty>Totale contatti trovati </recordnoempty>
+		
+		<filesaved>Salvataggio contatti avvenuto.</filesaved>
+		
+		<infodesc><![CDATA[Applicazione cross platform scritta in C# per gestire i contatti su sim card utilizzando un lettore PC/SC o seriale (SmartMouse/Phoenix).<br> 
+		- Multilanguage (usando files di lingua xml nella cartella <i>Language</i>)<br> 
+		- Gui (usando il binding GTK# delle librerie grafiche GTK e il binding Qyoto delle librerie grafiche QT)<br> 
+		- Debug/Trace (può essere inviato sia alla console che ad un file di log da consultare successivamente)<br> 
+<br> 
+		<b>autore:</b><br> 
+		&nbsp;&nbsp;&nbsp;Armando Basile (hmandevteam@gmail.com)<br> 
+<br> 		
+		<b>sito web:</b><br> 
+		&nbsp;&nbsp;&nbsp;http://monosim.integrazioneweb.com<br> 
+<br> 
+		<b>segnalazioni:</b><br> 
+		&nbsp;&nbsp;&nbsp;http://code.google.com/p/monosim/issues/list<br> 
+		]]></infodesc>
+		
+		<thanksdesc><![CDATA[Si ringraziano gli sviluppatori, tester, traduttori, web designer e 
+		tutti coloro che hanno collaborato in qualsiasi forma al progetto.
+		]]></thanksdesc>
+		
+	</language>
+</Settings>

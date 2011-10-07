@@ -57,13 +57,13 @@ namespace monosimgtk
 				if (!retStr.Contains("SCARD_"))
 				{
 					// error detected (not scard problem)
-					ShowMessage("ERROR", retStr, MessageType.Error);
+					ShowMessage(null, "ERROR", retStr, MessageType.Error);
 					return;
 				}
 				else
 				{
 					// warning (scard problem, can use serial reader)
-					ShowMessage("WARNING", retStr, MessageType.Warning);
+					ShowMessage(null, "WARNING", retStr, MessageType.Warning);
 				}
 				
 			}
@@ -77,7 +77,7 @@ namespace monosimgtk
 			{
 				// error detected
 				log.Error("GlobalObjUI::SetLanguage: " + Ex.Message + "\r\n" + Ex.StackTrace);
-				ShowMessage("LANGUAGE SET ERROR", Ex.Message, MessageType.Error);
+				ShowMessage(null, "LANGUAGE SET ERROR", Ex.Message, MessageType.Error);
 				return;
 			}
 			
@@ -95,11 +95,11 @@ namespace monosimgtk
 		/// <summary>
 		/// Show Message Window
 		/// </summary>
-		public static void ShowMessage(string title, string message, MessageType mt)
+		public static void ShowMessage(Gtk.Window parent, string title, string message, MessageType mt)
 		{
 			
 			// Gui Message
-			MessageDialog mdl = new MessageDialog(null, 
+			MessageDialog mdl = new MessageDialog(parent, 
 			                                      DialogFlags.DestroyWithParent, 
 			                                      mt, 
 			                                      ButtonsType.Ok,
@@ -112,7 +112,6 @@ namespace monosimgtk
 			mdl.Destroy();                  
 	
 		}
-		
 		
 		
 		
