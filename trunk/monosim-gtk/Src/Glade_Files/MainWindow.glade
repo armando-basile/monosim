@@ -360,6 +360,20 @@
             <property name="can_focus">False</property>
             <property name="toolbar_style">both-horiz</property>
             <child>
+              <widget class="GtkToolButton" id="TbNew">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">New</property>
+                <property name="use_underline">True</property>
+                <property name="stock_id">gtk-new</property>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
               <widget class="GtkToolButton" id="TbOpen">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
@@ -397,6 +411,21 @@
                 <property name="label" translatable="yes">SaveSim</property>
                 <property name="use_underline">True</property>
                 <property name="stock_id">gtk-save</property>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkToolButton" id="TbClose">
+                <property name="visible">True</property>
+                <property name="sensitive">False</property>
+                <property name="can_focus">False</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">CloseFile</property>
+                <property name="use_underline">True</property>
+                <property name="stock_id">gtk-close</property>
               </widget>
               <packing>
                 <property name="expand">False</property>
@@ -444,6 +473,21 @@
               </packing>
             </child>
             <child>
+              <widget class="GtkToolButton" id="TbChangePin">
+                <property name="visible">True</property>
+                <property name="sensitive">False</property>
+                <property name="can_focus">False</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">ChangePin</property>
+                <property name="use_underline">True</property>
+                <property name="stock_id">gtk-dialog-authentication</property>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
               <widget class="GtkToolButton" id="TbSaveSimFile">
                 <property name="visible">True</property>
                 <property name="sensitive">False</property>
@@ -467,6 +511,21 @@
                 <property name="label" translatable="yes">SaveSimSim</property>
                 <property name="use_underline">True</property>
                 <property name="stock_id">gtk-save</property>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkToolButton" id="TbCloseSim">
+                <property name="visible">True</property>
+                <property name="sensitive">False</property>
+                <property name="can_focus">False</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">CloseSim</property>
+                <property name="use_underline">True</property>
+                <property name="stock_id">gtk-disconnect</property>
               </widget>
               <packing>
                 <property name="expand">False</property>

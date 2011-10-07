@@ -88,6 +88,12 @@
     <Compile Include="..\base-components\Contacts.cs">
       <Link>Src\Base_Components\Contacts.cs</Link>
     </Compile>
+    <Compile Include="..\base-components\GlobalObjUI.Sim.cs">
+      <Link>Src\Base_Components\GlobalObjUI.Sim.cs</Link>
+    </Compile>
+    <Compile Include="..\base-components\MonosimEventHandler.cs">
+      <Link>Src\Base_Components\MonosimEventHandler.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\monosim-gtk.desktop">
@@ -99,12 +105,12 @@
       <Link>copying.gpl</Link>
     </None>
     <None Include="readme" />
-    <None Include="..\Languages\en-US.xml">
-      <Link>Languages\en-US.xml</Link>
+    <None Include="..\Languages\monosim-en-US.xml">
+      <Link>Languages\monosim-en-US.xml</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="..\Languages\it-IT.xml">
-      <Link>Languages\it-IT.xml</Link>
+    <None Include="..\Languages\monosim-it-IT.xml">
+      <Link>Languages\monosim-it-IT.xml</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

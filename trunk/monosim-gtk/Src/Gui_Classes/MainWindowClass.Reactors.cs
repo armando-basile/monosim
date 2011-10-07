@@ -333,6 +333,10 @@ namespace monosimgtk
 					{
 						PopMenuFileVSim.Sensitive = true;
 					}
+					else
+					{
+						PopMenuFileVSim.Sensitive = false;
+					}
 				}
 
 				PopMenuFile.Popup(null, null, null, ev.Button, ev.Time);
@@ -369,6 +373,10 @@ namespace monosimgtk
 					{
 						PopMenuSimVFile.Sensitive = true;
 					}
+					else
+					{
+						PopMenuSimVFile.Sensitive = false;
+					}
 				}
 				
 				PopMenuSim.Popup(null, null, null, ev.Button, ev.Time);
@@ -379,7 +387,14 @@ namespace monosimgtk
 		
 		
 		
-		
+		/// <summary>
+		/// Sim event arrived
+		/// </summary>
+		private void SimEvent(object sender, EventArgs eArgs)
+		{
+			// recall gtk update method
+			notify.WakeupMain();
+		}
 		
 		
 		

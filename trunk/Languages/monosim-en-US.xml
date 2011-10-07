@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Settings>
+	<language>
+		<about>about</about>
+		<thanks>thanks</thanks>
+		<frmabout>info about ...</frmabout>
+		<description>application to manage sim card contacts using PC/SC or serial readers</description>
+		
+		<filemenulbl>_File</filemenulbl>
+		<newfileact>Create contacts file</newfileact>
+		<openfileact>Open contacts file</openfileact>
+		<savefileact>Save contacts file</savefileact>
+		<savefilesimact>Save contacts file on sim</savefilesimact>
+		<closefileact>Close contacts file</closefileact>		
+		<settingsact>Settings serial port</settingsact>
+		<exitact>Exit</exitact>
+		
+		<readermenulbl>_Reader</readermenulbl>
+		
+		<simmenulbl>_Sim card</simmenulbl>
+		<opensimact>Connect to sim card</opensimact>
+		<closesimact>Disconnect sim card</closesimact>
+		<pinsimact>Change Pin status on sim card</pinsimact>
+		<savesimact>Save sim contacts</savesimact>
+		<savesimfileact>Save sim contacts on file</savesimfileact>
+		<deletesimact>Delete sim contacts</deletesimact>
+		
+		<helpmenulbl>_Help</helpmenulbl>
+		<infoact>View informations window</infoact>
+		
+		<framefile>File Contacts</framefile>
+		<framesim>Sim Contacts</framesim>
+		
+		<descnumber>description</descnumber>
+		<phonenumber>phone number</phonenumber>
+		
+		<addcontacts>Add contact</addcontacts>
+		<delcontacts>Del contact</delcontacts>
+		<copycontactstosim>Copy contact to sim</copycontactstosim>
+		<copycontactstofile>Copy contact to file</copycontactstofile>
+		
+		<openlbl>Open</openlbl>
+		<cancellbl>Cancel</cancellbl>
+		<savelbl>Save</savelbl>
+		
+		<needpindisable>Pin1 enabled. To use monosim you need to disable it</needpindisable>
+		
+		<readcontact>Reading sim contact n. </readcontact>
+		<recordnoempty>Total contacts founded </recordnoempty>
+		
+		<filesaved>Saved contacts successfully</filesaved>
+		
+		<infodesc><![CDATA[Cross platform C# application to manage sim card contacts using a standard PC/SC smartcard reader or serial (SmartMouse/Phoenix).<br> 
+		- Multilanguage (using xml language files in <i>Language</i> folder)<br> 
+		- Gui (using GTK# binding for GTK graphic libraries and Qyoto binding for QT graphic libraries)<br> 
+		- Debug/Trace (can be sended to console and also to a log file to read after)<br> 
+<br> 
+		<b>author:</b><br> 
+		&nbsp;&nbsp;&nbsp;Armando Basile (hmandevteam@gmail.com)<br> 
+<br> 
+		<b>website:</b><br> 
+		&nbsp;&nbsp;&nbsp;http://monosim.integrazioneweb.com<br> 
+<br> 
+		<b>issue tracker:</b><br> 
+		&nbsp;&nbsp;&nbsp;http://code.google.com/p/monosim/issues/list<br> 
+		]]></infodesc>
+		
+		<thanksdesc><![CDATA[Si ringraziano gli sviluppatori, tester, traduttori, web designer e 
+		tutti coloro che hanno collaborato in qualsiasi forma al progetto.
+		]]></thanksdesc>
+		
+	</language>
+</Settings>

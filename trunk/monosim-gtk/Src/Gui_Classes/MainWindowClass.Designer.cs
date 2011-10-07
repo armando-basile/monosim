@@ -22,14 +22,22 @@ namespace monosimgtk
 		
 		[Glade.Widget]  Gtk.Window             MainWindow = null;
 		
+		[Glade.Widget]  Gtk.MenuBar            MainMenu = null;
+		[Glade.Widget]  Gtk.Toolbar            TopToolBar = null;
+		[Glade.Widget]  Gtk.Frame              FrameFile = null;
+		[Glade.Widget]  Gtk.Frame              FrameSim = null;
 		
+		[Glade.Widget]  Gtk.ToolButton         TbNew = null;
 		[Glade.Widget]  Gtk.ToolButton         TbOpen = null;
 		[Glade.Widget]  Gtk.ToolButton         TbSaveFile = null;
 		[Glade.Widget]  Gtk.ToolButton         TbSaveSim = null;
+		[Glade.Widget]  Gtk.ToolButton         TbClose = null;
 		[Glade.Widget]  Gtk.ToolButton         TbSettings = null;
 		[Glade.Widget]  Gtk.ToolButton         TbOpenSim = null;
+		[Glade.Widget]  Gtk.ToolButton         TbChangePin = null;
 		[Glade.Widget]  Gtk.ToolButton         TbSaveSimFile = null;
 		[Glade.Widget]  Gtk.ToolButton         TbSaveSimSim = null;
+		[Glade.Widget]  Gtk.ToolButton         TbCloseSim = null;
 		[Glade.Widget]  Gtk.ToolButton         TbAbout = null;
 		[Glade.Widget]  Gtk.ToolButton         TbExit = null;
 		
@@ -82,8 +90,7 @@ namespace monosimgtk
 		
 		// Log4Net object
         private static readonly ILog log = LogManager.GetLogger(typeof(MainWindowClass));
-		
-		
+
 
 		// Attributes
 		private ListStore lstFileContacts;
@@ -180,9 +187,10 @@ namespace monosimgtk
             MainWindow.Icon = Gdk.Pixbuf.LoadFromResource("monosim.png");
 			
 			// Set tool tip text for toolbutton
+			TbNew.TooltipText = GlobalObjUI.LMan.GetString("newfileact");
 			TbOpen.TooltipText = GlobalObjUI.LMan.GetString("openfileact");
 			TbSaveFile.TooltipText = GlobalObjUI.LMan.GetString("savefileact");
-			
+			TbClose.TooltipText = GlobalObjUI.LMan.GetString("closefileact");
 			
 			TbSaveSim.TooltipText = GlobalObjUI.LMan.GetString("savefilesimact");
 			TbSaveSim.IconWidget = new Gtk.Image(Pixbuf.LoadFromResource("chip_24.png"));
@@ -190,7 +198,9 @@ namespace monosimgtk
 			
 			TbSettings.TooltipText = GlobalObjUI.LMan.GetString("settingsact");
 			TbOpenSim.TooltipText = GlobalObjUI.LMan.GetString("opensimact");
+			TbChangePin.TooltipText = GlobalObjUI.LMan.GetString("pinsimact");
 			TbSaveSimFile.TooltipText = GlobalObjUI.LMan.GetString("savesimfileact");
+			TbCloseSim.TooltipText = GlobalObjUI.LMan.GetString("closesimact");
 			
 			TbSaveSimSim.TooltipText = GlobalObjUI.LMan.GetString("savesimact");
 			TbSaveSimSim.IconWidget = new Gtk.Image(Pixbuf.LoadFromResource("chip_24.png"));
@@ -310,19 +320,23 @@ namespace monosimgtk
 			MenuSimSaveSim.Activated += ActionSimSave;
 			MenuSimDeleteAll.Activated += ActionSimDeleteAll;
 			MenuSimDisconnect.Activated += ActionSimDisconnect;
-			
+
 			MenuAboutInfo.Activated += ActionAbout;
-			
+
+			TbNew.Clicked += ActionFileNew;
 			TbOpen.Clicked += ActionFileOpen;
 			TbSaveFile.Clicked += ActionFileSave;
 			TbSaveSim.Clicked += ActionFileSaveSim;
+			TbClose.Clicked += ActionFileClose;
 			TbSettings.Clicked += ActionSettings;
 			TbOpenSim.Clicked += ActionSimConnect;
+			TbChangePin.Clicked += ActionSimChangePin;
 			TbSaveSimFile.Clicked += ActionSimSaveFile;
 			TbSaveSimSim.Clicked += ActionSimSave;
+			TbCloseSim.Clicked += ActionSimDisconnect;
 			TbAbout.Clicked += ActionAbout;
 			TbExit.Clicked += ActionCancel;
-			
+
 			PopMenuFileAdd.Activated += ActionFileAdd;
 			PopMenuFileDel.Activated += ActionFileDel;
 			PopMenuFileVSim.Activated += ActionFileMoveToSim;
@@ -332,6 +346,8 @@ namespace monosimgtk
 			
 			LstFileContacts.ButtonPressEvent += ActionListFileContactsButtonPress;
 			LstSimContacts.ButtonPressEvent += ActionListSimContactsButtonPress;
+			
+			GlobalObjUI.MonosimEvent += SimEvent;
 		}
 		
 		
