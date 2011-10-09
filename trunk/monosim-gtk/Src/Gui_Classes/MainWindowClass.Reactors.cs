@@ -238,7 +238,7 @@ namespace monosimgtk
 		[GLib.ConnectBefore]
 		public void ActionFileAdd(object sender, EventArgs args)
 		{
-			
+			PopupFileAdd();
 		}
 		
 		
@@ -251,7 +251,7 @@ namespace monosimgtk
 		[GLib.ConnectBefore]
 		public void ActionFileDel(object sender, EventArgs args)
 		{
-			
+			PopupFileDel();
 		}
 
 		
@@ -262,7 +262,7 @@ namespace monosimgtk
 		[GLib.ConnectBefore]
 		public void ActionFileMoveToSim(object sender, EventArgs args)
 		{
-			
+			PopupFileMoveToSim();
 		}
 
 		
@@ -274,7 +274,7 @@ namespace monosimgtk
 		[GLib.ConnectBefore]
 		public void ActionSimAdd(object sender, EventArgs args)
 		{
-			
+			PopupSimAdd();
 		}
 		
 		
@@ -287,7 +287,7 @@ namespace monosimgtk
 		[GLib.ConnectBefore]
 		public void ActionSimDel(object sender, EventArgs args)
 		{
-			
+			PopupSimDel();
 		}
 
 		
@@ -298,7 +298,7 @@ namespace monosimgtk
 		[GLib.ConnectBefore]
 		public void ActionSimMoveToFile(object sender, EventArgs args)
 		{
-			
+			PopupSimMoveToFile();
 		}
 
 		
