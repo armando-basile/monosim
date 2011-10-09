@@ -57,6 +57,7 @@ namespace monosimgtk
 		private void NewContactsFile()
 		{
 			lstFileContacts.Clear();
+			GlobalObjUI.FileContacts = new Contacts();
 			GlobalObjUI.ContactsFilePath = "";
 			UpdateFileControls(true);
 		}
@@ -104,7 +105,7 @@ namespace monosimgtk
 			
 			
 			// Update gui
-			UpdateFileControls(false);
+			UpdateFileControls(false);			
 			lstFileContacts.Clear();
 			MainClass.GtkWait();
 			
@@ -151,9 +152,53 @@ namespace monosimgtk
 		
 		
 		
-		
+		/// <summary>
+		/// Save file contacts on file.
+		/// </summary>
 		private void SaveContactsFile()
 		{
+			MessageDialog mdlg = null;
+			string fileToSave = "";
+			
+			if (GlobalObjUI.ContactsFilePath != "")
+			{
+				mdlg = new MessageDialog(MainWindow,
+				                         DialogFlags.Modal,
+				                         MessageType.Question,
+				                         ButtonsType.YesNo, 
+					                     GlobalObjUI.LMan.GetString("override") + "\r\n" + 
+					                     Path.GetFileNameWithoutExtension(GlobalObjUI.ContactsFilePath));
+				mdlg.TransientFor = MainWindow;
+				mdlg.Title = MainClass.AppNameVer + " - " + GlobalObjUI.LMan.GetString("savefileact");
+				ResponseType respType = (ResponseType)mdlg.Run();
+				
+				if (respType == ResponseType.Yes)
+				{
+					// override
+					mdlg.Destroy();
+					mdlg.Dispose();
+					mdlg = null;
+					
+					WriteContactsOnFile(GlobalObjUI.ContactsFilePath, GlobalObjUI.FileContacts.SimContacts);
+					return;
+				}
+				
+				mdlg.Destroy();
+				mdlg.Dispose();
+				mdlg = null;
+				
+			}
+			
+			// select new file to save
+			fileToSave = ChooseFileToSave(GlobalObjUI.LMan.GetString("savefileact"));
+			if (fileToSave == "")
+			{
+				// no file selected
+				return;
+			}
+			
+			WriteContactsOnFile(fileToSave, GlobalObjUI.FileContacts.SimContacts);
+			GlobalObjUI.ContactsFilePath = fileToSave;
 			
 		}
 		
@@ -274,72 +319,14 @@ namespace monosimgtk
 		/// </summary>
 		private void SaveContactsSimOnFile()
 		{
-			string fileToSave = "";
-			
-			// New dialog to save sim contacts on file 
-			Gtk.FileChooserDialog FileBox = new Gtk.FileChooserDialog(GlobalObjUI.LMan.GetString("savesimfileact"), 
-			                                MainWindow,
-			                                FileChooserAction.Save, 
-			                                GlobalObjUI.LMan.GetString("cancellbl"), Gtk.ResponseType.Cancel,
-                                            GlobalObjUI.LMan.GetString("savelbl"), Gtk.ResponseType.Accept);
-			
-			// Filter for using only monosim files
-			Gtk.FileFilter myFilter = new Gtk.FileFilter(); 
-			myFilter.AddPattern("*.monosim");
-			myFilter.Name = "monosim files";
-			FileBox.AddFilter(myFilter);
-			
-			// Manage result of dialog box
-			FileBox.Icon = Gdk.Pixbuf.LoadFromResource("monosim.png");
-			int retFileBox = FileBox.Run();
-			if ((ResponseType)retFileBox == Gtk.ResponseType.Accept)
-			{	
-				// path of a right file returned
-				fileToSave = FileBox.Filename;
-				
-				string chkfile = fileToSave.PadLeft(9).ToLower();
-				if (chkfile.Substring(chkfile.Length-8) != ".monosim")
-				{
-					fileToSave += ".monosim";
-				}
-				
-				FileBox.Destroy();
-				FileBox.Dispose();				
-			}
-			else
+			string fileToSave = ChooseFileToSave(GlobalObjUI.LMan.GetString("savesimfileact"));
+			if (fileToSave == "")
 			{
-				// nothing returned				
-				FileBox.Destroy();
-				FileBox.Dispose();
+				// no file selected
 				return;
 			}
 			
-			
-			try
-			{
-				// save contacts
-				StreamWriter sw = new StreamWriter(fileToSave,false);
-				
-				foreach(Contact cnt in GlobalObjUI.SimContacts.SimContacts)
-				{
-					sw.WriteLine(cnt.Description);
-					sw.WriteLine(cnt.PhoneNumber);
-				}
-				
-				sw.Close();
-				sw.Dispose();
-				sw = null;			
-				
-			}
-			catch (Exception Ex)
-			{
-				log.Error("MainWindowClass::SaveContactsSimOnFile: " + Ex.Message + "\r\n" + Ex.StackTrace);
-				MainClass.ShowMessage(MainWindow, "ERROR", Ex.Message, MessageType.Error);
-				return;
-			}
-			
-			MainClass.ShowMessage(MainWindow, "INFO", GlobalObjUI.LMan.GetString("filesaved"),MessageType.Info);
-			
+			WriteContactsOnFile(fileToSave, GlobalObjUI.SimContacts.SimContacts);
 		}
 		
 		
@@ -347,7 +334,30 @@ namespace monosimgtk
 		
 		private void DeleteContactsSim()
 		{
-			
+				MessageDialog mdlg = new MessageDialog(MainWindow,
+				                         DialogFlags.Modal,
+				                         MessageType.Question,
+				                         ButtonsType.YesNo, 
+					                     GlobalObjUI.LMan.GetString("suredeletesim"));
+				mdlg.TransientFor = MainWindow;
+				mdlg.Title = MainClass.AppNameVer + " - " + GlobalObjUI.LMan.GetString("deletesimact");
+				ResponseType respType = (ResponseType)mdlg.Run();
+				
+				if (respType == ResponseType.Yes)
+				{
+					// override
+					mdlg.Destroy();
+					mdlg.Dispose();
+					mdlg = null;
+					
+					// Delete sim
+				
+					return;
+				}
+				
+				mdlg.Destroy();
+				mdlg.Dispose();
+				mdlg = null;
 		}
 		
 		
@@ -482,9 +492,13 @@ namespace monosimgtk
 			if (isSensitive)
 			{
 				// add filename to frame label
-				LblFile.Markup = "<b>" + GlobalObjUI.LMan.GetString("framefile") + "</b> [" +
-					Path.GetFileNameWithoutExtension(GlobalObjUI.ContactsFilePath) + 
+				LblFile.Markup = "<b>" + GlobalObjUI.LMan.GetString("framefile") + "</b>";
+				if (GlobalObjUI.ContactsFilePath != "")
+				{
+					LblFile.Markup = "<b>" + GlobalObjUI.LMan.GetString("framefile") + "</b>" +
+						" [" + Path.GetFileNameWithoutExtension(GlobalObjUI.ContactsFilePath) + 
 					" - size: " + GlobalObjUI.FileContacts.SimContacts.Count.ToString() + "]"; 
+				}				
 			}
 			else
 			{
@@ -531,6 +545,96 @@ namespace monosimgtk
 			FrameFile.Sensitive = true;
 			MainClass.GtkWait();
 		}
+		
+		
+		
+		
+		/// <summary>
+		/// Choose file to save contacts.
+		/// </summary>
+		private string ChooseFileToSave(string dialogTitle)
+		{
+			string fileToSave = "";
+			
+			// New dialog to save sim contacts on file 
+			Gtk.FileChooserDialog FileBox = new Gtk.FileChooserDialog(dialogTitle, 
+			                                MainWindow,
+			                                FileChooserAction.Save, 
+			                                GlobalObjUI.LMan.GetString("cancellbl"), Gtk.ResponseType.Cancel,
+                                            GlobalObjUI.LMan.GetString("savelbl"), Gtk.ResponseType.Accept);
+			
+			// Filter for using only monosim files
+			Gtk.FileFilter myFilter = new Gtk.FileFilter(); 
+			myFilter.AddPattern("*.monosim");
+			myFilter.Name = "monosim files";
+			FileBox.AddFilter(myFilter);
+			
+			// Manage result of dialog box
+			FileBox.Icon = Gdk.Pixbuf.LoadFromResource("monosim.png");
+			int retFileBox = FileBox.Run();
+			if ((ResponseType)retFileBox == Gtk.ResponseType.Accept)
+			{	
+				// path of a right file returned
+				fileToSave = FileBox.Filename;
+				
+				string chkfile = fileToSave.PadLeft(9).ToLower();
+				if (chkfile.Substring(chkfile.Length-8) != ".monosim")
+				{
+					fileToSave += ".monosim";
+				}
+				
+				FileBox.Destroy();
+				FileBox.Dispose();				
+			}
+			else
+			{
+				// nothing returned				
+				FileBox.Destroy();
+				FileBox.Dispose();
+				return "";
+			}
+			
+			return fileToSave;
+		}
+		
+		
+		
+		/// <summary>
+		/// Write contacts on file
+		/// </summary>
+		private void WriteContactsOnFile(string filePath, List<Contact> contacts)
+		{
+			
+			try
+			{
+				// save contacts
+				StreamWriter sw = new StreamWriter(filePath,false);
+				
+				foreach(Contact cnt in contacts)
+				{
+					sw.WriteLine(cnt.Description);
+					sw.WriteLine(cnt.PhoneNumber);
+				}
+				
+				sw.Close();
+				sw.Dispose();
+				sw = null;			
+				
+			}
+			catch (Exception Ex)
+			{
+				log.Error("MainWindowClass::WriteContactsOnFile: " + Ex.Message + "\r\n" + Ex.StackTrace);
+				MainClass.ShowMessage(MainWindow, "ERROR", Ex.Message, MessageType.Error);
+				return;
+			}
+			
+			MainClass.ShowMessage(MainWindow, "INFO", GlobalObjUI.LMan.GetString("filesaved"),MessageType.Info);
+		}
+		
+		
+		
+		
+		
 		
 		
 		

@@ -94,6 +94,8 @@
     <Compile Include="..\base-components\MonosimEventHandler.cs">
       <Link>Src\Base_Components\MonosimEventHandler.cs</Link>
     </Compile>
+    <Compile Include="Src\Gui_Classes\NewContactDialogClass.cs" />
+    <Compile Include="Src\Gui_Classes\MainWindowClass.Popup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\monosim-gtk.desktop">
@@ -143,6 +145,9 @@
     <EmbeddedResource Include="..\resources\chip_48.png">
       <Link>Resources\chip_48.png</Link>
       <LogicalName>chip_48.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Glade_Files\NewContactDialog.glade">
+      <LogicalName>NewContactDialog.glade</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

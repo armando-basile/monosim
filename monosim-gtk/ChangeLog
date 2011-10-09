@@ -1,3 +1,15 @@
+2011-10-09  Armando Basile  <hmandevteam@gmail.com>
+
+	* monosim-gtk.csproj:
+	* MainWindowClass.cs:
+	* NewContactDialog.glade:
+	* MainWindowClass.Popup.cs:
+	* NewContactDialogClass.cs:
+	* MainWindowClass.Reactors.cs: - added add, del contact
+	feature
+	- added contacts copy
+
+
 2011-10-06  Armando Basile  <hmandevteam@gmail.com>
 
 	* monosim-gtk.csproj:
