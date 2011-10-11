@@ -1,3 +1,11 @@
+2011-10-12  Armando Basile  <hmandevteam@gmail.com>
+
+	* monosim-gtk.csproj:
+	* MainWindowClass.cs:
+	* ChangePinStatusDialog.glade:
+	* ChangePinStatusDialogClass.cs: - added change pin1 status
+	feature (enable/disable)
+
 2011-10-09  Armando Basile  <hmandevteam@gmail.com>
 
 	* monosim-gtk.csproj:

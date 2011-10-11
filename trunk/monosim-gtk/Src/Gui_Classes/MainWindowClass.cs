@@ -301,7 +301,49 @@ namespace monosimgtk
 		
 		private void SimChangePin()
 		{
+			// check for Pin1 check attempts
+			if (GlobalObjUI.SimPin1Attempts == 1)
+			{
+				// Pin1 one attempt
+				MainClass.ShowMessage(MainWindow, GlobalObjUI.LMan.GetString("pinsimact"),
+					GlobalObjUI.LMan.GetString("pinsimchk3"),MessageType.Warning);
+				return;
+			}
+			else if (GlobalObjUI.SimPin1Attempts == 0)
+			{
+				// Pin1 no more attempt
+				MainClass.ShowMessage(MainWindow, GlobalObjUI.LMan.GetString("pinsimact"),
+					GlobalObjUI.LMan.GetString("pinsimchk4"),MessageType.Warning);
+				return;
+			}
 			
+			// Change Pin1 dialog
+			ChangePinStatusDialogClass cpsdc = new ChangePinStatusDialogClass(MainWindow);
+			string pin1 = cpsdc.Show();
+			
+			if (pin1 == null)
+			{
+				// cancel button pressed
+				return;
+			}
+			
+			// Perform Pin1 status change
+			retStr = GlobalObjUI.SetPinStatus(!GlobalObjUI.SimPin1Status, pin1);
+			
+			if (retStr != "")
+			{
+				// error detected during Pin1 status change
+				MainClass.ShowMessage(MainWindow, GlobalObjUI.LMan.GetString("pinsimact"),
+					retStr,MessageType.Error);
+				return;
+			}
+			
+			// Pin1 status changed, reconnect sim now
+			MainClass.ShowMessage(MainWindow, GlobalObjUI.LMan.GetString("pinsimact"),
+					GlobalObjUI.LMan.GetString("pinsimdone"), MessageType.Info);
+			
+			// Force sim disconnect
+			SimDisconnect();
 		}
 		
 		
