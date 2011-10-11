@@ -32,7 +32,7 @@
 		<framesim>Contatti su sim</framesim>
 		
 		<descnumber>descrizione</descnumber>
-		<phonenumber>numbero di telefono</phonenumber>
+		<phonenumber>numbero telefonico</phonenumber>
 		
 		<addcontacts>Aggiungi contatto</addcontacts>
 		<delcontacts>Cancella contatto</delcontacts>
@@ -49,6 +49,21 @@
 		<recordnoempty>Totale contatti trovati </recordnoempty>
 		
 		<filesaved>Salvataggio contatti avvenuto.</filesaved>
+		<override>Sovrascrivo il file dei contatti</override>
+		<suredeletesim>Sei sicuro di voler cancellare tutti i contatti sulla sim ?</suredeletesim>
+		<suredelcontact>Sei sicuro di voler eliminare il seguente contatto ?</suredelcontact>
+		<fieldsreq>Entrambi i campi sono necessari, riprova</fieldsreq>
+		
+		<pinsimlbl>Pin1</pinsimlbl>
+		<pin1on>Abilitato</pin1on>
+		<pin1off>Disabilitato</pin1off>
+		<pinsimsetlbl>Imposta lo stato del Pin1 a </pinsimsetlbl>
+		<pinsimchklbl>Pin1 verifica</pinsimchklbl>
+		<pinsimchk1>I due valori del Pin1 non corrispondono, riprova</pinsimchk1>
+		<pinsimchk2>Il Pin1 deve essere composto da 4 numeri, riprova</pinsimchk2>
+		<pinsimchk3><![CDATA[Operazione non permessa, hai a disposizione <b>un solo tentativo</b>, effettua l'operazione sul telefono]]></pinsimchk3>
+		<pinsimchk4><![CDATA[Operazione non permessa, hai <b>esaurito i tentativi</b> di presentazione del Pin1, prova ad usare il <b>Puk1 sul telefono</b>]]></pinsimchk4>
+		<pinsimdone>Lo stato del Pin1 è stato variato</pinsimdone>
 		
 		<infodesc><![CDATA[Applicazione cross platform scritta in C# per gestire i contatti su sim card utilizzando un lettore PC/SC o seriale (SmartMouse/Phoenix).<br> 
 		- Multilanguage (usando files di lingua xml nella cartella <i>Language</i>)<br> 

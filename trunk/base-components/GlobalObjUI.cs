@@ -60,6 +60,8 @@ namespace monosimbase
 		
 		public static string SimIccID {get; set;}
 		public static string SimADNError {get; set;}
+		public static bool SimPin1Status {get; set;}
+		public static int SimPin1Attempts {get; set;}
 		public static int SimADNStatus {get; set;}
 		public static int SimADNPosition {get; set;}
 		public static int SimADNRecordLen {get; set;}

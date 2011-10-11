@@ -49,6 +49,21 @@
 		<recordnoempty>Total contacts founded </recordnoempty>
 		
 		<filesaved>Saved contacts successfully</filesaved>
+		<override>Override contacts file</override>
+		<suredeletesim>Are you sure to delete all contacts on sim ?</suredeletesim>
+		<suredelcontact>Are you sure to delete follow contact ?</suredelcontact>
+		<fieldsreq>All fields required, retry</fieldsreq>
+		
+		<pinsimlbl>Pin1</pinsimlbl>
+		<pin1on>Enabled</pin1on>
+		<pin1off>Disabled</pin1off>
+		<pinsimsetlbl>Set Pin1 status to </pinsimsetlbl>
+		<pinsimchklbl>Pin1 check</pinsimchklbl>
+		<pinsimchk1>Pin1 check value don't match with Pin1, please retry</pinsimchk1>
+		<pinsimchk2>Pin1 need to be 4-digit numbers, retry</pinsimchk2>
+		<pinsimchk3><![CDATA[Operation not allowed, have <b>only one attempt</b>, perform it on phone]]></pinsimchk3>
+		<pinsimchk4><![CDATA[Operation not allowed, <b>haven't any attempt</b> to verify Pin1, try to use <b>Puk1 on phone</b>]]></pinsimchk4>
+		<pinsimdone>Pin1 status changed</pinsimdone>
 		
 		<infodesc><![CDATA[Cross platform C# application to manage sim card contacts using a standard PC/SC smartcard reader or serial (SmartMouse/Phoenix).<br> 
 		- Multilanguage (using xml language files in <i>Language</i> folder)<br> 
