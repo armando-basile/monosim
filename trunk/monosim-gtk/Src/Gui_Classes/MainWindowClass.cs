@@ -678,6 +678,13 @@ namespace monosimgtk
 		
 		
 		
+		/// <summary>
+		/// Write passed contacts on sim card (append or override)
+		/// </summary>
+		private void WriteContactsOnSim(List<Contact> contacts, bool isAppend)
+		{
+			
+		}
 		
 		
 		
