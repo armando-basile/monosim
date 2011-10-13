@@ -65,6 +65,14 @@
 		<pinsimchk4><![CDATA[Operazione non permessa, hai <b>esaurito i tentativi</b> di presentazione del Pin1, prova ad usare il <b>Puk1 sul telefono</b>]]></pinsimchk4>
 		<pinsimdone>Lo stato del Pin1 è stato variato</pinsimdone>
 		
+		<simoverride>Sovrascrive</simoverride>
+		<simappend>Aggiunge</simappend>
+		<simwritemode><![CDATA[Come vuoi che vengano salvati i contatti sulla sim ?<br>
+
+<b>Sovrascrive</b>: cancella tutta la rubrica su sim e poi scrive i nuovi contatti<br>
+<b>Aggiunge</b>: usa tutte le posizioni vuote nella rubrica su sim per scrivere i nuovi contatti]]></simwritemode>
+		
+		
 		<infodesc><![CDATA[Applicazione cross platform scritta in C# per gestire i contatti su sim card utilizzando un lettore PC/SC o seriale (SmartMouse/Phoenix).<br> 
 		- Multilanguage (usando files di lingua xml nella cartella <i>Language</i>)<br> 
 		- Gui (usando il binding GTK# delle librerie grafiche GTK e il binding Qyoto delle librerie grafiche QT)<br> 

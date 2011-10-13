@@ -208,7 +208,18 @@ namespace monosimgtk
 		
 		private void SaveContactsFileOnSim()
 		{
+			SelectWriteModeDialogClass swmdc = 
+				new SelectWriteModeDialogClass(MainWindow, GlobalObjUI.LMan.GetString("savefilesimact"));
 			
+			int retMode = swmdc.Show();
+			
+			if (retMode < 0)
+			{
+				// cancel button pressed
+				return;
+			}
+			
+			log.Debug("MainWindowClass::SaveContactsFileOnSim: SELECTED SIM WRITE MODE: " + retMode.ToString());
 			
 		}		
 		
@@ -350,6 +361,18 @@ namespace monosimgtk
 		
 		private void SaveContactsSim()
 		{
+			SelectWriteModeDialogClass swmdc = 
+				new SelectWriteModeDialogClass(MainWindow, GlobalObjUI.LMan.GetString("savesimact"));
+			
+			int retMode = swmdc.Show();
+			
+			if (retMode < 0)
+			{
+				// cancel button pressed
+				return;
+			}
+			
+			log.Debug("MainWindowClass::SaveContactsSim: SELECTED SIM WRITE MODE: " + retMode.ToString());
 			
 		}
 		

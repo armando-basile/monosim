@@ -65,6 +65,14 @@
 		<pinsimchk4><![CDATA[Operation not allowed, <b>haven't any attempt</b> to verify Pin1, try to use <b>Puk1 on phone</b>]]></pinsimchk4>
 		<pinsimdone>Pin1 status changed</pinsimdone>
 		
+		<simoverride>Override</simoverride>
+		<simappend>Append</simappend>
+		<simwritemode><![CDATA[How would you like to update sim?<br>
+
+<b>Override</b>: delete all phonebook on sim and after write new contacts<br>
+<b>Append</b>: use all empty position on phonebook on sim to write new contacts]]></simwritemode>
+		
+		
 		<infodesc><![CDATA[Cross platform C# application to manage sim card contacts using a standard PC/SC smartcard reader or serial (SmartMouse/Phoenix).<br> 
 		- Multilanguage (using xml language files in <i>Language</i> folder)<br> 
 		- Gui (using GTK# binding for GTK graphic libraries and Qyoto binding for QT graphic libraries)<br> 

@@ -18,7 +18,7 @@ namespace monosimgtk
 		
 		
 		
-		public SelectWriteModeDialogClass(Gtk.Window parent)
+		public SelectWriteModeDialogClass(Gtk.Window parent, string winTitle)
 		{
 			Glade.XML gxml =  new Glade.XML("SelectWriteModeDialog.glade", "SelectWriteModeDialog");
             gxml.Autoconnect(this);
@@ -26,16 +26,17 @@ namespace monosimgtk
 			SelectWriteModeDialog.TransientFor = parent;
 			SelectWriteModeDialog.DestroyWithParent = true;
 			
-			SelectWriteModeDialog.Title = MainClass.AppNameVer + " - Work in progress";
+			SelectWriteModeDialog.Title = MainClass.AppNameVer + " - " + winTitle;
 			
-			string title = "work in progress";			
+			string title = GlobalObjUI.LMan.GetString("simwritemode");
+			title = title.Replace("<br>", "").Replace("&nbsp;", " ");
 			
 			LblTitle.Markup = title;
 
-			BtnOverride.Image = new Gtk.Image(Pixbuf.LoadFromResource("chip_16.png"));
-			BtnAppend.Image = new Gtk.Image(Pixbuf.LoadFromResource("chip_16.png"));
-			BtnOverride.Label = "Override.";
-			BtnAppend.Label = "Append.";
+			BtnOverride.Image = new Gtk.Image(Stock.Remove, IconSize.Button);
+			BtnAppend.Image = new Gtk.Image(Stock.Add, IconSize.Button);
+			BtnOverride.Label = GlobalObjUI.LMan.GetString("simoverride");
+			BtnAppend.Label = GlobalObjUI.LMan.GetString("simappend");
 		}
 		
 		
