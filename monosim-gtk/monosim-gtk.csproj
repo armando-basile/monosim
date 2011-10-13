@@ -117,6 +117,10 @@
       <Link>Languages\monosim-it-IT.xml</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="..\Languages\monosim-es-ES.xml">
+      <Link>Languages\monosim-es-ES.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Src\Glade_Files\AboutDialog.glade">
