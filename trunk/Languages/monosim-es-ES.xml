@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Settings>
+	<language>
+		<about>Acerca de</about>
+		<thanks>Agradecimientos</thanks>
+		<frmabout>Información sobre...</frmabout>
+		<description>Aplicación para gestionar los contactos de una tarjeta SIM usando lectores PC/SC o serie</description>
+		
+		<filemenulbl>_Archivo</filemenulbl>
+		<newfileact>Crear archivo de contactos</newfileact>
+		<openfileact>Abrir archivo de contactos</openfileact>
+		<savefileact>Guardar archivo de contactos</savefileact>
+		<savefilesimact>Guardar archivo de contactos en SIM</savefilesimact>
+		<closefileact>Cerrar archivo de contactos</closefileact>		
+		<settingsact>Ajustes del puerto serie</settingsact>
+		<exitact>Salir</exitact>
+		
+		<readermenulbl>_Lector</readermenulbl>
+		
+		<simmenulbl>_Tarjeta SIM</simmenulbl>
+		<opensimact>Conectar a tarjeta SIM</opensimact>
+		<closesimact>Desconectar tarjeta SIM</closesimact>
+		<pinsimact>Cambiar el estado del pin en la tarjeta SIM</pinsimact>
+		<savesimact>Guardar contactos de la SIM</savesimact>
+		<savesimfileact>Guardar contactos de la SIM en un archivo</savesimfileact>
+		<deletesimact>Borrar contactos de la SIM</deletesimact>
+		
+		<helpmenulbl>A_yuda</helpmenulbl>
+		<infoact>Ver ventana de información</infoact>
+		
+		<framefile>Contactos del archivo</framefile>
+		<framesim>Contactos de la SIM</framesim>
+		
+		<descnumber>descripción</descnumber>
+		<phonenumber>número de teléfono</phonenumber>
+		
+		<addcontacts>Añadir contacto</addcontacts>
+		<delcontacts>Borrar contacto</delcontacts>
+		<copycontactstosim>Copiar contacto a la SIM</copycontactstosim>
+		<copycontactstofile>Copiar contacto al archivo</copycontactstofile>
+		
+		<openlbl>Abrir</openlbl>
+		<cancellbl>Cancelar</cancellbl>
+		<savelbl>Guardar</savelbl>
+		
+		<needpindisable>Pin1 activado. Para usar monosim necesita desactivarlo</needpindisable>
+		
+		<readcontact>Leyendo contacto de la SIM n </readcontact>
+		<recordnoempty>Todos los contactos encontrados </recordnoempty>
+		
+		<filesaved>Guardado de contactos completado con éxito</filesaved>
+		<override>Sobreescribir archivo de contactos</override>
+		<suredeletesim>¿Está seguro de querer borrar todos los contactos de la SIM?</suredeletesim>
+		<suredelcontact>¿Está seguro de querer borrar el siguiente contacto?</suredelcontact>
+		<fieldsreq>Se requieren todos los campos, reintentar</fieldsreq>
+		
+		<infodesc><![CDATA[Aplicación C# multiplataforma para gestionar los contactos de una tarjeta SIM usando un lector estandar PC/SC smartcard o serie (SmartMouse/Phoenix).<br> 
+		- Múltiples idiomas (usando archivos de idioma xml en carpeta <i>Languages</i>)<br> 
+		- Interfaz gráfica (usando enlace GTK# para las bibliotecas gráficas GTK y enlace Qyoto para las bibliotecas gráficas QT)<br> 
+		- Depuración/Trazado (puede ser enviado a la consola y también a un archivo de registro que puede ser leído posteriormente)<br> 
+<br> 
+		<b>Autor:</b><br> 
+		&nbsp;&nbsp;&nbsp;Armando Basile (hmandevteam@gmail.com)<br> 
+<br> 
+		<b>Página Web:</b><br> 
+		&nbsp;&nbsp;&nbsp;http://monosim.integrazioneweb.com<br> 
+<br> 
+		<b>Seguimiento de incidencias:</b><br> 
+		&nbsp;&nbsp;&nbsp;http://code.google.com/p/monosim/issues/list<br> 
+		]]></infodesc>
+		
+		<thanksdesc><![CDATA[Si ringraziano gli sviluppatori, tester, traduttori, web designer e 
+		tutti coloro che hanno collaborato in qualsiasi forma al progetto.
+		]]></thanksdesc>
+		
+	</language>
+</Settings>
