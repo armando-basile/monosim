@@ -97,6 +97,7 @@
     <Compile Include="Src\Gui_Classes\NewContactDialogClass.cs" />
     <Compile Include="Src\Gui_Classes\MainWindowClass.Popup.cs" />
     <Compile Include="Src\Gui_Classes\ChangePinStatusDialogClass.cs" />
+    <Compile Include="Src\Gui_Classes\SelectWriteModeDialogClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\monosim-gtk.desktop">
@@ -152,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Src\Glade_Files\ChangePinStatusDialog.glade">
       <LogicalName>ChangePinStatusDialog.glade</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Src\Glade_Files\SelectWriteModeDialog.glade">
+      <LogicalName>SelectWriteModeDialog.glade</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
