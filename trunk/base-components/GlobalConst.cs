@@ -9,8 +9,10 @@ namespace monosimbase
 			"\r\n" +
 			"Richard Dale (richard.j.dale@gmail.com) - Kdebindings, Qyoto\r\n" +
 			"Rigel Va (rigel.va@gmail.com) - spanish translation\r\n" +
-			"\r\n" +
-			"";
+			"Ludovic Rousseau (ludovic.rousseau@gmail.com) - tester\r\n" +
+			"Teddino (teddiman@gmail.com) - tester\r\n" +
+			"Delfino - tester\r\n" +
+			"Maxoft - tester\r\n";
 	}
 }
 
