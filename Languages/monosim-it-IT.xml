@@ -71,7 +71,7 @@
 
 <b>Sovrascrive</b>: cancella tutta la rubrica su sim e poi scrive i nuovi contatti<br>
 <b>Aggiunge</b>: usa tutte le posizioni vuote nella rubrica su sim per scrivere i nuovi contatti]]></simwritemode>
-		
+		<simwriteok>Scrittura contatti su sim terminata con successo</simwriteok>
 		
 		<infodesc><![CDATA[Applicazione cross platform scritta in C# per gestire i contatti su sim card utilizzando un lettore PC/SC o seriale (SmartMouse/Phoenix).<br> 
 		- Multilanguage (usando files di lingua xml nella cartella <i>Language</i>)<br> 

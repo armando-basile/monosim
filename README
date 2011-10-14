@@ -14,6 +14,8 @@ BUILD AND RUN ON LINUX FROM SVN CHECKOUT
   1. you need to install: log4net, log4net-devel, gtk-sharp2, glade-sharp2, mono, monodevelop
   2. you need to install also latest comex-base, can download tarball from official
      project website http://code.google.com/p/comex-project/downloads/list
+     follow this instruction bo build and register component in GAC
+     http://code.google.com/p/comex-project/wiki/Build_Comex#Build_and_install_from_tarballs
   3. use build script in main svn folder: $ ./build-monosim-gtk.sh
   4. build output will be generated in monosim-gtk/bin/Debug folder
   5. to run generated file use: $ mono --debug monosim-gtk.exe --log-console
@@ -23,6 +25,8 @@ BUILD AND RUN ON LINUX FROM SVN CHECKOUT
   1. you need to install: log4net, log4net-devel, qyoto, qyoto-devel, mono, monodevelop
   2. you need to install also latest comex-base, can download tarball from official
      project website http://code.google.com/p/comex-project/downloads/list
+     follow this instruction bo build and register component in GAC
+     http://code.google.com/p/comex-project/wiki/Build_Comex#Build_and_install_from_tarballs
   3. use build script in main svn folder: $ ./build-monosim-qt.sh
   4. build output will be generated in monosim-qt/bin/Debug folder
   5. to run generated file use: $ mono --debug monosim-qt.exe --log-console

@@ -11,7 +11,27 @@ monosim-gtk is distributed under the terms of the GNU General Public License (GP
 See the file COPYING for more information
 
 
-RUN GTK APPLICATION 
+
+BUILD AND INSTALL FROM TARBALL ON LINUX
+-------------------------------------------------------------------------------
+
+  1. you need to install: log4net, log4net-devel, gtk-sharp2, glade-sharp2, mono
+  2. you need to install also latest comex-base, can download tarball from official
+     project website http://code.google.com/p/comex-project/downloads/list
+     follow this instruction bo build and register component in GAC
+     http://code.google.com/p/comex-project/wiki/Build_Comex#Build_and_install_from_tarballs
+  3. use 
+     $ ./configure
+     $ make (build output will be generated in monosim-gtk/bin/Debug folder)
+     # make install (to install)
+
+
+
+RUN FROM BUILD OUTPUT
  $ mono monosim-gtk.exe --help                    (for help message)
  $ mono monosim-gtk.exe                           (to run without log)
 
+
+RUN FROM INSTALLED
+ $ monosim-gtk --help                             (for help message)
+ $ monosim-gtk                                    (to run without log)
