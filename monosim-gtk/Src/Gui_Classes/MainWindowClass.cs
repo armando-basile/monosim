@@ -208,6 +208,17 @@ namespace monosimgtk
 		
 		private void SaveContactsFileOnSim()
 		{
+			// check for contacts description chars len
+			string retCheck = GlobalObjUI.CheckAlphaCharsLen(GlobalObjUI.FileContacts);
+			if (retCheck != "")
+			{
+				MainClass.ShowMessage(MainWindow, "ERROR",
+					GlobalObjUI.LMan.GetString("maxlenexceeded")
+					.Replace("'description'", "'<b>" + retCheck + "</b>'")
+					+ "<b>" + GlobalObjUI.SimADNMaxAlphaChars.ToString() + "</b>", MessageType.Warning);
+				return;
+			}
+			
 			SelectWriteModeDialogClass swmdc = 
 				new SelectWriteModeDialogClass(MainWindow, GlobalObjUI.LMan.GetString("savefilesimact"));
 			
@@ -220,7 +231,14 @@ namespace monosimgtk
 			}
 			
 			log.Debug("MainWindowClass::SaveContactsFileOnSim: SELECTED SIM WRITE MODE: " + retMode.ToString());
-			
+			if (retMode == 1)
+			{			
+				WriteContactsOnSim(GlobalObjUI.FileContacts, true);	
+			}
+			else
+			{
+				WriteContactsOnSim(GlobalObjUI.FileContacts, false);	
+			}
 		}		
 		
 		
@@ -274,6 +292,7 @@ namespace monosimgtk
 			}
 			
 			ScanSimBefore();
+			lstSimContacts.Clear();
 			
 			// Reset status values
 			GlobalObjUI.SimADNStatus = 1;
@@ -289,9 +308,27 @@ namespace monosimgtk
 		
 		
 		
-		
-		
-		
+		/// <summary>
+		/// Start sim update thread
+		/// </summary>
+		private void SimUpdate(Contacts cnts, bool isAppend)
+		{
+			ScanSimBefore();
+			
+			// Reset status values
+			GlobalObjUI.SimADNStatus = 1;
+			GlobalObjUI.SimADNPosition = 0;
+			GlobalObjUI.SimADNError = "";
+			
+            // Start thread for reading process
+            notify = new ThreadNotify(new ReadyEvent(WritingUpdate));
+			System.Threading.ThreadStart threadStart = delegate() {
+				GlobalObjUI.WriteSimContactsList(cnts, isAppend);
+			};
+            simThread = new System.Threading.Thread(threadStart);
+            simThread.Start();
+
+		}
 		
 		
 		
@@ -361,6 +398,17 @@ namespace monosimgtk
 		
 		private void SaveContactsSim()
 		{
+			// check for contacts description chars len
+			string retCheck = GlobalObjUI.CheckAlphaCharsLen(GlobalObjUI.SimContacts);
+			if (retCheck != "")
+			{
+				MainClass.ShowMessage(MainWindow, "ERROR",
+					GlobalObjUI.LMan.GetString("maxlenexceeded")
+					.Replace("'description'", "'<b>" + retCheck + "</b>'")
+					+ "<b>" + GlobalObjUI.SimADNMaxAlphaChars.ToString() + "</b>", MessageType.Warning);
+				return;
+			}
+			
 			SelectWriteModeDialogClass swmdc = 
 				new SelectWriteModeDialogClass(MainWindow, GlobalObjUI.LMan.GetString("savesimact"));
 			
@@ -373,7 +421,14 @@ namespace monosimgtk
 			}
 			
 			log.Debug("MainWindowClass::SaveContactsSim: SELECTED SIM WRITE MODE: " + retMode.ToString());
-			
+			if (retMode == 1)
+			{			
+				WriteContactsOnSim(GlobalObjUI.SimContacts, true);	
+			}
+			else
+			{
+				WriteContactsOnSim(GlobalObjUI.SimContacts, false);	
+			}
 		}
 		
 		
@@ -399,30 +454,43 @@ namespace monosimgtk
 		
 		private void DeleteContactsSim()
 		{
-				MessageDialog mdlg = new MessageDialog(MainWindow,
-				                         DialogFlags.Modal,
-				                         MessageType.Question,
-				                         ButtonsType.YesNo, 
-					                     GlobalObjUI.LMan.GetString("suredeletesim"));
-				mdlg.TransientFor = MainWindow;
-				mdlg.Title = MainClass.AppNameVer + " - " + GlobalObjUI.LMan.GetString("deletesimact");
-				ResponseType respType = (ResponseType)mdlg.Run();
-				
-				if (respType == ResponseType.Yes)
-				{
-					// override
-					mdlg.Destroy();
-					mdlg.Dispose();
-					mdlg = null;
-					
-					// Delete sim
-				
-					return;
-				}
-				
+			MessageDialog mdlg = new MessageDialog(MainWindow,
+			                         DialogFlags.Modal,
+			                         MessageType.Question,
+			                         ButtonsType.YesNo, 
+				                     GlobalObjUI.LMan.GetString("suredeletesim"));
+			mdlg.TransientFor = MainWindow;
+			mdlg.Title = MainClass.AppNameVer + " - " + GlobalObjUI.LMan.GetString("deletesimact");
+			ResponseType respType = (ResponseType)mdlg.Run();
+			
+			if (respType == ResponseType.Yes)
+			{
+				// override
 				mdlg.Destroy();
 				mdlg.Dispose();
 				mdlg = null;
+				
+				// Delete sim
+				ScanSimBefore();
+				
+				// Reset status values
+				GlobalObjUI.SimADNStatus = 1;
+				GlobalObjUI.SimADNPosition = 0;
+				GlobalObjUI.SimADNError = "";
+				
+	            // Start thread for reading process
+	            notify = new ThreadNotify(new ReadyEvent(WritingUpdate));
+	            simThread = new System.Threading.Thread(new System.Threading.ThreadStart(GlobalObjUI.DeleteAllSimContactsList));
+	            simThread.Start();
+			
+				return;
+			}
+			
+			mdlg.Destroy();
+			mdlg.Dispose();
+			mdlg = null;
+			
+
 		}
 		
 		
@@ -483,13 +551,38 @@ namespace monosimgtk
 				// Update gui widgets properties
 				ScanSimAfter();
 			}
-			
-			
-			
 		}
 		
 		
 		
+		
+		/// <summary>
+		/// Updates during sim contacts writing
+		/// </summary>
+		private void WritingUpdate()
+		{
+			PBar.Adjustment.Value = (double)GlobalObjUI.SimADNPosition;
+			StatusBar.Push(1, GlobalObjUI.LMan.GetString("writecontact") + 
+				              GlobalObjUI.SimADNPosition.ToString("d3"));
+			MainClass.GtkWait();
+			
+			
+			if (GlobalObjUI.SimADNStatus == 3)
+			{
+				// End with errors
+				MainClass.ShowMessage(MainWindow, "ERROR", GlobalObjUI.SimADNError, MessageType.Error);
+				//ScanSimAfter();
+				SimConnect();
+			}
+			
+			// check for sim write ended
+			if (GlobalObjUI.SimADNStatus != 1)
+			{
+				// Update gui widgets properties
+				//ScanSimAfter();
+				SimConnect();
+			}
+		}		
 		
 		
 		
@@ -592,7 +685,6 @@ namespace monosimgtk
 			TopToolBar.Sensitive = false;
 			FrameSim.Sensitive = false;
 			FrameFile.Sensitive = false;
-			lstSimContacts.Clear();
 			MainClass.GtkWait();
 		}
 
@@ -704,9 +796,27 @@ namespace monosimgtk
 		/// <summary>
 		/// Write passed contacts on sim card (append or override)
 		/// </summary>
-		private void WriteContactsOnSim(List<Contact> contacts, bool isAppend)
+		private void WriteContactsOnSim(Contacts contacts, bool isAppend)
 		{
+			// check for space on sim
+			if (!isAppend && (contacts.SimContacts.Count > GlobalObjUI.SimADNRecordCount))
+			{
+				// No enough space on sim
+				MainClass.ShowMessage(MainWindow, "ERROR", 
+					GlobalObjUI.LMan.GetString("nosimspace"), MessageType.Error);
+				return;
+			}
 			
+			if (isAppend && (contacts.SimContacts.Count > (GlobalObjUI.SimADNRecordCount - 
+				                                           GlobalObjUI.SimADNRecordNoEmpty)))
+			{
+				// No enough space on sim
+				MainClass.ShowMessage(MainWindow, "ERROR", 
+					GlobalObjUI.LMan.GetString("nosimspace"), MessageType.Error);
+				return;
+			}
+			
+			SimUpdate(contacts, isAppend);			
 		}
 		
 		

@@ -75,6 +75,16 @@ namespace monosimgtk
 						                  GlobalObjUI.LMan.GetString("fieldsreq"), 
 						                  MessageType.Warning);
 				}
+				else if ((txtDesc.Length == 21) && 
+					     (txtDesc.Substring(0,1) != "+"))
+				{
+					// number max len is 20 digits
+					MainClass.ShowMessage(mainWin, "ERROR", 
+						                  GlobalObjUI.LMan.GetString("maxnumlen"), 
+						                  MessageType.Warning);
+
+
+				}
 				else
 				{
 					// Data are correct
@@ -101,7 +111,7 @@ namespace monosimgtk
 			TxtDesc.MaxLength = maxAlphaChars;
 			TxtDesc.Text = txtDesc;
 			TxtNumber.Text = txtNumber;
-			
+			TxtNumber.MaxLength = 21;
 			NewContactDialog.TransientFor = mainWin;
 			NewContactDialog.DestroyWithParent = true;
 		}

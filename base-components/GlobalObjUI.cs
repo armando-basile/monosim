@@ -29,7 +29,7 @@ namespace monosimbase
     	// private static string configId = "";
     	// private static string ext1Rec = "";    	
 		private static int tonNpiNumber = 0;
-		
+
 		
 		// Log4Net object
         private static readonly ILog log = LogManager.GetLogger(typeof(GlobalObjUI));
@@ -69,7 +69,7 @@ namespace monosimbase
 		public static int SimADNRecordCount {get; set;}
 		public static int SimADNRecordNoEmpty {get; set;}
 		public static int SimADNMaxAlphaChars {get; set;}
-		
+		public static List<int> SimADNRecordEmptyID {get; set;}
 		
 		#endregion Properties
 		
@@ -105,7 +105,7 @@ namespace monosimbase
 			{
 				// use share folder to search languages
 				languageFolder = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) +
-					             Path.DirectorySeparatorChar + Assembly.GetExecutingAssembly().GetName().Name +
+					             Path.DirectorySeparatorChar + "monosim" +
 						         Path.DirectorySeparatorChar + "Languages";
 				
 				if (!Directory.Exists(languageFolder))
@@ -164,6 +164,23 @@ namespace monosimbase
 		
 		
 		
+		/// <summary>
+		/// Check for contacts with description chars len > MaxAlphaCharsLen
+		/// </summary>
+		public static string CheckAlphaCharsLen(Contacts contacts)
+		{
+			// loop for each contact
+			foreach (Contact contact in contacts.SimContacts)
+			{
+				// check for contact description length
+				if (contact.Description.Length > SimADNMaxAlphaChars)
+				{
+					return contact.Description;
+				}
+			}
+			
+			return "";
+		}
 		
 		
 		
@@ -202,7 +219,7 @@ namespace monosimbase
 				
 				alphaID = AsciiFromHex(alphaID);
 				alphaID = alphaID.Replace(((char)255).ToString() , "");
-		    	dialNum = SwapNumber(dialNum, Convert.ToInt32(numLength, 16) * 2); 
+		    	dialNum = SwapNumber(dialNum, (Convert.ToInt32(numLength, 16)-1) * 2); 
 				
 				if ((tonNpiNumber&16) > 0)
 				{
@@ -250,6 +267,23 @@ namespace monosimbase
 		
 		
 		
+		/// <summary>
+		/// Get hexadecimal value from ASCII string
+		/// </summary>
+		private static string HexFromAscii(string asciiValue)
+		{
+			string hexOut = "";
+			byte[] inBytes = UTF8Encoding.UTF8.GetBytes(asciiValue);
+			
+			for (int j=0; j<inBytes.Length; j++)
+			{
+				hexOut += inBytes[j].ToString("X2");
+			}
+			
+			return hexOut;
+		}
+		
+		
 		
 		
 		
@@ -261,7 +295,7 @@ namespace monosimbase
 			string outNumber = "";
 			
 			// loop for each byte
-			for (int k=0; k<numDigits - 2; k +=2)
+			for (int k=0; k<numDigits; k +=2)
 			{
 				// swap digits in byte
 				outNumber += inNumber.Substring(k+1,1) + inNumber.Substring(k,1);
@@ -278,7 +312,67 @@ namespace monosimbase
 		
 		
 		
-		
+		/// <summary>
+		/// Prepare record to store contact on sim
+		/// </summary>
+		private static string PrepareRecord(Contact cnt, out string record)
+		{
+			string outNumber = "";
+			int lenNumber = 0;
+			string inNumber = cnt.PhoneNumber;			
+			string digit = "";
+			string tonNpi = "81";
+			record = HexFromAscii(cnt.Description);
+			record = record.PadRight(SimADNMaxAlphaChars*2, 'F');
+			
+			int tmpInt;
+			
+			if (inNumber.Substring(0,1) == "+")
+			{
+				// international number
+				tonNpi = "91";
+				inNumber = inNumber.Substring(1);
+			}
+			
+			// check for phone number digits
+			for(int p=0; p<inNumber.Length; p++)
+			{
+				digit = inNumber.Substring(p, 1);
+				if (!int.TryParse(digit, out tmpInt) && digit != "*" && digit != "#")
+				{
+					log.Debug("GlobalObjUI::PrepareRecord: WRONG NUMBER " + cnt.PhoneNumber);
+					return "WRONG NUMBER " + cnt.PhoneNumber;
+				}
+			}
+			
+			// Prepare Phone number
+			if (inNumber.Length%2 != 0)
+			{
+				// add digit 
+				inNumber += "F";
+			}
+			
+			// len of numner + tonnpi byte
+			lenNumber = (inNumber.Length/2) + 1;
+			
+			// loop for each byte
+			for (int k=0; k<inNumber.Length; k +=2)
+			{
+				// swap digits in byte
+				outNumber += inNumber.Substring(k+1,1) + inNumber.Substring(k,1);
+			}
+			
+			outNumber = outNumber.Replace("*", "A");
+			outNumber = outNumber.Replace("#", "B");
+			outNumber = outNumber.PadRight(20, 'F');
+			
+			record += lenNumber.ToString("X2");
+			record += tonNpi;
+			record += outNumber;
+			record += "FFFF";
+			
+			return "";
+		}
 		
 		
 		

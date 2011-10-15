@@ -46,6 +46,7 @@
 		<needpindisable>Pin1 enabled. To use monosim you need to disable it</needpindisable>
 		
 		<readcontact>Reading sim contact n. </readcontact>
+		<writecontact>Writing sim contact n. </writecontact>
 		<recordnoempty>Total contacts founded </recordnoempty>
 		
 		<filesaved>Saved contacts successfully</filesaved>
@@ -53,6 +54,9 @@
 		<suredeletesim>Are you sure to delete all contacts on sim ?</suredeletesim>
 		<suredelcontact>Are you sure to delete follow contact ?</suredelcontact>
 		<fieldsreq>All fields required, retry</fieldsreq>
+		<maxnumlen>Max phone number len 20 digits</maxnumlen>
+		<maxlenexceeded>Maximum description length exceeded for 'description'. Max digits is </maxlenexceeded>
+		<nosimspace>Not enough space on sim</nosimspace>
 		
 		<pinsimlbl>Pin1</pinsimlbl>
 		<pin1on>Enabled</pin1on>
@@ -88,8 +92,8 @@
 		&nbsp;&nbsp;&nbsp;http://code.google.com/p/monosim/issues/list<br> 
 		]]></infodesc>
 		
-		<thanksdesc><![CDATA[Si ringraziano gli sviluppatori, tester, traduttori, web designer e 
-		tutti coloro che hanno collaborato in qualsiasi forma al progetto.
+		<thanksdesc><![CDATA[We thanks developers, testers, translators, web designers and
+		everyone who worked on the project in any way.
 		]]></thanksdesc>
 		
 	</language>
