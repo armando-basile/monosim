@@ -1,0 +1,39 @@
+TonNpi Byte is codify as follow:
+ 
+ -----------------------------------------
+ | b8 | b7 | b6 | b5 | b4 | b3 | b2 | b1 |
+ -----------------------------------------
+   |    |    |    |    |----|----|----|---> Npi
+   |    |----|----|-----------------------> Ton
+   |--------------------------------------> 1
+
+
+TON values
+---------------------
+Unknown ......... = 0
+International ... = 1
+National ........ = 2
+Network Specific  = 3
+Subscriber Number = 4
+Alphanumeric .... = 5
+Abbreviated ..... = 6 
+
+
+NPI values
+---------------------
+Unknown                                   = 0
+ISDN/telephone numbering plan (E163/E164) = 1
+Data numbering plan (X.121)               = 3
+Telex numbering plan (F.69)               = 4
+Land Mobile (E.212)                       = 6
+National numbering plan                   = 8
+Private numbering plan                    = 9
+ERMES numbering plan (ETSI DE/PS 3 01-3)  = 10
+Internet (IP)                             = 13
+WAP Client Id                             = 18
+
+
+Examples:
+Unknow        number have Ton=0 and Npi=1 (10000001 = 81)
+International number have Ton=1 and Npi=1 (10010001 = 91)
+National      number have Ton=2 and Npi=1 (10100001 = A1)
