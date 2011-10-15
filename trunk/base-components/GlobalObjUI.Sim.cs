@@ -89,6 +89,7 @@ namespace monosimbase
 			
 			SimADNRecordNoEmpty = 0;
 			ADNrecords = new List<string>();
+			SimADNRecordEmptyID = new List<int>();
 			SimContacts = new Contacts();
 			
 			// loop for each ADN records
@@ -137,6 +138,11 @@ namespace monosimbase
 					// update records list
 					ADNrecords.Add(simResponse.Substring(0, simResponse.Length-4));
 				}
+				else
+				{
+					// Add to Empty record list
+					SimADNRecordEmptyID.Add(l);
+				}
 				
 				// send notify to gui
 				MonosimEvent(new object(), new EventArgs());				
@@ -151,6 +157,201 @@ namespace monosimbase
 		}
 		
 		
+		
+		
+		
+		public static void WriteSimContactsList(Contacts contacts, bool isAppend)
+		{
+			string emptyRecord = new string('F', SimADNRecordLen * 2);
+			string expRecord = "9000";
+			string retCmd = "";
+			string retRecord = "";
+			int adnRec = 0;
+			
+			// loop for each ADN records
+			for (int cid=0; cid<contacts.SimContacts.Count; cid++)
+			{
+				if (!isAppend)
+				{
+					// first record
+					adnRec = cid + 1;
+				}
+				else
+				{
+					// first empty record
+					adnRec = SimADNRecordEmptyID[cid];
+				}
+				
+				// Set record id
+				SimADNPosition = adnRec;
+				
+				// Prepare sim command
+				simCommand = "A0DC" + adnRec.ToString("X2") + "04" + SimADNRecordLen.ToString("X2");
+					
+				retStr = PrepareRecord(contacts.SimContacts[cid], out retRecord);
+				if (retStr != "")
+				{
+					// error detected
+					SimADNError = retStr;
+					SimADNStatus = 3;
+					// send notify to gui
+					MonosimEvent(new object(), new EventArgs());
+					return;
+				}
+				
+				simCommand += retRecord;
+				simExpResponse = expRecord;
+				simResponse = "";
+				simRespOk = false;
+				retCmd = SendReceiveAdv(simCommand, ref simResponse, simExpResponse, ref simRespOk);
+				
+				log.Debug("GlobalObjUI.Sim::WriteSimContactsList: WRITE ADN REC " + 
+					      adnRec.ToString("d3") + " " + simCommand + " < " + simResponse);
+				
+				if (retCmd != "")
+				{
+					// error detected
+					SimADNError = retCmd;
+					SimADNStatus = 3;
+					// send notify to gui
+					MonosimEvent(new object(), new EventArgs());
+					return;
+				}
+				
+				
+				if (!simRespOk)
+				{
+					// wrong response
+					SimADNError = "WRONG RESPONSE: [" + simExpResponse + "] - [" + simResponse + "]";
+					SimADNStatus = 3;
+
+					// send notify to gui
+					MonosimEvent(new object(), new EventArgs());
+					return;
+				}
+				
+				// send notify to gui
+				MonosimEvent(new object(), new EventArgs());
+			}
+			
+			if(!isAppend)
+			{
+				// delete old other records
+				for (int rid=adnRec+1; rid<=GlobalObjUI.SimADNRecordCount; rid++)
+				{
+					if (!SimADNRecordEmptyID.Contains(rid))
+					{
+						// Set record id
+						SimADNPosition = rid;
+						
+						simCommand = "A0DC" + rid.ToString("X2") + "04" + SimADNRecordLen.ToString("X2") +
+							         emptyRecord;
+						simExpResponse = expRecord;
+						simResponse = "";
+						simRespOk = false;
+						retCmd = SendReceiveAdv(simCommand, ref simResponse, simExpResponse, ref simRespOk);
+						
+						log.Debug("GlobalObjUI.Sim::WriteSimContactsList: WRITE ADN REC " + 
+						      rid.ToString("d3") + " " + simCommand + " < " + simResponse);
+					
+						if (retCmd != "")
+						{
+							// error detected
+							SimADNError = retCmd;
+							SimADNStatus = 3;
+							// send notify to gui
+							MonosimEvent(new object(), new EventArgs());
+							return;
+						}
+						
+						
+						if (!simRespOk)
+						{
+							// wrong response
+							SimADNError = "WRONG RESPONSE: [" + simExpResponse + "] - [" + simResponse + "]";
+							SimADNStatus = 3;
+		
+							// send notify to gui
+							MonosimEvent(new object(), new EventArgs());
+							return;
+						}
+						
+						// send notify to gui
+						MonosimEvent(new object(), new EventArgs());
+						
+					}
+				}
+			}
+			
+			SimADNStatus = 2;
+			
+			// send notify to gui
+			MonosimEvent(new object(), new EventArgs());	
+			
+		}
+		
+		
+		
+		/// <summary>
+		/// Delete all sim contacts list
+		/// </summary>
+		public static void DeleteAllSimContactsList()
+		{
+			string emptyRecord = new string('F', SimADNRecordLen * 2);
+			string expRecord = "9000";
+			string retCmd = "";
+			
+			for (int rid=1; rid<=GlobalObjUI.SimADNRecordCount; rid++)
+			{
+				// if record isn't empty
+				if (!SimADNRecordEmptyID.Contains(rid))
+				{
+					// Set record id
+					SimADNPosition = rid;
+					
+					simCommand = "A0DC" + rid.ToString("X2") + "04" + SimADNRecordLen.ToString("X2") +
+						         emptyRecord;
+					simExpResponse = expRecord;
+					simResponse = "";
+					simRespOk = false;
+					retCmd = SendReceiveAdv(simCommand, ref simResponse, simExpResponse, ref simRespOk);
+					
+					log.Debug("GlobalObjUI.Sim::DeleteAllSimContactsList: WRITE ADN REC " + 
+					      rid.ToString("d3") + " " + simCommand + " < " + simResponse);
+				
+					if (retCmd != "")
+					{
+						// error detected
+						SimADNError = retCmd;
+						SimADNStatus = 3;
+						// send notify to gui
+						MonosimEvent(new object(), new EventArgs());
+						return;
+					}
+					
+					
+					if (!simRespOk)
+					{
+						// wrong response
+						SimADNError = "WRONG RESPONSE: [" + simExpResponse + "] - [" + simResponse + "]";
+						SimADNStatus = 3;
+	
+						// send notify to gui
+						MonosimEvent(new object(), new EventArgs());
+						return;
+					}
+					
+					// send notify to gui
+					MonosimEvent(new object(), new EventArgs());
+				}
+			}
+			
+			SimADNStatus = 2;
+			
+			// send notify to gui
+			MonosimEvent(new object(), new EventArgs());
+			
+		}
 		
 		
 		
@@ -484,12 +685,6 @@ namespace monosimbase
 			
 			return "";
 		}
-		
-		
-		
-		
-		
-		
 		
 		
 		

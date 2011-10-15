@@ -46,6 +46,7 @@
 		<needpindisable>Pin1 activado. Para usar monosim necesita desactivarlo</needpindisable>
 		
 		<readcontact>Leyendo contacto de la SIM n </readcontact>
+		<writecontact>Writing sim contact n. </writecontact>
 		<recordnoempty>Todos los contactos encontrados </recordnoempty>
 		
 		<filesaved>Guardado de contactos completado con éxito</filesaved>
@@ -53,7 +54,29 @@
 		<suredeletesim>¿Está seguro de querer borrar todos los contactos de la SIM?</suredeletesim>
 		<suredelcontact>¿Está seguro de querer borrar el siguiente contacto?</suredelcontact>
 		<fieldsreq>Se requieren todos los campos, reintentar</fieldsreq>
+		<maxnumlen>Max phone number len 20 digits</maxnumlen>
+		<maxlenexceeded>Maximum description length exceeded for 'description'. Max digits is </maxlenexceeded>
+		<nosimspace>Not enough space on sim</nosimspace>
 		
+		<pinsimlbl>Pin1</pinsimlbl>
+		<pin1on>Enabled</pin1on>
+		<pin1off>Disabled</pin1off>
+		<pinsimsetlbl>Set Pin1 status to </pinsimsetlbl>
+		<pinsimchklbl>Pin1 check</pinsimchklbl>
+		<pinsimchk1>Pin1 check value don't match with Pin1, please retry</pinsimchk1>
+		<pinsimchk2>Pin1 need to be 4-digit numbers, retry</pinsimchk2>
+		<pinsimchk3><![CDATA[Operation not allowed, have <b>only one attempt</b>, perform it on phone]]></pinsimchk3>
+		<pinsimchk4><![CDATA[Operation not allowed, <b>haven't any attempt</b> to verify Pin1, try to use <b>Puk1 on phone</b>]]></pinsimchk4>
+		<pinsimdone>Pin1 status changed</pinsimdone>
+		
+		<simoverride>Override</simoverride>
+		<simappend>Append</simappend>
+		<simwritemode><![CDATA[How would you like to update sim?<br>
+
+<b>Override</b>: delete all phonebook on sim and after write new contacts<br>
+<b>Append</b>: use all empty position on phonebook on sim to write new contacts]]></simwritemode>
+		<simwriteok>Write contacts on sim successfully completed</simwriteok>
+
 		<infodesc><![CDATA[Aplicación C# multiplataforma para gestionar los contactos de una tarjeta SIM usando un lector estandar PC/SC smartcard o serie (SmartMouse/Phoenix).<br> 
 		- Múltiples idiomas (usando archivos de idioma xml en carpeta <i>Languages</i>)<br> 
 		- Interfaz gráfica (usando enlace GTK# para las bibliotecas gráficas GTK y enlace Qyoto para las bibliotecas gráficas QT)<br> 
@@ -69,8 +92,8 @@
 		&nbsp;&nbsp;&nbsp;http://code.google.com/p/monosim/issues/list<br> 
 		]]></infodesc>
 		
-		<thanksdesc><![CDATA[Si ringraziano gli sviluppatori, tester, traduttori, web designer e 
-		tutti coloro che hanno collaborato in qualsiasi forma al progetto.
+		<thanksdesc><![CDATA[We thanks developers, testers, translators, web designers and
+		everyone who worked on the project in any way.
 		]]></thanksdesc>
 		
 	</language>
