@@ -45,8 +45,8 @@
 		
 		<needpindisable>Pin1 activado. Para usar monosim necesita desactivarlo</needpindisable>
 		
-		<readcontact>Leyendo contacto de la SIM n </readcontact>
-		<writecontact>Writing sim contact n. </writecontact>
+		<readcontact>Leyendo contacto n </readcontact>
+		<writecontact>Escribiendo contacto n. </writecontact>
 		<recordnoempty>Todos los contactos encontrados </recordnoempty>
 		
 		<filesaved>Guardado de contactos completado con éxito</filesaved>
@@ -54,28 +54,28 @@
 		<suredeletesim>¿Está seguro de querer borrar todos los contactos de la SIM?</suredeletesim>
 		<suredelcontact>¿Está seguro de querer borrar el siguiente contacto?</suredelcontact>
 		<fieldsreq>Se requieren todos los campos, reintentar</fieldsreq>
-		<maxnumlen>Max phone number len 20 digits</maxnumlen>
-		<maxlenexceeded>Maximum description length exceeded for 'description'. Max digits is </maxlenexceeded>
-		<nosimspace>Not enough space on sim</nosimspace>
+		<maxnumlen>Longitud máxima del número de teléfono: 20 dígitos</maxnumlen>
+		<maxlenexceeded>Longitud máxima de la descripción superada por 'description'. El número máximo de caracteres es </maxlenexceeded>
+		<nosimspace>No hay espacio suficiente en ls SIM</nosimspace>
 		
 		<pinsimlbl>Pin1</pinsimlbl>
-		<pin1on>Enabled</pin1on>
-		<pin1off>Disabled</pin1off>
-		<pinsimsetlbl>Set Pin1 status to </pinsimsetlbl>
-		<pinsimchklbl>Pin1 check</pinsimchklbl>
-		<pinsimchk1>Pin1 check value don't match with Pin1, please retry</pinsimchk1>
-		<pinsimchk2>Pin1 need to be 4-digit numbers, retry</pinsimchk2>
-		<pinsimchk3><![CDATA[Operation not allowed, have <b>only one attempt</b>, perform it on phone]]></pinsimchk3>
-		<pinsimchk4><![CDATA[Operation not allowed, <b>haven't any attempt</b> to verify Pin1, try to use <b>Puk1 on phone</b>]]></pinsimchk4>
-		<pinsimdone>Pin1 status changed</pinsimdone>
+		<pin1on>Habilitado</pin1on>
+		<pin1off>Deshabilitado</pin1off>
+		<pinsimsetlbl>Establecer el estado de Pin1 a </pinsimsetlbl>
+		<pinsimchklbl>Verificación de Pin1</pinsimchklbl>
+		<pinsimchk1>El valor de verificación de Pin1 no coincide con Pin1, por favor, vuélvalo a intentar</pinsimchk1>
+		<pinsimchk2>Pin1 debe ser un número de 4 dígitos, vuélvalo a intentar</pinsimchk2>
+		<pinsimchk3><![CDATA[Operación no permitida, tiene <b>sólo un intento</b>, hágalo en el teléfono]]></pinsimchk3>
+		<pinsimchk4><![CDATA[Operación no permitida, <b>ya no tiene más intentos</b> para verificar Pin1, intente usar <b>Puk1 en el teléfono</b>]]></pinsimchk4>
+		<pinsimdone>Cambiado el estado de Pin1</pinsimdone>
 		
-		<simoverride>Override</simoverride>
-		<simappend>Append</simappend>
-		<simwritemode><![CDATA[How would you like to update sim?<br>
+		<simoverride>Sobreescribir</simoverride>
+		<simappend>Añadir</simappend>
+		<simwritemode><![CDATA[¿Cómo le gustaría actualizar la SIM?<br>
 
-<b>Override</b>: delete all phonebook on sim and after write new contacts<br>
-<b>Append</b>: use all empty position on phonebook on sim to write new contacts]]></simwritemode>
-		<simwriteok>Write contacts on sim successfully completed</simwriteok>
+<b>Sobreescribiendo</b>: borra todos los teléfonos de la SIM y después escribe los nuevos contactos<br>
+<b>Añadiendo</b>: usa todas las entradas vacías de la libreta de direcciones de la SIM para escribir nuevos contactos]]></simwritemode>
+		<simwriteok>Escritura de contactos en la SIM completada con éxito</simwriteok>
 
 		<infodesc><![CDATA[Aplicación C# multiplataforma para gestionar los contactos de una tarjeta SIM usando un lector estandar PC/SC smartcard o serie (SmartMouse/Phoenix).<br> 
 		- Múltiples idiomas (usando archivos de idioma xml en carpeta <i>Languages</i>)<br> 
@@ -92,8 +92,8 @@
 		&nbsp;&nbsp;&nbsp;http://code.google.com/p/monosim/issues/list<br> 
 		]]></infodesc>
 		
-		<thanksdesc><![CDATA[We thanks developers, testers, translators, web designers and
-		everyone who worked on the project in any way.
+		<thanksdesc><![CDATA[Agradecemos a los desarrolladores, probadores, traductores, diseñadores web y
+		a todos los que han colaborado de cualquier forma en el proyecto.
 		]]></thanksdesc>
 		
 	</language>
