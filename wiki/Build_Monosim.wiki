@@ -22,7 +22,7 @@ Build Dependencies:
 
 To build and install can use:
 {{{ 
- $ ./configure
+ $ ./configure --prefix=/usr
  $ make
  # make install (as root)
 }}}
@@ -39,7 +39,7 @@ Build Dependencies:
 
 To build and install can use:
 {{{ 
- $ ./configure
+ $ ./configure --prefix=/usr
  $ make
  # make install (as root)
 }}}
