@@ -1,5 +1,5 @@
 #summary how to build Monosim on your os
-#labels Phase-Implementation
+#labels Phase-Implementation,Featured
 
 = Introduction =
 
@@ -43,7 +43,6 @@ To build and install can use:
  $ make
  # make install (as root)
 }}}
-----
 
 <br />
 
