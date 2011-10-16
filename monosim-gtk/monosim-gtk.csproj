@@ -39,7 +39,7 @@
     <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="comex-base, Version=0.1.8.1, Culture=neutral, PublicKeyToken=f010a30ad7addeec">
+    <Reference Include="comex-base">
       <SpecificVersion>False</SpecificVersion>
       <Package>comex-base</Package>
     </Reference>
@@ -55,7 +55,7 @@
     <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=f010a30ad7addeec">
+    <Reference Include="log4net">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
