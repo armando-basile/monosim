@@ -1,0 +1,95 @@
+#summary how to build Monosim on your os
+#labels Phase-Implementation
+
+= Introduction =
+
+This page lists methods to build Monosim on Linux and Windows os.
+
+= Build on Linux =
+
+== Build and install from tarballs ==
+
+Can find tarballs in [http://code.google.com/p/monosim/downloads/list Downloads area].
+
+=== For monosim-gtk ===
+
+Build Dependencies:
+ * mono devel package
+ * log4net devel package
+ * comex-base devel (see [http://code.google.com/p/comex-project/Wiki/Build_Comex comex-base build])
+ * gtk-sharp2 devel package
+ * glade-sharp2
+
+To build and install can use:
+{{{ 
+ $ ./configure
+ $ make
+ # make install (as root)
+}}}
+----
+
+=== For monosim-qt ===
+
+Build Dependencies:
+ * mono devel package
+ * log4net devel package
+ * comex-base devel (see [http://code.google.com/p/comex-project/Wiki/Build_Comex comex-base build])
+ * qyoto devel package
+ * qyoto
+
+To build and install can use:
+{{{ 
+ $ ./configure
+ $ make
+ # make install (as root)
+}}}
+----
+
+<br />
+
+
+== Build from sources ==
+Need to obtain sources using checkout instructions contained in [http://code.google.com/p/monosim/source/checkout Source Tabs].
+
+=== For monosim-gtk ===
+
+Build Dependencies:
+ * mono devel package
+ * log4net devel package
+ * comex-base devel (see [http://code.google.com/p/comex-project/Wiki/Build_Comex comex-base build])
+ * gtk-sharp2 devel package
+ * glade-sharp2
+
+To build can use build script:
+{{{ 
+ $ ./build-lnx-monosim-gtk.sh
+}}}
+build output will be generated in monosim-gtk/bin/Debug folder
+----
+
+=== For monosim-qt ===
+
+Build Dependencies:
+ * mono devel package
+ * log4net devel package
+ * comex-base devel (see [http://code.google.com/p/comex-project/Wiki/Build_Comex comex-base build])
+ * qyoto devel devel package
+ * qyoto
+
+To build can use build script:
+{{{ 
+ $ ./build-lnx-monosim-qt.sh
+}}}
+build output will be generated in monosim-qt/bin/Debug folder
+
+
+<br />
+
+
+= Build on Windows =
+
+== Build from sources ==
+Need to obtain sources using checkout instructions contained in [http://code.google.com/p/monosim/source/checkout Source Tabs].
+
+
+After can use [http://sharpdevelop.net/opensource/sd/ SharpDevelop IDE] to build all solutions. Note that you need to change reference to comex-base and log4net because default reference is in GAC.
