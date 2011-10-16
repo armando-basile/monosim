@@ -1,0 +1,74 @@
+#summary how to install Monosim on your os
+#labels Phase-Deploy,Featured
+
+= Introduction =
+
+Before install Monosim you may want to try it, so you need to follow [#Use_binaries Use binaries] section.
+<br />
+
+
+= Install from your package manager =
+ * *Mandriva/Rosa Linux*
+ from Mandriva 2010.1 can use *urpmi* to install packages _(need to enable contrib/backports repository)_
+ * *Debian/Ubuntu Linux*
+ work in progress
+<wiki:comment>
+ can find packages [https://launchpad.net/~armando-basile/+archive/stable here]
+</wiki:comment>
+ * *Opensuse Linux*
+ work in progress
+<wiki:comment>
+ can find packages [http://download.opensuse.org/repositories/home:/hmandevteam:/comex-project/openSUSE_11.4/ here]
+</wiki:comment>
+
+<br />
+
+
+
+= Install from tarballs =
+Please see [http://code.google.com/p/monosim/wiki/Build_Monosim#Build_and_install_from_tarballs Build and install from tarballs] section
+
+<br />
+
+
+
+= Use binaries =
+Can find binaries package in [http://code.google.com/p/monosim/downloads/list Downloads area].
+ * *On Linux*
+ To launch *GTK user interface* using:
+  <div>_to obtain help message_</div>
+{{{ 
+$ mono monosim-gtk.exe --help
+}}}
+  <div>_to launch without log_</div>
+{{{ 
+$ mono monosim-gtk.exe
+}}}
+  NOTE: _you need to install *gtk-sharp2* and *glade-sharp2* to use it_
+----
+
+ To launch *QT user interface* using:
+  <div>_to obtain help message_</div>
+{{{ 
+$ mono monosim-qt.exe --help
+}}}
+  <div>_to launch without log_</div>
+{{{
+$ mono monosim-qt.exe
+}}}
+  NOTE: _you need to install *qyoto* to use it_
+----
+
+<br />
+ * *On Windows*
+
+ To launch *GTK user interface* using:
+  <div>_to obtain help message_</div>
+{{{ 
+C:\...> comex-gtk.exe --help
+}}}
+  <div>_to launch without log_</div>
+{{{ 
+C:\...> comex-gtk.exe
+}}}
+  NOTE: _you need to install [http://www.go-mono.com/mono-downloads/download.html Gtk# for .NET] to use it_
