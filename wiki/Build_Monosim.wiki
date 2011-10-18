@@ -63,7 +63,10 @@ To build can use build script:
 {{{ 
  $ ./build-lnx-monosim-gtk.sh
 }}}
-build output will be generated in monosim-gtk/bin/Debug folder
+build output will be generated in monosim-gtk/bin/Debug folder. Can run using
+{{{ 
+ $ mono --debug monosim-gtk.exe --log-console
+}}}
 ----
 
 === For monosim-qt ===
@@ -79,8 +82,10 @@ To build can use build script:
 {{{ 
  $ ./build-lnx-monosim-qt.sh
 }}}
-build output will be generated in monosim-qt/bin/Debug folder
-
+build output will be generated in monosim-qt/bin/Debug folder. Can run using
+{{{ 
+ $ mono --debug monosim-qt.exe --log-console
+}}}
 
 <br />
 
