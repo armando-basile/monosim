@@ -10,7 +10,7 @@
     <RootNamespace>monosimgtk</RootNamespace>
     <AssemblyName>monosim-gtk</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
-    <ReleaseVersion>0.2.0.0</ReleaseVersion>
+    <ReleaseVersion>2.0.0.0</ReleaseVersion>
     <ApplicationIcon>..\resources\monosim_win.ico</ApplicationIcon>
     <Description>GTK application to manage sim card contacts</Description>
   </PropertyGroup>
