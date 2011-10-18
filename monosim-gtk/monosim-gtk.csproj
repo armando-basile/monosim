@@ -162,8 +162,4 @@
       <LogicalName>SelectWriteModeDialog.glade</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Src\Base_Components\" />
-    <Folder Include="Languages\" />
-  </ItemGroup>
 </Project>
