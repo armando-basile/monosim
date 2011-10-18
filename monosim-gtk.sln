@@ -25,6 +25,6 @@ Global
 		$3.LineAlign = 0
 		$2.inheritsSet = Mono
 		description = GTK application to manage sim card contacts
-		version = 0.2.0.0
+		version = 2.0.0.0
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,6 @@
+2011-10-18  Armando Basile  <hmandevteam@gmail.com>
+
+	* monosim-qt.sln:
+	* monosim-gtk.sln:
+	* monosim-qt.csproj: - fix: wrong version number
+
