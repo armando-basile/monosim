@@ -1,3 +1,9 @@
+2011-10-18  Armando Basile  <hmandevteam@gmail.com>
+
+	* monosim-gtk.csproj: - fix: wrong solution version
+
+	* MainWindow.glade: - fix: set minimum VPaned childs size
+
 2011-10-12  Armando Basile  <hmandevteam@gmail.com>
 
 	* monosim-gtk.csproj:
