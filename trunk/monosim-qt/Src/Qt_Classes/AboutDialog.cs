@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'AboutDialog.ui'
 **
-** Created: lun ott 3 15:26:35 2011
+** Created: mer ott 19 16:56:14 2011
 **      by: Qt User Interface Compiler for C# version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -55,7 +55,7 @@ public class Ui_AboutDialog
     Logo.ObjectName = "Logo";
     Logo.MinimumSize = new QSize(48, 48);
     Logo.MaximumSize = new QSize(48, 48);
-    Logo.StyleSheet = "background-image: url(:/main/resources/Images/comex_48.png);";
+    Logo.StyleSheet = "background-image: url(:/main/resources/monosim_48.png);";
 
     gridLayout1.AddWidget(Logo, 0, 0, 1, 1);
 

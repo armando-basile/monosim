@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Collections.Generic;
 
 using comexbase;
+using monosimbase;
 
 using log4net;
 
@@ -50,15 +51,15 @@ namespace monosimqt
 		{
 			
 			// fill graphic objects informations
-			this.WindowTitle = GlobalObj.LMan.GetString("frmabout");
-			aboutdialog_UI.tabInfo.SetTabText(0, GlobalObj.LMan.GetString("about"));
-			aboutdialog_UI.TxtInfo.SetHtml(GlobalObj.LMan.GetString("infodesc").Replace("\t", ""));
+			this.WindowTitle = GlobalObjUI.LMan.GetString("frmabout");
+			aboutdialog_UI.tabInfo.SetTabText(0, GlobalObjUI.LMan.GetString("about"));
+			aboutdialog_UI.TxtInfo.SetHtml(GlobalObjUI.LMan.GetString("infodesc").Replace("\t", ""));
 
-			aboutdialog_UI.tabInfo.SetTabText(1, GlobalObj.LMan.GetString("thanks"));
-			aboutdialog_UI.TxtThanks.SetText(GlobalObj.LMan.GetString("thanksdesc").Replace("\t", "") + GlobalConst.ThanksTo);
+			aboutdialog_UI.tabInfo.SetTabText(1, GlobalObjUI.LMan.GetString("thanks"));
+			aboutdialog_UI.TxtThanks.SetText(GlobalObjUI.LMan.GetString("thanksdesc").Replace("\t", "") + monosimbase.GlobalConst.ThanksTo);
 
 			aboutdialog_UI.LblName.Text = MainClass.AppNameVer + " [" + GlobalObj.AppNameVer + "]";			
-			aboutdialog_UI.LblDesc.Text =  GlobalObj.LMan.GetString("description");
+			aboutdialog_UI.LblDesc.Text =  GlobalObjUI.LMan.GetString("description");
 			
 			
 			

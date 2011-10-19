@@ -1,0 +1,14 @@
+2011-10-19  Armando Basile  <hmandevteam@gmail.com>
+
+	* MainClass.cs:
+	* monosim-qt.csproj:
+	* MainWindow.ui:
+	* ResManager.cs:
+	* MainWindow.cs:
+	* AboutDialog.cs:
+	* SettingsDialog.cs:
+	* MainWindowClass.cs:
+	* AboutDialogClass.cs:
+	* MainWindowClass.Designer.cs: - added qt gui classes and
+	widgets
+

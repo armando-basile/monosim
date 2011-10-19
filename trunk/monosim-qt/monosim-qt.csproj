@@ -61,6 +61,28 @@
     <Compile Include="Src\Gui_Classes\MainWindowClass.Designer.cs" />
     <Compile Include="Src\Gui_Classes\MainWindowClass.cs" />
     <Compile Include="Src\Gui_Classes\SettingsDialogClass.cs" />
+    <Compile Include="..\base-components\Contact.cs">
+      <Link>Src\Base_Components\Contact.cs</Link>
+    </Compile>
+    <Compile Include="..\base-components\Contacts.cs">
+      <Link>Src\Base_Components\Contacts.cs</Link>
+    </Compile>
+    <Compile Include="..\base-components\GlobalConst.cs">
+      <Link>Src\Base_Components\GlobalConst.cs</Link>
+    </Compile>
+    <Compile Include="..\base-components\GlobalObjUI.cs">
+      <Link>Src\Base_Components\GlobalObjUI.cs</Link>
+    </Compile>
+    <Compile Include="..\base-components\GlobalObjUI.Sim.cs">
+      <Link>Src\Base_Components\GlobalObjUI.Sim.cs</Link>
+    </Compile>
+    <Compile Include="..\base-components\LanguageManager.cs">
+      <Link>Src\Base_Components\LanguageManager.cs</Link>
+    </Compile>
+    <Compile Include="..\base-components\MonosimEventHandler.cs">
+      <Link>Src\Base_Components\MonosimEventHandler.cs</Link>
+    </Compile>
+    <Compile Include="Src\Qt_Classes\MainWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\monosim-qt.desktop">
@@ -71,6 +93,19 @@
     <None Include="Src\Qt_Files\AboutDialog.ui" />
     <None Include="Src\Qt_Files\SettingsDialog.ui" />
     <None Include="readme" />
+    <None Include="Src\Qt_Files\MainWindow.ui" />
+    <None Include="..\Languages\monosim-en-US.xml">
+      <Link>Languages\monosim-en-US.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Languages\monosim-es-ES.xml">
+      <Link>Languages\monosim-es-ES.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Languages\monosim-it-IT.xml">
+      <Link>Languages\monosim-it-IT.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\copying.gpl">
