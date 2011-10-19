@@ -1,0 +1,343 @@
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>631</width>
+    <height>570</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>550</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../Resources/ResManager.qrc">
+    <normaloff>:/main/resources/monosim_128.png</normaloff>:/main/resources/monosim_128.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="childrenCollapsible">
+       <bool>false</bool>
+      </property>
+      <widget class="QGroupBox" name="FrameFile">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="title">
+        <string>Contatti File</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <widget class="QTableWidget" name="LstFileContacts">
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <attribute name="verticalHeaderVisible">
+           <bool>true</bool>
+          </attribute>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QGroupBox" name="FrameSim">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="title">
+        <string>Contatti Sim</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="0">
+         <widget class="QTableWidget" name="LstSimContacts">
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <attribute name="verticalHeaderVisible">
+           <bool>true</bool>
+          </attribute>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="MainMenu">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>631</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="MenuFileItem">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="MenuFileNew"/>
+    <addaction name="MenuFileOpen"/>
+    <addaction name="MenuFileSaveFile"/>
+    <addaction name="MenuFileSaveSim"/>
+    <addaction name="MenuFileClose"/>
+    <addaction name="separator"/>
+    <addaction name="MenuFileSettings"/>
+    <addaction name="separator"/>
+    <addaction name="MenuFileExit"/>
+   </widget>
+   <widget class="QMenu" name="MenuReaderItem">
+    <property name="title">
+     <string>&amp;Lettore</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="MenuAboutItem">
+    <property name="title">
+     <string>&amp;Aiuto</string>
+    </property>
+    <addaction name="MenuAboutInfo"/>
+   </widget>
+   <widget class="QMenu" name="MenuSimItem">
+    <property name="title">
+     <string>Sim</string>
+    </property>
+    <addaction name="MenuSimConnect"/>
+    <addaction name="MenuSimPin"/>
+    <addaction name="separator"/>
+    <addaction name="MenuSimSaveFile"/>
+    <addaction name="MenuSimSaveSim"/>
+    <addaction name="MenuSimDeleteAll"/>
+    <addaction name="separator"/>
+    <addaction name="MenuSimDisconnect"/>
+   </widget>
+   <addaction name="MenuFileItem"/>
+   <addaction name="MenuReaderItem"/>
+   <addaction name="MenuSimItem"/>
+   <addaction name="MenuAboutItem"/>
+  </widget>
+  <widget class="QStatusBar" name="StatusBar"/>
+  <widget class="QToolBar" name="TopToolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="MenuFileNew"/>
+   <addaction name="MenuFileOpen"/>
+   <addaction name="MenuFileSaveFile"/>
+   <addaction name="MenuFileSaveSim"/>
+   <addaction name="MenuFileClose"/>
+   <addaction name="separator"/>
+   <addaction name="MenuFileSettings"/>
+   <addaction name="MenuSimConnect"/>
+   <addaction name="MenuSimPin"/>
+   <addaction name="MenuSimSaveFile"/>
+   <addaction name="MenuSimSaveSim"/>
+   <addaction name="MenuSimDisconnect"/>
+   <addaction name="separator"/>
+   <addaction name="MenuAboutInfo"/>
+   <addaction name="MenuFileExit"/>
+  </widget>
+  <action name="MenuFileNew">
+   <property name="icon">
+    <iconset resource="../../Resources/ResManager.qrc">
+     <normaloff>:/toolbar/resources/qt/document-new.png</normaloff>:/toolbar/resources/qt/document-new.png</iconset>
+   </property>
+   <property name="text">
+    <string>New</string>
+   </property>
+  </action>
+  <action name="MenuFileOpen">
+   <property name="icon">
+    <iconset resource="../../Resources/ResManager.qrc">
+     <normaloff>:/toolbar/resources/qt/document-open.png</normaloff>:/toolbar/resources/qt/document-open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="MenuFileSaveFile">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../Resources/ResManager.qrc">
+     <normaloff>:/toolbar/resources/qt/document-save.png</normaloff>:/toolbar/resources/qt/document-save.png</iconset>
+   </property>
+   <property name="text">
+    <string>SaveFile</string>
+   </property>
+  </action>
+  <action name="MenuFileSaveSim">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../Resources/ResManager.qrc">
+     <normaloff>:/main/resources/chip_32.png</normaloff>:/main/resources/chip_32.png</iconset>
+   </property>
+   <property name="text">
+    <string>SaveSim</string>
+   </property>
+  </action>
+  <action name="MenuFileClose">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../Resources/ResManager.qrc">
+     <normaloff>:/toolbar/resources/qt/document-close.png</normaloff>:/toolbar/resources/qt/document-close.png</iconset>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="MenuFileSettings">
+   <property name="icon">
+    <iconset resource="../../Resources/ResManager.qrc">
+     <normaloff>:/toolbar/resources/qt/configure.png</normaloff>:/toolbar/resources/qt/configure.png</iconset>
+   </property>
+   <property name="text">
+    <string>Settings</string>
+   </property>
+  </action>
+  <action name="MenuFileExit">
+   <property name="icon">
+    <iconset resource="../../Resources/ResManager.qrc">
+     <normaloff>:/toolbar/resources/qt/application-exit.png</normaloff>:/toolbar/resources/qt/application-exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="MenuSimConnect">
+   <property name="icon">
+    <iconset resource="../../Resources/ResManager.qrc">
+     <normaloff>:/toolbar/resources/qt/network-connect.png</normaloff>:/toolbar/resources/qt/network-connect.png</iconset>
+   </property>
+   <property name="text">
+    <string>Connect</string>
+   </property>
+  </action>
+  <action name="MenuSimPin">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../Resources/ResManager.qrc">
+     <normaloff>:/toolbar/resources/qt/document-encrypt.png</normaloff>:/toolbar/resources/qt/document-encrypt.png</iconset>
+   </property>
+   <property name="text">
+    <string>Pin</string>
+   </property>
+  </action>
+  <action name="MenuSimSaveFile">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../Resources/ResManager.qrc">
+     <normaloff>:/toolbar/resources/qt/document-save.png</normaloff>:/toolbar/resources/qt/document-save.png</iconset>
+   </property>
+   <property name="text">
+    <string>SaveFile</string>
+   </property>
+  </action>
+  <action name="MenuSimSaveSim">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../Resources/ResManager.qrc">
+     <normaloff>:/main/resources/chip_32.png</normaloff>:/main/resources/chip_32.png</iconset>
+   </property>
+   <property name="text">
+    <string>SaveSim</string>
+   </property>
+  </action>
+  <action name="MenuSimDeleteAll">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../Resources/ResManager.qrc">
+     <normaloff>:/toolbar/resources/qt/edit-delete.png</normaloff>:/toolbar/resources/qt/edit-delete.png</iconset>
+   </property>
+   <property name="text">
+    <string>DeleteAll</string>
+   </property>
+  </action>
+  <action name="MenuSimDisconnect">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../Resources/ResManager.qrc">
+     <normaloff>:/toolbar/resources/qt/network-disconnect.png</normaloff>:/toolbar/resources/qt/network-disconnect.png</iconset>
+   </property>
+   <property name="text">
+    <string>Disconnect</string>
+   </property>
+  </action>
+  <action name="MenuAboutInfo">
+   <property name="icon">
+    <iconset resource="../../Resources/ResManager.qrc">
+     <normaloff>:/toolbar/resources/qt/dialog-information.png</normaloff>:/toolbar/resources/qt/dialog-information.png</iconset>
+   </property>
+   <property name="text">
+    <string>Info</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../../Resources/ResManager.qrc"/>
+ </resources>
+ <connections/>
+</ui>

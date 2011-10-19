@@ -5,6 +5,7 @@ using log4net;
 using Qyoto;
 
 using comexbase;
+using monosimbase;
 
 namespace monosimqt
 {
@@ -15,10 +16,11 @@ namespace monosimqt
 		// Log4Net object
         private static readonly ILog log = LogManager.GetLogger(typeof(monosimqt.MainClass));
 		
-		
+		// Attributes
 		private static string retStr = "";
 		
 		
+		// Properties
 		public static string AppNameVer = "";
 		
 		
@@ -48,8 +50,8 @@ namespace monosimqt
 				Console.WriteLine(GetHelpMsg());
 				return;
 			}
-			
-			
+
+
 			// Init resource class manager			
 			Q_INIT_RESOURCE("ResManager");
 			
@@ -67,16 +69,29 @@ namespace monosimqt
 				if (!retStr.Contains("SCARD_"))
 				{
 					// error detected (not scard problem)
-					ShowMessage(new QWidget(), "ERROR", retStr, MessageType.Error);
+					ShowMessage(null, "ERROR", retStr, MessageType.Error);
 					QApplication.Quit();					
 					return;
 				}
 				else
 				{
 					// warning (scard problem, can use serial reader)
-					ShowMessage(new QWidget(), "WARNING", retStr, MessageType.Warning);
+					ShowMessage(null, "WARNING", retStr, MessageType.Warning);
 				}
 				
+			}
+			
+			try
+			{
+				// try to set language
+				GlobalObjUI.SetLanguage();
+			}
+			catch (Exception Ex)
+			{
+				// error detected
+				log.Error("GlobalObjUI::SetLanguage: " + Ex.Message + "\r\n" + Ex.StackTrace);
+				ShowMessage(null, "LANGUAGE SET ERROR", Ex.Message, MessageType.Error);
+				return;
 			}
 			
 			// Create new Qyoto Desktop Object
