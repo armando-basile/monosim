@@ -18,7 +18,8 @@ namespace monosimqt
 	{
 		
 		// Attributes		
-		Ui.MainWindow mainwindow_Ui;
+		private Ui.MainWindow mainwindow_Ui;
+		private QProgressBar PBar = null;		
 		
 		// Log4Net object
         private static readonly ILog log = LogManager.GetLogger(typeof(monosimqt.MainWindowClass));
@@ -73,7 +74,7 @@ namespace monosimqt
 			string newReader = sender.Text;
 			
 			log.Info("ActionChangeReader " + newReader);
-			//UpdateSelectedReader(newReader);
+			UpdateSelectedReader(newReader);
 		}
 		
 		
@@ -100,6 +101,41 @@ namespace monosimqt
 		
 		
 		
+		[Q_SLOT]
+		public void ActionFileNew()
+		{
+			NewContactsFile();
+		}
+
+		
+		
+		
+		[Q_SLOT]
+		public void ActionFileOpen()
+		{
+			OpenContactsFile();
+		}
+		
+		
+		
+		
+		
+		
+		[Q_SLOT]
+		public void ActionFileClose()
+		{
+			CloseContactsFile();
+		}
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		/*		
 		[Q_SLOT]		
 		public void ActionOpen()
@@ -109,11 +145,6 @@ namespace monosimqt
 		
 		
 		
-		[Q_SLOT]
-		public void ActionClose()
-		{
-			CloseCommandFile();
-		}
 		
 
 		
@@ -237,17 +268,15 @@ namespace monosimqt
 			
 			// Setup column headers
 			List<string> columnHeaders = new List<string>();
+			columnHeaders.Add(" ");
 			columnHeaders.Add(GlobalObjUI.LMan.GetString("descnumber"));
 			columnHeaders.Add(GlobalObjUI.LMan.GetString("phonenumber"));
 			
-			mainwindow_Ui.LstFileContacts.SetVerticalHeaderLabels(columnHeaders);
-			mainwindow_Ui.LstSimContacts.SetVerticalHeaderLabels(columnHeaders);
+			mainwindow_Ui.LstFileContacts.SetHeaderLabels(columnHeaders);
+			mainwindow_Ui.LstSimContacts.SetHeaderLabels(columnHeaders);
+			mainwindow_Ui.LstFileContacts.HideColumn(0);
+			mainwindow_Ui.LstSimContacts.HideColumn(0);
 			
-			mainwindow_Ui.LstFileContacts.SetColumnWidth(0, 150);
-			mainwindow_Ui.LstFileContacts.SetColumnWidth(1, 150);
-			mainwindow_Ui.LstSimContacts.SetColumnWidth(0, 150);
-			mainwindow_Ui.LstSimContacts.SetColumnWidth(1, 150);
-
 			
 			// loop for each managed readers type
 			foreach(IReader rdr in GlobalObj.ReaderManager.Values)
@@ -289,6 +318,14 @@ namespace monosimqt
 				GlobalObj.SelectedReader = allReaders[0];
 			}
 			
+			// Add progressbar to statusbar
+			PBar = new QProgressBar(mainwindow_Ui.StatusBar);
+			PBar.SetFixedWidth(180);
+			PBar.SetFixedHeight(20);
+			PBar.SetVisible(false);
+			mainwindow_Ui.StatusBar.AddPermanentWidget(PBar);
+
+			
 		}
 			
 		
@@ -300,6 +337,10 @@ namespace monosimqt
 		{
 
 			// Configure events reactors
+			Connect( mainwindow_Ui.MenuFileNew, SIGNAL("activated()"), this, SLOT("ActionFileNew()"));
+			Connect( mainwindow_Ui.MenuFileOpen, SIGNAL("activated()"), this, SLOT("ActionFileOpen()"));
+			Connect( mainwindow_Ui.MenuFileClose, SIGNAL("activated()"), this, SLOT("ActionFileClose()"));
+			
 			Connect( mainwindow_Ui.MenuFileExit, SIGNAL("activated()"), this, SLOT("ActionExit()"));
 			
 			Connect( mainwindow_Ui.MenuFileSettings, SIGNAL("activated()"), this, SLOT("ActionSettingsSerial()"));

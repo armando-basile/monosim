@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'MainWindow.ui'
 **
-** Created: mer ott 19 16:56:14 2011
+** Created: mer ott 19 19:32:59 2011
 **      by: Qt User Interface Compiler for C# version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -31,10 +31,10 @@ public class Ui_MainWindow
     public QSplitter splitter;
     public QGroupBox FrameFile;
     public QGridLayout gridLayout1;
-    public QTableWidget LstFileContacts;
+    public QTreeWidget LstFileContacts;
     public QGroupBox FrameSim;
     public QGridLayout gridLayout2;
-    public QTableWidget LstSimContacts;
+    public QTreeWidget LstSimContacts;
     public QMenuBar MainMenu;
     public QMenu MenuFileItem;
     public QMenu MenuReaderItem;
@@ -115,10 +115,11 @@ public class Ui_MainWindow
     FrameFile.MinimumSize = new QSize(0, 100);
     gridLayout1 = new QGridLayout(FrameFile);
     gridLayout1.ObjectName = "gridLayout1";
-    LstFileContacts = new QTableWidget(FrameFile);
+    LstFileContacts = new QTreeWidget(FrameFile);
     LstFileContacts.ObjectName = "LstFileContacts";
+    LstFileContacts.Enabled = false;
     LstFileContacts.EditTriggers = Qyoto.Qyoto.GetCPPEnumValue("QAbstractItemView", "NoEditTriggers");
-    LstFileContacts.selectionBehavior = QAbstractItemView.SelectionBehavior.SelectRows;
+    LstFileContacts.selectionMode = QAbstractItemView.SelectionMode.ContiguousSelection;
 
     gridLayout1.AddWidget(LstFileContacts, 0, 0, 1, 1);
 
@@ -128,10 +129,11 @@ public class Ui_MainWindow
     FrameSim.MinimumSize = new QSize(0, 100);
     gridLayout2 = new QGridLayout(FrameSim);
     gridLayout2.ObjectName = "gridLayout2";
-    LstSimContacts = new QTableWidget(FrameSim);
+    LstSimContacts = new QTreeWidget(FrameSim);
     LstSimContacts.ObjectName = "LstSimContacts";
+    LstSimContacts.Enabled = false;
     LstSimContacts.EditTriggers = Qyoto.Qyoto.GetCPPEnumValue("QAbstractItemView", "NoEditTriggers");
-    LstSimContacts.selectionBehavior = QAbstractItemView.SelectionBehavior.SelectRows;
+    LstSimContacts.selectionMode = QAbstractItemView.SelectionMode.ContiguousSelection;
 
     gridLayout2.AddWidget(LstSimContacts, 0, 0, 1, 1);
 
@@ -226,7 +228,13 @@ public class Ui_MainWindow
     MenuAboutInfo.Text = QApplication.Translate("MainWindow", "Info", null, QApplication.Encoding.UnicodeUTF8);
     MenuAboutInfo.Shortcut = QApplication.Translate("MainWindow", "Ctrl+I", null, QApplication.Encoding.UnicodeUTF8);
     FrameFile.Title = QApplication.Translate("MainWindow", "Contatti File", null, QApplication.Encoding.UnicodeUTF8);
+    LstFileContacts.HeaderItem().SetText(0, QApplication.Translate("MainWindow", "1", null, QApplication.Encoding.UnicodeUTF8));
+    LstFileContacts.HeaderItem().SetText(1, QApplication.Translate("MainWindow", "New Column", null, QApplication.Encoding.UnicodeUTF8));
+    LstFileContacts.HeaderItem().SetText(2, QApplication.Translate("MainWindow", "Phone Number", null, QApplication.Encoding.UnicodeUTF8));
     FrameSim.Title = QApplication.Translate("MainWindow", "Contatti Sim", null, QApplication.Encoding.UnicodeUTF8);
+    LstSimContacts.HeaderItem().SetText(0, QApplication.Translate("MainWindow", "1", null, QApplication.Encoding.UnicodeUTF8));
+    LstSimContacts.HeaderItem().SetText(1, QApplication.Translate("MainWindow", "Description", null, QApplication.Encoding.UnicodeUTF8));
+    LstSimContacts.HeaderItem().SetText(2, QApplication.Translate("MainWindow", "Phone Number", null, QApplication.Encoding.UnicodeUTF8));
     MenuFileItem.Title = QApplication.Translate("MainWindow", "&File", null, QApplication.Encoding.UnicodeUTF8);
     MenuReaderItem.Title = QApplication.Translate("MainWindow", "&Lettore", null, QApplication.Encoding.UnicodeUTF8);
     MenuAboutItem.Title = QApplication.Translate("MainWindow", "&Aiuto", null, QApplication.Encoding.UnicodeUTF8);

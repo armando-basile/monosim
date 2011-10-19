@@ -1,5 +1,16 @@
 2011-10-19  Armando Basile  <hmandevteam@gmail.com>
 
+	* MainWindow.ui:
+	* ResManager.cs:
+	* MainWindow.cs:
+	* AboutDialog.cs:
+	* SettingsDialog.cs:
+	* MainWindowClass.cs:
+	* MainWindowClass.Designer.cs: - modified qt widget, using
+	QTreeWidget instead QListView
+
+2011-10-19  Armando Basile  <hmandevteam@gmail.com>
+
 	* MainClass.cs:
 	* monosim-qt.csproj:
 	* MainWindow.ui:
