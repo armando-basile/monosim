@@ -191,18 +191,14 @@ namespace monosimqt
             	return;
             }
 			
-			 // path of a right file returned
-            
-			//string commandFileName = System.IO.Path.GetFileNameWithoutExtension(selectedFile);
-			
 			// path of a right file returned
 			GlobalObjUI.ContactsFilePath = selectedFile;
 			
 			// Update gui
 			UpdateFileControls(false);	
 					
-			mainwindow_Ui.LstFileContacts.Clear();
-			
+			// Clear ListView
+			mainwindow_Ui.LstFileContacts.Clear();			
 			MainClass.QtWait();
 			
 			try
@@ -236,17 +232,120 @@ namespace monosimqt
 			}
 			
 			// loop to append data readed from file			
-			
+			//QTreeWidgetItem qtwi = null;
+			List<string> rowContent = null;
 			foreach(Contact cnt in GlobalObjUI.FileContacts.SimContacts)
 			{
-				//fields.Add(new QStandardItem(cnt.Description));
-				//fields.Add(new QStandardItem(cnt.PhoneNumber));
-				//lstFileContacts.AppendRow(fields);
+				rowContent = new List<string>();
+				rowContent.Add(" ");
+				rowContent.Add(cnt.Description);
+				rowContent.Add(cnt.PhoneNumber);
+				new QTreeWidgetItem(mainwindow_Ui.LstFileContacts, rowContent);				
 			}
 			
 			UpdateFileControls(true);
 			
 		}
+		
+		
+		
+		
+
+		/// <summary>
+		/// Perform sim card connection and contacts read.
+		/// </summary>
+		private void SimConnect()
+		{
+			MainClass.QtWait();
+			
+			if (GlobalObj.IsPowered)
+			{
+				// Disconnect card if needed
+				GlobalObj.CloseConnection();
+			}
+			
+			// Connect to smartcard
+			retStr = GlobalObj.AnswerToReset(ref ATR);
+			
+			// check for error
+			if (retStr != "")
+			{
+				// error on answer to reset
+				log.Error("MainWindowClass::SimConnect: " + retStr);
+				MainClass.ShowMessage(this, "ERROR", retStr, MainClass.MessageType.Error);
+				return;
+			}
+			
+			// read sim contacts and fill list
+			retStr = GlobalObjUI.SelectSimContactsList();
+			
+			// check for error
+			if (retStr != "")
+			{
+				// error on reading contacts list
+				GlobalObj.CloseConnection();
+				MainClass.ShowMessage(this, "ERROR", retStr, MainClass.MessageType.Error);
+				return;
+			}
+			
+			ScanSimBefore();
+			mainwindow_Ui.LstSimContacts.Clear();
+			
+			// Reset status values
+			GlobalObjUI.SimADNStatus = 1;
+			GlobalObjUI.SimADNPosition = 0;
+			GlobalObjUI.SimADNError = "";
+			
+            // Start thread for reading process
+            //simThread = new System.Threading.Thread(new 
+			//	System.Threading.ThreadStart(GlobalObjUI.ReadSimContactsList));
+            //simThread.Start();
+
+		}
+		
+		
+		
+		
+		
+		
+		/// <summary>
+		/// Set gui widgets before sim scan
+		/// </summary>
+		private void ScanSimBefore()
+		{
+			// Setup ProgressBar
+			PBar.SetMinimum(0);
+			PBar.SetMaximum(GlobalObjUI.SimADNRecordCount);
+			PBar.SetValue(0);
+			PBar.SetVisible(true);
+			mainwindow_Ui.MainMenu.Enabled = false;
+			mainwindow_Ui.TopToolBar.Enabled = false;
+			mainwindow_Ui.FrameSim.Enabled = false;
+			mainwindow_Ui.FrameFile.Enabled = false;
+			MainClass.QtWait();
+		}
+
+		
+		
+		/// <summary>
+		/// Set gui widgets after sim scan
+		/// </summary>
+		private void ScanSimAfter()
+		{
+			PBar.SetVisible(false);
+			mainwindow_Ui.MainMenu.Enabled = true;
+			mainwindow_Ui.TopToolBar.Enabled = true;
+			mainwindow_Ui.FrameSim.Enabled = true;
+			mainwindow_Ui.FrameFile.Enabled = true;
+			MainClass.QtWait();
+		}
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
@@ -754,40 +853,7 @@ namespace monosimqt
 		
 		
 		
-		
-		/// <summary>
-		/// Set gui widgets before sim scan
-		/// </summary>
-		private void ScanSimBefore()
-		{
-			// Setup ProgressBar
-			PBar.Fraction = 0;
-			PBar.Adjustment.Lower=0;
-			PBar.Adjustment.Upper=GlobalObjUI.SimADNRecordCount;
-			PBar.Adjustment.Value=0;
-			PBar.Visible=true;
-			MainMenu.Sensitive = false;
-			TopToolBar.Sensitive = false;
-			FrameSim.Sensitive = false;
-			FrameFile.Sensitive = false;
-			MainClass.GtkWait();
-		}
 
-		
-		
-		/// <summary>
-		/// Set gui widgets after sim scan
-		/// </summary>
-		private void ScanSimAfter()
-		{
-			PBar.Visible = false;
-			MainMenu.Sensitive = true;
-			TopToolBar.Sensitive = true;
-			FrameSim.Sensitive = true;
-			FrameFile.Sensitive = true;
-			MainClass.GtkWait();
-		}
-		
 		
 		
 		

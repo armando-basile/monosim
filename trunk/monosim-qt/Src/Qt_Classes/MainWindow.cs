@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'MainWindow.ui'
 **
-** Created: mer ott 19 19:32:59 2011
+** Created: mer ott 19 22:40:55 2011
 **      by: Qt User Interface Compiler for C# version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -119,7 +119,9 @@ public class Ui_MainWindow
     LstFileContacts.ObjectName = "LstFileContacts";
     LstFileContacts.Enabled = false;
     LstFileContacts.EditTriggers = Qyoto.Qyoto.GetCPPEnumValue("QAbstractItemView", "NoEditTriggers");
-    LstFileContacts.selectionMode = QAbstractItemView.SelectionMode.ContiguousSelection;
+    LstFileContacts.selectionMode = QAbstractItemView.SelectionMode.ExtendedSelection;
+    LstFileContacts.ItemsExpandable = false;
+    LstFileContacts.ExpandsOnDoubleClick = false;
 
     gridLayout1.AddWidget(LstFileContacts, 0, 0, 1, 1);
 
