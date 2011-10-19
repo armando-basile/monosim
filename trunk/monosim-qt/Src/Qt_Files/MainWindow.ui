@@ -44,16 +44,31 @@
        </property>
        <layout class="QGridLayout" name="gridLayout_2">
         <item row="0" column="0">
-         <widget class="QTableWidget" name="LstFileContacts">
+         <widget class="QTreeWidget" name="LstFileContacts">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="editTriggers">
            <set>QAbstractItemView::NoEditTriggers</set>
           </property>
-          <property name="selectionBehavior">
-           <enum>QAbstractItemView::SelectRows</enum>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::ContiguousSelection</enum>
           </property>
-          <attribute name="verticalHeaderVisible">
-           <bool>true</bool>
-          </attribute>
+          <column>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>New Column</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Phone Number</string>
+           </property>
+          </column>
          </widget>
         </item>
        </layout>
@@ -70,16 +85,31 @@
        </property>
        <layout class="QGridLayout" name="gridLayout_3">
         <item row="0" column="0">
-         <widget class="QTableWidget" name="LstSimContacts">
+         <widget class="QTreeWidget" name="LstSimContacts">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="editTriggers">
            <set>QAbstractItemView::NoEditTriggers</set>
           </property>
-          <property name="selectionBehavior">
-           <enum>QAbstractItemView::SelectRows</enum>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::ContiguousSelection</enum>
           </property>
-          <attribute name="verticalHeaderVisible">
-           <bool>true</bool>
-          </attribute>
+          <column>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Description</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Phone Number</string>
+           </property>
+          </column>
          </widget>
         </item>
        </layout>
