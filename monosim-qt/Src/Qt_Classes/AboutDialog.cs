@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'AboutDialog.ui'
 **
-** Created: mer ott 19 19:32:59 2011
+** Created: mer ott 19 22:40:55 2011
 **      by: Qt User Interface Compiler for C# version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!

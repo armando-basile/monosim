@@ -273,7 +273,13 @@ namespace monosimqt
 			columnHeaders.Add(GlobalObjUI.LMan.GetString("phonenumber"));
 			
 			mainwindow_Ui.LstFileContacts.SetHeaderLabels(columnHeaders);
+			mainwindow_Ui.LstFileContacts.SetColumnWidth(1, 150);
+			mainwindow_Ui.LstFileContacts.SetColumnWidth(2, 150);
+			
 			mainwindow_Ui.LstSimContacts.SetHeaderLabels(columnHeaders);
+			mainwindow_Ui.LstSimContacts.SetColumnWidth(1, 150);
+			mainwindow_Ui.LstSimContacts.SetColumnWidth(2, 150);
+			
 			mainwindow_Ui.LstFileContacts.HideColumn(0);
 			mainwindow_Ui.LstSimContacts.HideColumn(0);
 			
