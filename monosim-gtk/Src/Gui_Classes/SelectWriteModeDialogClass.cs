@@ -22,7 +22,8 @@ namespace monosimgtk
 		{
 			Glade.XML gxml =  new Glade.XML("SelectWriteModeDialog.glade", "SelectWriteModeDialog");
             gxml.Autoconnect(this);
-
+			
+			SelectWriteModeDialog.Icon = Gdk.Pixbuf.LoadFromResource("monosim.png");
 			SelectWriteModeDialog.TransientFor = parent;
 			SelectWriteModeDialog.DestroyWithParent = true;
 			

@@ -1,5 +1,12 @@
 2011-10-20  Armando Basile  <hmandevteam@gmail.com>
 
+	* NewContactDialogClass.cs:
+	* ChangePinStatusDialogClass.cs:
+	* SelectWriteModeDialogClass.cs: - fix: set window icon for
+	all dialogs
+
+2011-10-20  Armando Basile  <hmandevteam@gmail.com>
+
 	* MainWindowClass.cs: - fix: still gui widgets status fix
 	after sim reading
 
