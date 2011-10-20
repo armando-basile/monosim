@@ -92,6 +92,16 @@ namespace monosimqt
 		
 		
 		
+        [Q_SLOT]
+        public void ActionFileSaveSim()
+        {
+        	SaveContactsFileOnSim();
+        }
+
+		
+		
+		
+		
 		[Q_SLOT]
 		public void ActionFileClose()
 		{
@@ -104,7 +114,14 @@ namespace monosimqt
         [Q_SLOT]
         public void ActionThreadNotify()
         {
-        	ReadingUpdate();
+			if (isReading)
+			{
+        		ReadingUpdate();
+			}
+			else
+			{
+				WritingUpdate();
+			}
         }
 		
 		
@@ -220,12 +237,12 @@ namespace monosimqt
 			Connect( mainwindow_Ui.MenuFileNew, SIGNAL("activated()"), this, SLOT("ActionFileNew()"));
 			Connect( mainwindow_Ui.MenuFileOpen, SIGNAL("activated()"), this, SLOT("ActionFileOpen()"));
 			Connect( mainwindow_Ui.MenuFileSaveFile, SIGNAL("activated()"), this, SLOT("ActionFileSaveFile()"));
-			
+			Connect( mainwindow_Ui.MenuFileSaveSim, SIGNAL("activated()"), this, SLOT("ActionFileSaveSim()"));
 			Connect( mainwindow_Ui.MenuFileClose, SIGNAL("activated()"), this, SLOT("ActionFileClose()"));
-			
+			Connect( mainwindow_Ui.MenuFileSettings, SIGNAL("activated()"), this, SLOT("ActionSettingsSerial()"));
 			Connect( mainwindow_Ui.MenuFileExit, SIGNAL("activated()"), this, SLOT("ActionExit()"));
 			
-			Connect( mainwindow_Ui.MenuFileSettings, SIGNAL("activated()"), this, SLOT("ActionSettingsSerial()"));
+			
 			
 			Connect( mainwindow_Ui.MenuSimConnect, SIGNAL("activated()"), this, SLOT("ActionSimConnect()"));
 			Connect( mainwindow_Ui.MenuSimDisconnect, SIGNAL("activated()"), this, SLOT("ActionSimDisconnect()"));

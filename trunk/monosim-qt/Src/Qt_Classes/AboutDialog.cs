@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'AboutDialog.ui'
 **
-** Created: gio ott 20 14:29:38 2011
+** Created: ven ott 21 00:41:21 2011
 **      by: Qt User Interface Compiler for C# version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -37,7 +37,7 @@ public class Ui_AboutDialog
     Size = Size.ExpandedTo(AboutDialog.MinimumSizeHint());
     AboutDialog.Size = Size;
     AboutDialog.MinimumSize = new QSize(660, 460);
-    AboutDialog.WindowIcon = new QIcon(":/main/resources/Images/comex_256.png");
+    AboutDialog.WindowIcon = new QIcon(":/main/resources/monosim_128.png");
     AboutDialog.Modal = true;
     gridLayout = new QGridLayout(AboutDialog);
     gridLayout.ObjectName = "gridLayout";

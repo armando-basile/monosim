@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>470</width>
-    <height>188</height>
+    <width>443</width>
+    <height>125</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,33 +17,40 @@
     <normaloff>:/main/resources/monosim_128.png</normaloff>:/main/resources/monosim_128.png</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0" colspan="5">
+   <item row="0" column="0" colspan="4">
     <widget class="QLabel" name="LblTitle">
      <property name="text">
       <string>TextLabel</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignHCenter|Qt::AlignTop</set>
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
      </property>
     </widget>
    </item>
-   <item row="1" column="2">
+   <item row="1" column="0">
+    <widget class="QPushButton" name="BtnCancel">
+     <property name="text">
+      <string>PushButton</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
     <spacer name="horizontalSpacer">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>106</width>
-       <height>24</height>
+       <width>152</width>
+       <height>20</height>
       </size>
      </property>
     </spacer>
    </item>
-   <item row="1" column="3">
+   <item row="1" column="2">
     <widget class="QPushButton" name="BtnOverride">
      <property name="text">
-      <string>PushButton</string>
+      <string>Override</string>
      </property>
      <property name="icon">
       <iconset resource="../../Resources/ResManager.qrc">
@@ -51,27 +58,14 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="4">
+   <item row="1" column="3">
     <widget class="QPushButton" name="BtnAppend">
      <property name="text">
-      <string>PushButton</string>
+      <string>Append</string>
      </property>
      <property name="icon">
       <iconset resource="../../Resources/ResManager.qrc">
        <normaloff>:/toolbar/resources/qt/list-add.png</normaloff>:/toolbar/resources/qt/list-add.png</iconset>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="1">
-    <widget class="QDialogButtonBox" name="BtnBoxCancel">
-     <property name="layoutDirection">
-      <enum>Qt::RightToLeft</enum>
-     </property>
-     <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel</set>
-     </property>
-     <property name="centerButtons">
-      <bool>false</bool>
      </property>
     </widget>
    </item>
