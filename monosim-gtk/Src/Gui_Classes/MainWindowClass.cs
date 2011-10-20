@@ -617,11 +617,26 @@ namespace monosimgtk
 				
 				StatusBar.Push(1, GlobalObjUI.LMan.GetString("recordnoempty") + 
 					              GlobalObjUI.SimADNRecordNoEmpty.ToString());
+				
+				// check for File area enabled
+				if (LstFileContacts.Sensitive)
+				{
+					MenuFileSaveSim.Sensitive = isSensitive;
+					TbSaveSim.Sensitive = isSensitive;
+				}
+				else
+				{
+					MenuFileSaveSim.Sensitive = false;
+					TbSaveSim.Sensitive = false;
+				}
+
 			}
 			else
 			{
 				// clear frame label
 				LblSim.Markup = "<b>" + GlobalObjUI.LMan.GetString("framesim") + "</b>";
+				MenuFileSaveSim.Sensitive = isSensitive;
+				TbSaveSim.Sensitive = isSensitive;
 			}
 		}
 
@@ -657,11 +672,25 @@ namespace monosimgtk
 						" [" + Path.GetFileNameWithoutExtension(GlobalObjUI.ContactsFilePath) + 
 					" - size: " + GlobalObjUI.FileContacts.SimContacts.Count.ToString() + "]"; 
 				}				
+				
+				// check for sim power on
+				if (LstSimContacts.Sensitive)
+				{
+					MenuFileSaveSim.Sensitive = isSensitive;
+					TbSaveSim.Sensitive = isSensitive;
+				}
+				else
+				{
+					MenuFileSaveSim.Sensitive = false;
+					TbSaveSim.Sensitive = false;
+				}
 			}
 			else
 			{
 				// clear frame label
 				LblFile.Markup = "<b>" + GlobalObjUI.LMan.GetString("framefile") + "</b>";
+				MenuFileSaveSim.Sensitive = isSensitive;
+				TbSaveSim.Sensitive = isSensitive;
 			}
 		}
 		
