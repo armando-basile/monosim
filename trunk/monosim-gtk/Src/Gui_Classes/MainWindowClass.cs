@@ -515,6 +515,9 @@ namespace monosimgtk
 				// End with errors
 				MainClass.ShowMessage(MainWindow, "ERROR", GlobalObjUI.SimADNError, MessageType.Error);
 				
+				// Update gui widgets properties
+				ScanSimAfter();
+				
 				// update gui widgets with results
 				UpdateSimControls(false);
 			}
@@ -528,6 +531,9 @@ namespace monosimgtk
 				{
 					// error detected
 					MainClass.ShowMessage(MainWindow, "ERROR", retStr, MessageType.Error);
+				
+					// Update gui widgets properties
+					ScanSimAfter();
 					
 					// update gui widgets with results
 					UpdateSimControls(false);
@@ -540,17 +546,14 @@ namespace monosimgtk
 						lstSimContacts.AppendValues(new string[]{cnt.Description, cnt.PhoneNumber });
 					}
 					
+					// Update gui widgets properties
+					ScanSimAfter();
+					
 					// update gui widgets with results
 					UpdateSimControls(true);
 				}
 			}
 
-			// check for sim scan ended
-			if (GlobalObjUI.SimADNStatus != 1)
-			{
-				// Update gui widgets properties
-				ScanSimAfter();
-			}
 		}
 		
 		

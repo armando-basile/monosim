@@ -1,5 +1,10 @@
 2011-10-20  Armando Basile  <hmandevteam@gmail.com>
 
+	* MainWindowClass.cs: - fix: still gui widgets status fix
+	after sim reading
+
+2011-10-20  Armando Basile  <hmandevteam@gmail.com>
+
 	* MainWindowClass.cs: - fix: enable file contacts write on sim
 	only when sim is connected
 
