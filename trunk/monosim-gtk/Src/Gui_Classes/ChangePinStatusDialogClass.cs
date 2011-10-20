@@ -120,7 +120,7 @@ namespace monosimgtk
 				title += "<b>" + GlobalObjUI.LMan.GetString("pin1on") + "</b>";
 			}
 			
-			
+			ChangePinStatusDialog.Icon = Gdk.Pixbuf.LoadFromResource("monosim.png");
 			ChangePinStatusDialog.Title = MainClass.AppNameVer + " - " + GlobalObjUI.LMan.GetString("pinsimact");
 			LblTitle.Markup = title;
 			LblPin1.Text = GlobalObjUI.LMan.GetString("pinsimlbl");

@@ -104,6 +104,7 @@ namespace monosimgtk
 		{
 			Glade.XML gxml =  new Glade.XML("NewContactDialog.glade", "NewContactDialog");
             gxml.Autoconnect(this);
+			NewContactDialog.Icon = Gdk.Pixbuf.LoadFromResource("monosim.png");
 			NewContactDialog.Title = MainClass.AppNameVer + " - " + GlobalObjUI.LMan.GetString("addcontacts");
 			LblTitle.Text = GlobalObjUI.LMan.GetString("addcontacts");
 			LblDesc.Text = GlobalObjUI.LMan.GetString("descnumber");
