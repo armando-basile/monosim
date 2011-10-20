@@ -12,6 +12,10 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../../Resources/ResManager.qrc">
+    <normaloff>:/main/resources/monosim_128.png</normaloff>:/main/resources/monosim_128.png</iconset>
+  </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0" colspan="2">
     <widget class="QLabel" name="LblTitle">
@@ -87,7 +91,9 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../Resources/ResManager.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>Buttons</sender>
