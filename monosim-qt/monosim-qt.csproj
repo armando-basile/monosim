@@ -59,6 +59,7 @@
     <Compile Include="Src\MainClass.cs" />
     <Compile Include="Src\Gui_Classes\AboutDialogClass.cs" />
     <Compile Include="Src\Gui_Classes\MainWindowClass.Designer.cs" />
+    <Compile Include="Src\Gui_Classes\MainWindowClass.Reactors.cs" />
     <Compile Include="Src\Gui_Classes\MainWindowClass.cs" />
     <Compile Include="Src\Gui_Classes\SettingsDialogClass.cs" />
     <Compile Include="..\base-components\Contact.cs">
@@ -83,6 +84,13 @@
       <Link>Src\Base_Components\MonosimEventHandler.cs</Link>
     </Compile>
     <Compile Include="Src\Qt_Classes\MainWindow.cs" />
+    <Compile Include="Src\Gui_Classes\ThreadNotify.cs" />
+    <Compile Include="Src\Qt_Classes\ChangePinStatusDialog.cs" />
+    <Compile Include="Src\Qt_Classes\NewContactDialog.cs" />
+    <Compile Include="Src\Qt_Classes\SelectWriteModeDialog.cs" />
+    <Compile Include="Src\Gui_Classes\ChangePinStatusDialogClass.cs" />
+    <Compile Include="Src\Gui_Classes\NewContactDialogClass.cs" />
+    <Compile Include="Src\Gui_Classes\SelectWriteModeDialogClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\monosim-qt.desktop">
@@ -106,6 +114,9 @@
       <Link>Languages\monosim-it-IT.xml</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Src\Qt_Files\ChangePinStatusDialog.ui" />
+    <None Include="Src\Qt_Files\NewContactDialog.ui" />
+    <None Include="Src\Qt_Files\SelectWriteModeDialog.ui" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\copying.gpl">
