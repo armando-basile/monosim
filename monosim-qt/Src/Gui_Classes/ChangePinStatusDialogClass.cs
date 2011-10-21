@@ -23,6 +23,22 @@ namespace monosimqt
 		public string Pin1check {get { return cpsDialog_Ui.TxtPin1check.Text; }}
 		
 		
+		[Q_SLOT]
+		public void ActionExit(QAbstractButton buttonPressed)
+		{
+			QDialogButtonBox.StandardButton sBtn = cpsDialog_Ui.Buttons.standardButton(buttonPressed);
+			
+			if (sBtn == QDialogButtonBox.StandardButton.Ok)
+			{
+				Accept();
+			}
+			else
+			{
+				Reject();	
+			}
+		}
+		
+		
 		/// <summary>
 		/// Constructor
 		/// </summary>
@@ -49,7 +65,8 @@ namespace monosimqt
 				title += "<b>" + GlobalObjUI.LMan.GetString("pin1on") + "</b>";
 			}
 			
-			cpsDialog_Ui.LblTitle.Text = title;			
+			cpsDialog_Ui.LblTitle.Text = title;
+			Connect( cpsDialog_Ui.Buttons, SIGNAL("clicked(QAbstractButton*)"), this, SLOT("ActionExit(QAbstractButton*)"));
 		}
 		
 		
@@ -65,17 +82,16 @@ namespace monosimqt
 	{
 		
 		// Attributes
-		private QMainWindow mainWin = null;
 		private ChangePinStatusDialogWidget cpsDialogWidget;
-		
+		private QMainWindow mainWin = null;
 		
 		
 		/// <summary>
 		/// Constructor
 		/// </summary>
-		public ChangePinStatusDialogClass (QMainWindow parent)
+		public ChangePinStatusDialogClass (QMainWindow topWin)
 		{
-			mainWin = parent;
+			mainWin = topWin;
 			SetupDialog();
 		}
 		
@@ -86,7 +102,7 @@ namespace monosimqt
 		/// </summary>
 		public string Show()
 		{
-			int respType = -1;
+			int respType = 0;
 			string pin1 = "", pin1check = "";
 			int retNumber = 0;
 			
@@ -100,14 +116,14 @@ namespace monosimqt
 				cpsDialogWidget.Close();
 				cpsDialogWidget.Dispose();
 				
-				if (respType != 0x00000400)
+				if (respType != 0x01)
 				{
 					// Cancel button pressed
 					return null;
 				}
 				
 				// check data entry
-				if (pin1 == "" || pin1check == "")
+				if (pin1.Trim() == "" || pin1check.Trim() == "")
 				{
 					// send warning message
 					MainClass.ShowMessage(mainWin, "ERROR", 
@@ -140,6 +156,8 @@ namespace monosimqt
 					// Data are correct					
 					return GetHexFromPin(pin1);
 				}
+
+				
 			}
 				
 				
@@ -152,7 +170,7 @@ namespace monosimqt
 		private void SetupDialog()
 		{
 			cpsDialogWidget = new ChangePinStatusDialogWidget();
-			cpsDialogWidget.SetParent(mainWin);
+
 		}
 		
 		

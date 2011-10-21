@@ -759,93 +759,26 @@ namespace monosimqt
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
-		
-
-		
-		
-		
-		
-/*
-		
-
-		
-		
-		
-		
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
-		
-		
-		
-		
-		
 		private void SimChangePin()
 		{
 			// check for Pin1 check attempts
 			if (GlobalObjUI.SimPin1Attempts == 1)
 			{
 				// Pin1 one attempt
-				MainClass.ShowMessage(MainWindow, GlobalObjUI.LMan.GetString("pinsimact"),
-					GlobalObjUI.LMan.GetString("pinsimchk3"),MessageType.Warning);
+				MainClass.ShowMessage(this, GlobalObjUI.LMan.GetString("pinsimact"),
+					GlobalObjUI.LMan.GetString("pinsimchk3"), MainClass.MessageType.Warning);
 				return;
 			}
 			else if (GlobalObjUI.SimPin1Attempts == 0)
 			{
 				// Pin1 no more attempt
-				MainClass.ShowMessage(MainWindow, GlobalObjUI.LMan.GetString("pinsimact"),
-					GlobalObjUI.LMan.GetString("pinsimchk4"),MessageType.Warning);
+				MainClass.ShowMessage(this, GlobalObjUI.LMan.GetString("pinsimact"),
+					GlobalObjUI.LMan.GetString("pinsimchk4"), MainClass.MessageType.Warning);
 				return;
 			}
 			
 			// Change Pin1 dialog
-			ChangePinStatusDialogClass cpsdc = new ChangePinStatusDialogClass(MainWindow);
+			ChangePinStatusDialogClass cpsdc = new ChangePinStatusDialogClass(this);
 			string pin1 = cpsdc.Show();
 			
 			if (pin1 == null)
@@ -860,14 +793,14 @@ namespace monosimqt
 			if (retStr != "")
 			{
 				// error detected during Pin1 status change
-				MainClass.ShowMessage(MainWindow, GlobalObjUI.LMan.GetString("pinsimact"),
-					retStr,MessageType.Error);
+				MainClass.ShowMessage(this, GlobalObjUI.LMan.GetString("pinsimact"),
+					retStr, MainClass.MessageType.Error);
 				return;
 			}
 			
 			// Pin1 status changed, reconnect sim now
-			MainClass.ShowMessage(MainWindow, GlobalObjUI.LMan.GetString("pinsimact"),
-					GlobalObjUI.LMan.GetString("pinsimdone"), MessageType.Info);
+			MainClass.ShowMessage(this, GlobalObjUI.LMan.GetString("pinsimact"),
+					GlobalObjUI.LMan.GetString("pinsimdone"), MainClass.MessageType.Info);
 			
 			// Force sim disconnect
 			SimDisconnect();
@@ -876,87 +809,44 @@ namespace monosimqt
 		
 		
 		
-		
-		
-
-		
-		
-		
-		
 		private void DeleteContactsSim()
 		{
-			MessageDialog mdlg = new MessageDialog(MainWindow,
-			                         DialogFlags.Modal,
-			                         MessageType.Question,
-			                         ButtonsType.YesNo, 
-				                     GlobalObjUI.LMan.GetString("suredeletesim"));
-			mdlg.TransientFor = MainWindow;
-			mdlg.Title = MainClass.AppNameVer + " - " + GlobalObjUI.LMan.GetString("deletesimact");
-			ResponseType respType = (ResponseType)mdlg.Run();
+			QMessageBox dmsg = new QMessageBox(QMessageBox.Icon.Question,
+				MainClass.AppNameVer + " - " + GlobalObjUI.LMan.GetString("deletesimact"),
+				GlobalObjUI.LMan.GetString("suredeletesim"),
+				(uint)QMessageBox.StandardButton.Yes | (uint)QMessageBox.StandardButton.No);
 			
-			if (respType == ResponseType.Yes)
+			int respType = dmsg.Exec();
+			
+			dmsg.Close();
+			dmsg.Dispose();
+			
+			
+			if (respType != (uint)QMessageBox.StandardButton.Yes)
 			{
-				// override
-				mdlg.Destroy();
-				mdlg.Dispose();
-				mdlg = null;
-				
-				// Delete sim
-				ScanSimBefore();
-				
-				// Reset status values
-				GlobalObjUI.SimADNStatus = 1;
-				GlobalObjUI.SimADNPosition = 0;
-				GlobalObjUI.SimADNError = "";
-				
-	            // Start thread for reading process
-	            notify = new ThreadNotify(new ReadyEvent(WritingUpdate));
-	            simThread = new System.Threading.Thread(new System.Threading.ThreadStart(GlobalObjUI.DeleteAllSimContactsList));
-	            simThread.Start();
-			
 				return;
 			}
+
+
+			// Delete sim
+			ScanSimBefore();
 			
-			mdlg.Destroy();
-			mdlg.Dispose();
-			mdlg = null;
+			// Reset status values
+			GlobalObjUI.SimADNStatus = 1;
+			GlobalObjUI.SimADNPosition = 0;
+			GlobalObjUI.SimADNError = "";
+			
+            // Start thread for reading process
+            isReading = false;
+			isEnd = false;
+            simThread = new System.Threading.Thread(new System.Threading.ThreadStart(GlobalObjUI.DeleteAllSimContactsList));
+            simThread.Start();
+
+			return;
 			
 
 		}
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
-		
-		
-		
-		
-		
-
-		
-		
-		
-		
-		
-
-		
-		
-		
-		
-*/
 		
 		
 		

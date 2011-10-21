@@ -17,7 +17,7 @@ namespace monosimqt
 	{
 		
 	
-		
+
 		
 		
 		#region Q_SLOTS
@@ -54,16 +54,11 @@ namespace monosimqt
 		
 		
 		
-		
-		
 		[Q_SLOT]		
 		public void ActionInfo()
 		{
 			OpenInfo();
 		}
-		
-		
-		
 		
 		
 		
@@ -97,8 +92,6 @@ namespace monosimqt
         {
         	SaveContactsFileOnSim();
         }
-
-		
 		
 		
 		
@@ -107,7 +100,6 @@ namespace monosimqt
 		{
 			CloseContactsFile();
 		}
-
 		
 		
 		
@@ -136,77 +128,95 @@ namespace monosimqt
 		
 		
 		[Q_SLOT]
+        public void ActionSimSaveFile()
+        {
+        	SaveContactsSimOnFile();
+        }
+
+		
+		
+		[Q_SLOT]
+        public void ActionSimSaveSim()
+        {
+        	SaveContactsSim();
+        }
+		
+		
+		
+		[Q_SLOT]
+        public void ActionSimChangePin()
+		{
+			SimChangePin();
+		}
+		
+		
+		
+		[Q_SLOT]
+        public void ActionSimDeleteAll()
+		{
+			DeleteContactsSim();
+		}		
+		
+		
+		
+		[Q_SLOT]
         public void ActionSimDisconnect()
 		{
 			SimDisconnect();
 		}
 		
 		
-		/*		
-		[Q_SLOT]		
-		public void ActionOpen()
-		{
-			OpenCommandFile();			
-		}
-		
-		
-		
-		
-
-		
 		
 		
 		[Q_SLOT]
-		public void ActionATR()
+        public void ActionFileContactsMenu(QPoint point)
 		{
-			GetATR();
-		}
-		
-		
-		
-		
-		
-		[Q_SLOT]
-		public void ActionSendCommand()
-		{
-			ExchangeData();
-		}
-		
-
-		
-		
-		
-		[Q_SLOT]
-		public void ActionAddCommand(QListWidgetItem qlwi)
-		{
-			// check for double click
-			GetCommandFromList();
-
-		}
-		
-		
-		
-		
-		[Q_SLOT]
-		public void ActionExecCommand()
-		{
-			QShortcut sender = (QShortcut)Sender();
+			menuFileActions[2].Enabled = false;
+			if ((mainwindow_Ui.LstFileContacts.SelectedItems().Count > 0) &&
+				(mainwindow_Ui.LstSimContacts.Enabled))
+			{
+				menuFileActions[2].Enabled = true;
+			}
 			
-			if (sender.Key.ToString() == "F5")
-			{
-				// Update text of command
-				GetCommandFromList();
-			}
-			else if (sender.Key.ToString() == "F6")
-			{
-				// Update text of command,  send it and receive response
-				GetCommandFromList();
-				ExchangeData();
-			}
-
+			menuFileItem.Popup(mainwindow_Ui.LstFileContacts.MapToGlobal(point));
 		}
 		
-		*/
+		
+		
+		[Q_SLOT]
+        public void ActionSimContactsMenu(QPoint point)
+		{
+			menuSimActions[2].Enabled = false;
+			if ((mainwindow_Ui.LstSimContacts.SelectedItems().Count > 0) &&
+				(mainwindow_Ui.LstFileContacts.Enabled))
+			{
+				menuSimActions[2].Enabled = true;
+			}
+
+			menuSimItem.Popup(mainwindow_Ui.LstSimContacts.MapToGlobal(point));
+		}		
+		
+		
+		
+		
+		
+		[Q_SLOT]
+        public void ActionAddContact()
+		{
+			QAction sender = (QAction)Sender();
+			
+			if (sender.ObjectName == "fileadd")
+			{
+				PopupFileAdd();
+			}
+			else if (sender.ObjectName == "simadd")
+			{
+				PopupSimAdd();
+			}
+		}
+		
+		
+		
 		#endregion Q_SLOTS
 		
 		
@@ -242,27 +252,24 @@ namespace monosimqt
 			Connect( mainwindow_Ui.MenuFileSettings, SIGNAL("activated()"), this, SLOT("ActionSettingsSerial()"));
 			Connect( mainwindow_Ui.MenuFileExit, SIGNAL("activated()"), this, SLOT("ActionExit()"));
 			
-			
-			
 			Connect( mainwindow_Ui.MenuSimConnect, SIGNAL("activated()"), this, SLOT("ActionSimConnect()"));
+			Connect( mainwindow_Ui.MenuSimPin, SIGNAL("activated()"), this, SLOT("ActionSimChangePin()"));
+			Connect( mainwindow_Ui.MenuSimSaveFile, SIGNAL("activated()"), this, SLOT("ActionSimSaveFile()"));
+			Connect( mainwindow_Ui.MenuSimSaveSim, SIGNAL("activated()"), this, SLOT("ActionSimSaveSim()"));
+			Connect( mainwindow_Ui.MenuSimDeleteAll, SIGNAL("activated()"), this, SLOT("ActionSimDeleteAll()"));
 			Connect( mainwindow_Ui.MenuSimDisconnect, SIGNAL("activated()"), this, SLOT("ActionSimDisconnect()"));
 			
 			Connect( mainwindow_Ui.MenuAboutInfo, SIGNAL("activated()"), this, SLOT("ActionInfo()"));
-/*
-			Connect( mainwindow_Ui.action_Open, SIGNAL("activated()"), this, SLOT("ActionOpen()"));			
-			Connect( mainwindow_Ui.action_Close, SIGNAL("activated()"), this, SLOT("ActionClose()"));
 			
+			mainwindow_Ui.LstFileContacts.ContextMenuPolicy = Qt.ContextMenuPolicy.CustomContextMenu;
+			Connect( mainwindow_Ui.LstFileContacts, SIGNAL("customContextMenuRequested(QPoint)"), this, SLOT("ActionFileContactsMenu(QPoint)"));
 			
-			Connect( mainwindow_Ui.action_ATR, SIGNAL("activated()"), this, SLOT("ActionATR()"));	
-			Connect( mainwindow_Ui.BtnSend, SIGNAL("clicked()"), this, SLOT("ActionSendCommand()"));	
-			Connect( mainwindow_Ui.LstCommands, SIGNAL("itemDoubleClicked(QListWidgetItem*)"),this,SLOT("ActionAddCommand(QListWidgetItem*)"));
+			mainwindow_Ui.LstSimContacts.ContextMenuPolicy = Qt.ContextMenuPolicy.CustomContextMenu;
+			Connect( mainwindow_Ui.LstSimContacts, SIGNAL("customContextMenuRequested(QPoint)"), this, SLOT("ActionSimContactsMenu(QPoint)"));
 			
-			QShortcut qsc = new QShortcut(new QKeySequence("F5"), mainwindow_Ui.LstCommands);
-			Connect( qsc, SIGNAL("activated()"),this,SLOT("ActionExecCommand()"));
+			Connect( menuFileActions[0], SIGNAL("activated()"), this, SLOT("ActionAddContact()"));
+			Connect( menuSimActions[0], SIGNAL("activated()"), this, SLOT("ActionAddContact()"));
 			
-			qsc = new QShortcut(new QKeySequence("F6"), mainwindow_Ui.LstCommands);
-			Connect( qsc, SIGNAL("activated()"),this,SLOT("ActionExecCommand()"));
-*/
 		}
 		
 		

@@ -21,6 +21,11 @@ namespace monosimqt
 		private Ui.MainWindow mainwindow_Ui;
 		private QProgressBar PBar = null;		
 		
+		private QMenu menuFileItem = null;
+		private QMenu menuSimItem = null;
+		private List<QAction> menuFileActions = null;
+		private List<QAction> menuSimActions = null;
+		
 		// Log4Net object
         private static readonly ILog log = LogManager.GetLogger(typeof(monosimqt.MainWindowClass));
 
@@ -180,7 +185,8 @@ namespace monosimqt
 			PBar.SetVisible(false);
 			mainwindow_Ui.StatusBar.AddPermanentWidget(PBar);
 
-			
+			CreateFileMenu();
+			CreateSimMenu();
 		}
 
 
@@ -201,6 +207,72 @@ namespace monosimqt
 		
 		
 		
+		private void CreateFileMenu()
+		{
+			menuFileItem = new QMenu(mainwindow_Ui.LstFileContacts);
+			
+			menuFileActions = new List<QAction>();
+			menuFileActions.Add(new QAction(new QIcon(":/toolbar/resources/qt/list-add.png"),
+				GlobalObjUI.LMan.GetString("addcontacts"),
+				menuFileItem));
+			
+			menuFileActions.Add(new QAction(new QIcon(":/toolbar/resources/qt/edit-delete.png"),
+				GlobalObjUI.LMan.GetString("delcontacts"),
+				menuFileItem));
+			
+			menuFileActions.Add(new QAction(new QIcon(":/toolbar/resources/qt/go-down.png"),
+				GlobalObjUI.LMan.GetString("copycontactstosim"),
+				menuFileItem));
+			
+			menuFileItem.AddActions(menuFileActions);
+			
+			menuFileActions[0].ObjectName = "fileadd";
+			menuFileActions[1].ObjectName = "filedel";
+			menuFileActions[2].ObjectName = "filecopy";
+			
+			foreach(QAction qa in menuFileActions)
+			{
+				qa.SetVisible(true);
+				qa.IconVisibleInMenu=true;
+			}
+
+		}
+		
+		
+		
+		
+		
+		
+		private void CreateSimMenu()
+		{
+			menuSimItem = new QMenu(mainwindow_Ui.LstSimContacts);
+			
+			menuSimActions = new List<QAction>();
+			menuSimActions.Add(new QAction(new QIcon(":/toolbar/resources/qt/list-add.png"),
+				GlobalObjUI.LMan.GetString("addcontacts"),
+				menuSimItem));
+			
+			menuSimActions.Add(new QAction(new QIcon(":/toolbar/resources/qt/edit-delete.png"),
+				GlobalObjUI.LMan.GetString("delcontacts"),
+				menuSimItem));
+			
+			menuSimActions.Add(new QAction(new QIcon(":/toolbar/resources/qt/go-up.png"),
+				GlobalObjUI.LMan.GetString("copycontactstofile"),
+				menuSimItem));
+			
+			menuSimItem.AddActions(menuSimActions);
+			
+			menuSimActions[0].ObjectName = "simadd";
+			menuSimActions[1].ObjectName = "simdel";
+			menuSimActions[2].ObjectName = "simcopy";
+			
+			foreach(QAction qa in menuSimActions)
+			{
+				qa.SetVisible(true);
+				qa.IconVisibleInMenu=true;
+			}
+
+		}
 		
 		
 		
