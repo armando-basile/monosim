@@ -71,7 +71,7 @@ namespace monosimgtk
 			try
 			{
 				// try to set language
-				GlobalObjUI.SetLanguage();
+				GlobalObjUI.SetLanguage("monosim-gtk");
 			}
 			catch (Exception Ex)
 			{

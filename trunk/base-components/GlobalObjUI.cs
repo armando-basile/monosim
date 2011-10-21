@@ -91,7 +91,7 @@ namespace monosimbase
 		/// <summary>
 		/// Set language to use
 		/// </summary>
-		public static void SetLanguage()
+		public static void SetLanguage(string folderName)
 		{
 			// set application folder path
 			string dllPath = System.Reflection.Assembly.GetExecutingAssembly().Location;                        
@@ -105,7 +105,7 @@ namespace monosimbase
 			{
 				// use share folder to search languages
 				languageFolder = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) +
-					             Path.DirectorySeparatorChar + "monosim" +
+					             Path.DirectorySeparatorChar + folderName +
 						         Path.DirectorySeparatorChar + "Languages";
 				
 				if (!Directory.Exists(languageFolder))
