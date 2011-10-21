@@ -1,5 +1,10 @@
 2011-10-21  Armando Basile  <hmandevteam@gmail.com>
 
+	* NewContactDialogClass.cs: - fix: (gtk) New contact dialog
+	MaxLen for description
+
+2011-10-21  Armando Basile  <hmandevteam@gmail.com>
+
 	* MainWindowClass.cs: - fix: New contacts file feature should
 	be disabled when another file is already open
 
