@@ -109,7 +109,12 @@ namespace monosimgtk
 			LblTitle.Text = GlobalObjUI.LMan.GetString("addcontacts");
 			LblDesc.Text = GlobalObjUI.LMan.GetString("descnumber");
 			LblNumber.Text = GlobalObjUI.LMan.GetString("phonenumber");
-			TxtDesc.MaxLength = maxAlphaChars;
+			
+			if ( maxAlphaChars > 0)
+			{
+				TxtDesc.MaxLength = maxAlphaChars;
+			}
+			
 			TxtDesc.Text = txtDesc;
 			TxtNumber.Text = txtNumber;
 			TxtNumber.MaxLength = 21;
