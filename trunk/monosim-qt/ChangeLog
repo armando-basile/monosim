@@ -1,3 +1,23 @@
+2011-10-21  Armando Basile  <hmandevteam@gmail.com>
+
+	* monosim-qt.csproj:
+	* ResManager.cs:
+	* MainWindow.cs:
+	* AboutDialog.cs:
+	* SettingsDialog.cs:
+	* MainWindowClass.cs:
+	* NewContactDialog.cs:
+	* ChangePinStatusDialog.ui:
+	* SelectWriteModeDialog.ui:
+	* ChangePinStatusDialog.cs:
+	* SelectWriteModeDialog.cs:
+	* MainWindowClass.Popup.cs:
+	* NewContactDialogClass.cs:
+	* MainWindowClass.Designer.cs:
+	* MainWindowClass.Reactors.cs:
+	* ChangePinStatusDialogClass.cs: - improve right click menu
+	and actions
+
 2011-10-19  Armando Basile  <hmandevteam@gmail.com>
 
 	* MainWindow.ui:

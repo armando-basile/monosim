@@ -91,6 +91,7 @@
     <Compile Include="Src\Gui_Classes\ChangePinStatusDialogClass.cs" />
     <Compile Include="Src\Gui_Classes\NewContactDialogClass.cs" />
     <Compile Include="Src\Gui_Classes\SelectWriteModeDialogClass.cs" />
+    <Compile Include="Src\Gui_Classes\MainWindowClass.Popup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\monosim-qt.desktop">

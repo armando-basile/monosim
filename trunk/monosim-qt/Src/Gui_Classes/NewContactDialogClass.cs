@@ -10,6 +10,12 @@ namespace monosimqt
 	
 	
 	
+	
+	
+	
+	
+	
+	
 	/// <summary>
 	/// New contact dialog widget
 	/// </summary>
@@ -37,6 +43,21 @@ namespace monosimqt
 		
 		
 		
+		[Q_SLOT]
+		public void ActionExit(QAbstractButton buttonPressed)
+		{
+			QDialogButtonBox.StandardButton sBtn = ncDialog_Ui.Buttons.standardButton(buttonPressed);
+			
+			if (sBtn == QDialogButtonBox.StandardButton.Ok)
+			{
+				Accept();
+			}
+			else
+			{
+				Reject();	
+			}
+		}
+		
 		
 		
 		/// <summary>
@@ -55,6 +76,7 @@ namespace monosimqt
 			ncDialog_Ui.LblTitle.Text = title;			
 			ncDialog_Ui.TxtNumber.MaxLength = 21;
 			
+			Connect( ncDialog_Ui.Buttons, SIGNAL("clicked(QAbstractButton*)"), this, SLOT("ActionExit(QAbstractButton*)"));
 		}
 		
 		
@@ -151,7 +173,6 @@ namespace monosimqt
 		private void SetupDialog()
 		{
 			ncDialogWidget = new NewContactDialogWidget();
-			ncDialogWidget.SetParent(mainWin);
 			ncDialogWidget.MaxAlphaLen = maxAlphaChars;
 			
 			ncDialogWidget.Desc = txtDesc;

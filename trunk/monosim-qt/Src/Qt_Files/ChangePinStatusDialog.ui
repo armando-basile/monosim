@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>360</width>
-    <height>180</height>
+    <width>357</width>
+    <height>159</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -38,7 +38,20 @@
     </widget>
    </item>
    <item row="2" column="1">
-    <widget class="QLineEdit" name="TxtPin1"/>
+    <widget class="QLineEdit" name="TxtPin1">
+     <property name="inputMask">
+      <string/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="maxLength">
+      <number>4</number>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
+    </widget>
    </item>
    <item row="3" column="0">
     <widget class="QLabel" name="LblPin1check">
@@ -48,7 +61,14 @@
     </widget>
    </item>
    <item row="3" column="1">
-    <widget class="QLineEdit" name="TxtPin1check"/>
+    <widget class="QLineEdit" name="TxtPin1check">
+     <property name="maxLength">
+      <number>4</number>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
+    </widget>
    </item>
    <item row="4" column="1">
     <spacer name="verticalSpacer">

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'ChangePinStatusDialog.ui'
 **
-** Created: ven ott 21 00:41:21 2011
+** Created: ven ott 21 10:37:51 2011
 **      by: Qt User Interface Compiler for C# version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -26,7 +26,7 @@ public class Ui_ChangePinStatusDialog
     {
     if (ChangePinStatusDialog.ObjectName == "")
         ChangePinStatusDialog.ObjectName = "ChangePinStatusDialog";
-    QSize Size = new QSize(360, 180);
+    QSize Size = new QSize(357, 159);
     Size = Size.ExpandedTo(ChangePinStatusDialog.MinimumSizeHint());
     ChangePinStatusDialog.Size = Size;
     ChangePinStatusDialog.WindowIcon = new QIcon(":/main/resources/monosim_128.png");
@@ -46,6 +46,8 @@ public class Ui_ChangePinStatusDialog
 
     TxtPin1 = new QLineEdit(ChangePinStatusDialog);
     TxtPin1.ObjectName = "TxtPin1";
+    TxtPin1.MaxLength = 4;
+    TxtPin1.echoMode = QLineEdit.EchoMode.Password;
 
     gridLayout.AddWidget(TxtPin1, 2, 1, 1, 1);
 
@@ -56,6 +58,8 @@ public class Ui_ChangePinStatusDialog
 
     TxtPin1check = new QLineEdit(ChangePinStatusDialog);
     TxtPin1check.ObjectName = "TxtPin1check";
+    TxtPin1check.MaxLength = 4;
+    TxtPin1check.echoMode = QLineEdit.EchoMode.Password;
 
     gridLayout.AddWidget(TxtPin1check, 3, 1, 1, 1);
 
