@@ -84,7 +84,7 @@ namespace monosimqt
 			try
 			{
 				// try to set language
-				GlobalObjUI.SetLanguage();
+				GlobalObjUI.SetLanguage("monosim-qt");
 			}
 			catch (Exception Ex)
 			{
