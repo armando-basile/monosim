@@ -98,6 +98,7 @@ namespace monosimqt
 		/// </summary>
 		private void UpdateFileControls(bool isSensitive)
 		{
+			mainwindow_Ui.MenuFileNew.Enabled = !isSensitive;
 			mainwindow_Ui.MenuFileOpen.Enabled = !isSensitive;
 			mainwindow_Ui.MenuFileSaveFile.Enabled = isSensitive;			
 			mainwindow_Ui.MenuFileClose.Enabled = isSensitive;
