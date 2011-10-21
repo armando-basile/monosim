@@ -1,3 +1,8 @@
+2011-10-21  Armando Basile  <hmandevteam@gmail.com>
+
+	* MainWindowClass.cs: - fix: New contacts file feature should
+	be disabled when another file is already open
+
 2011-10-20  Armando Basile  <hmandevteam@gmail.com>
 
 	* NewContactDialogClass.cs:
