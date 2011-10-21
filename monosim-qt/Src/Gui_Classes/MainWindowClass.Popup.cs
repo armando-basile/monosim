@@ -69,11 +69,6 @@ namespace monosimqt
 		
 		
 		
-/*
-		
-		
-		
-		
 		
 		
 		
@@ -82,7 +77,7 @@ namespace monosimqt
 		/// </summary>
 		private void PopupFileDel()
 		{
-			if (LstFileContacts.Selection.CountSelectedRows() == 0)
+			if (mainwindow_Ui.LstFileContacts.SelectedItems().Count == 0)
 			{
 				// no selected rows
 				return;
@@ -94,15 +89,20 @@ namespace monosimqt
 			}
 			
 			// loop for all selected items
-			TreePath[] tps = LstFileContacts.Selection.GetSelectedRows();
-			Contacts contacts = GlobalObjUI.FileContacts;
-			RemoveItems(ref contacts, ref lstFileContacts, tps);
-			
+			List<QTreeWidgetItem> selContacts = mainwindow_Ui.LstFileContacts.SelectedItems();
+
+			int posw = -1;
+			for (int qwidx=selContacts.Count-1; qwidx>=0; qwidx--)
+			{
+				posw = mainwindow_Ui.LstFileContacts.IndexOfTopLevelItem(selContacts[qwidx]);				
+				mainwindow_Ui.LstFileContacts.TakeTopLevelItem(posw);
+				GlobalObjUI.FileContacts.SimContacts.RemoveAt(posw);
+			}
 		}
 		
 		
 		
-		
+
 		
 		
 		/// <summary>
@@ -122,43 +122,43 @@ namespace monosimqt
 			}
 			
 			// loop for all selected items
-			Contacts contacts = GlobalObjUI.SimContacts;
-			for (int i=0; i<contacts.SimContacts.Count; i++)
-			{
+			List<QTreeWidgetItem> selContacts = mainwindow_Ui.LstSimContacts.SelectedItems();
 
+			int posw = -1;
+			for (int qwidx=selContacts.Count-1; qwidx>=0; qwidx--)
+			{
+				posw = mainwindow_Ui.LstSimContacts.IndexOfTopLevelItem(selContacts[qwidx]);				
+				mainwindow_Ui.LstSimContacts.TakeTopLevelItem(posw);
+				GlobalObjUI.SimContacts.SimContacts.RemoveAt(posw);
 			}
-			 
-			
-			RemoveItems(ref contacts, ref lstSimContacts, tps);
-			
 		}
 		
-*/
+
 		
 		
 		
-/*		
+
 		
 		
 		private void PopupFileMoveToSim()
 		{
-			if (!LstSimContacts.Sensitive)
+			// loop for all selected items			
+			List<QTreeWidgetItem> selContacts = mainwindow_Ui.LstFileContacts.SelectedItems();
+			
+			List<string> cntValues = new List<string>();
+			foreach (QTreeWidgetItem fromw in selContacts)
 			{
-				// ListView disabled
-				return;
+				cntValues = new List<string>();
+				cntValues.Add(" ");
+				cntValues.Add(fromw.Text(1));
+				cntValues.Add(fromw.Text(2));
+				new QTreeWidgetItem(mainwindow_Ui.LstSimContacts, cntValues);
 			}
 			
-			// loop for all selected items
-			TreePath[] tps = LstFileContacts.Selection.GetSelectedRows();
-			int pos = -1;
-			for(int p=0; p<tps.Length; p++)
+			foreach (QTreeWidgetItem qtwi in selContacts)
 			{
-				pos = tps[p].Indices[0];
-				// add contact from list
-				GlobalObjUI.SimContacts.SimContacts.Add(GlobalObjUI.FileContacts.SimContacts[pos]);
-				lstSimContacts.AppendValues(GlobalObjUI.FileContacts.SimContacts[pos].Description,
-					                        GlobalObjUI.FileContacts.SimContacts[pos].PhoneNumber);
-			}
+				GlobalObjUI.SimContacts.SimContacts.Add(new Contact(qtwi.Text(1), qtwi.Text(2)));
+			}			
 		}
 		
 		
@@ -168,29 +168,28 @@ namespace monosimqt
 		
 		private void PopupSimMoveToFile()
 		{
-			if (!LstFileContacts.Sensitive)
+			// loop for all selected items			
+			List<QTreeWidgetItem> selContacts = mainwindow_Ui.LstSimContacts.SelectedItems();
+			
+			List<string> cntValues = new List<string>();
+			foreach (QTreeWidgetItem fromw in selContacts)
 			{
-				// ListView disabled
-				return;
+				cntValues = new List<string>();
+				cntValues.Add(" ");
+				cntValues.Add(fromw.Text(1));
+				cntValues.Add(fromw.Text(2));
+				new QTreeWidgetItem(mainwindow_Ui.LstFileContacts, cntValues);
 			}
 			
-			// loop for all selected items
-			TreePath[] tps = LstSimContacts.Selection.GetSelectedRows();
-			int pos = -1;
-			for(int p=0; p<tps.Length; p++)
+			foreach (QTreeWidgetItem qtwi in selContacts)
 			{
-				pos = tps[p].Indices[0];
-				// add contact from list
-				GlobalObjUI.FileContacts.SimContacts.Add(GlobalObjUI.SimContacts.SimContacts[pos]);
-				lstFileContacts.AppendValues(GlobalObjUI.SimContacts.SimContacts[pos].Description,
-					                         GlobalObjUI.SimContacts.SimContacts[pos].PhoneNumber);
-			}			
-			
+				GlobalObjUI.FileContacts.SimContacts.Add(new Contact(qtwi.Text(1), qtwi.Text(2)));
+			}
 		}		
 		
 		
 		
-*/
+
 		
 		/// <summary>
 		/// Are you sure dialog

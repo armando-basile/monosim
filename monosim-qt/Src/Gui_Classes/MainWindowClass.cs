@@ -207,7 +207,7 @@ namespace monosimqt
 			string selectedFile = QFileDialog.GetOpenFileName(this, 
                                                         GlobalObjUI.LMan.GetString("openfileact"),
                                                         null,
-                                                        "*.monosim");
+                                                        "monosim files *.monosim (*.monosim)");
             
 			if (string.IsNullOrEmpty(selectedFile))
             {
@@ -528,10 +528,11 @@ namespace monosimqt
 		private string ChooseFileToSave(string dialogTitle)
 		{
 			// New dialog for select contacts file 
-			string fileToSave = QFileDialog.GetOpenFileName(this, 
+			
+			string fileToSave = QFileDialog.GetSaveFileName(this, 
                                 GlobalObjUI.LMan.GetString("openfileact"),
                                 null,
-                                "*.monosim");
+                                "monosim files *.monosim (*.monosim)");
             
 			if (string.IsNullOrEmpty(fileToSave))
             {

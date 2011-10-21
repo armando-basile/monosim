@@ -172,12 +172,18 @@ namespace monosimqt
         public void ActionFileContactsMenu(QPoint point)
 		{
 			menuFileActions[2].Enabled = false;
+			menuFileActions[1].Enabled = false;
 			if ((mainwindow_Ui.LstFileContacts.SelectedItems().Count > 0) &&
 				(mainwindow_Ui.LstSimContacts.Enabled))
 			{
 				menuFileActions[2].Enabled = true;
 			}
-			
+
+			if (mainwindow_Ui.LstFileContacts.SelectedItems().Count > 0)
+			{
+				menuFileActions[1].Enabled = true;
+			}
+
 			menuFileItem.Popup(mainwindow_Ui.LstFileContacts.MapToGlobal(point));
 		}
 		
@@ -187,12 +193,18 @@ namespace monosimqt
         public void ActionSimContactsMenu(QPoint point)
 		{
 			menuSimActions[2].Enabled = false;
+			menuSimActions[1].Enabled = false;
 			if ((mainwindow_Ui.LstSimContacts.SelectedItems().Count > 0) &&
 				(mainwindow_Ui.LstFileContacts.Enabled))
 			{
 				menuSimActions[2].Enabled = true;
 			}
-
+			
+			if (mainwindow_Ui.LstSimContacts.SelectedItems().Count > 0)
+			{
+				menuSimActions[1].Enabled = true;
+			}
+			
 			menuSimItem.Popup(mainwindow_Ui.LstSimContacts.MapToGlobal(point));
 		}		
 		
@@ -214,6 +226,41 @@ namespace monosimqt
 				PopupSimAdd();
 			}
 		}
+		
+		
+		
+		[Q_SLOT]
+        public void ActionDelContact()
+		{
+			QAction sender = (QAction)Sender();
+			
+			if (sender.ObjectName == "filedel")
+			{
+				PopupFileDel();
+			}
+			else if (sender.ObjectName == "simdel")
+			{
+				PopupSimDel();
+			}
+		}
+		
+		
+		
+		[Q_SLOT]
+        public void ActionCopyContact()
+		{
+			QAction sender = (QAction)Sender();
+			
+			if (sender.ObjectName == "filecopy")
+			{
+				PopupFileMoveToSim();
+			}
+			else if (sender.ObjectName == "simcopy")
+			{
+				PopupSimMoveToFile();
+			}
+		}
+		
 		
 		
 		
@@ -269,7 +316,10 @@ namespace monosimqt
 			
 			Connect( menuFileActions[0], SIGNAL("activated()"), this, SLOT("ActionAddContact()"));
 			Connect( menuSimActions[0], SIGNAL("activated()"), this, SLOT("ActionAddContact()"));
-			
+			Connect( menuFileActions[1], SIGNAL("activated()"), this, SLOT("ActionDelContact()"));
+			Connect( menuSimActions[1], SIGNAL("activated()"), this, SLOT("ActionDelContact()"));
+			Connect( menuFileActions[2], SIGNAL("activated()"), this, SLOT("ActionCopyContact()"));
+			Connect( menuSimActions[2], SIGNAL("activated()"), this, SLOT("ActionCopyContact()"));
 		}
 		
 		

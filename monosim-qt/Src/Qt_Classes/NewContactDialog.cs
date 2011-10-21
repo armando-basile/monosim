@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'NewContactDialog.ui'
 **
-** Created: ven ott 21 10:37:51 2011
+** Created: ven ott 21 23:55:04 2011
 **      by: Qt User Interface Compiler for C# version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -26,9 +26,10 @@ public class Ui_NewContactDialog
     {
     if (NewContactDialog.ObjectName == "")
         NewContactDialog.ObjectName = "NewContactDialog";
-    QSize Size = new QSize(360, 180);
+    QSize Size = new QSize(360, 150);
     Size = Size.ExpandedTo(NewContactDialog.MinimumSizeHint());
     NewContactDialog.Size = Size;
+    NewContactDialog.MinimumSize = new QSize(360, 150);
     NewContactDialog.WindowIcon = new QIcon(":/main/resources/monosim_128.png");
     gridLayout = new QGridLayout(NewContactDialog);
     gridLayout.ObjectName = "gridLayout";
