@@ -173,7 +173,10 @@ namespace monosimqt
 		private void SetupDialog()
 		{
 			ncDialogWidget = new NewContactDialogWidget();
-			ncDialogWidget.MaxAlphaLen = maxAlphaChars;
+			if (maxAlphaChars > 0)
+			{
+				ncDialogWidget.MaxAlphaLen = maxAlphaChars;
+			}
 			
 			ncDialogWidget.Desc = txtDesc;
 			ncDialogWidget.Number = txtNumber;

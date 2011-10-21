@@ -1,5 +1,13 @@
 2011-10-21  Armando Basile  <hmandevteam@gmail.com>
 
+	* NewContactDialogClass.cs: - fix: (qt) New contact dialog
+	MaxLen for description
+
+	* MainWindowClass.cs: - fix: (qt) New contacts file feature
+	should be disabled when another file is already open
+
+2011-10-21  Armando Basile  <hmandevteam@gmail.com>
+
 	* monosim-qt.csproj:
 	* ResManager.cs:
 	* MainWindow.cs:
