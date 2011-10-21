@@ -1,3 +1,20 @@
+2011-10-22  Armando Basile  <hmandevteam@gmail.com>
+
+	* ResManager.cs:
+	* MainWindow.cs:
+	* AboutDialog.cs:
+	* NewContactDialog.ui:
+	* SettingsDialog.cs:
+	* MainWindowClass.cs:
+	* NewContactDialog.cs:
+	* SelectWriteModeDialog.cs:
+	* ChangePinStatusDialog.cs:
+	* NewContactDialogClass.cs:
+	* MainWindowClass.Popup.cs:
+	* MainWindowClass.Reactors.cs: - added context menu features
+	(add/remove/copy contacts)
+	- added all methods for each class, test required
+
 2011-10-21  Armando Basile  <hmandevteam@gmail.com>
 
 	* NewContactDialogClass.cs: - fix: (qt) New contact dialog
