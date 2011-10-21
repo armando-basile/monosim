@@ -653,11 +653,13 @@ namespace monosimgtk
 		/// </summary>
 		private void UpdateFileControls(bool isSensitive)
 		{
+			MenuFileNew.Sensitive = !isSensitive;
 			MenuFileOpen.Sensitive = !isSensitive;
 			MenuFileSaveFile.Sensitive = isSensitive;
 			MenuFileSaveSim.Sensitive = isSensitive;
 			MenuFileClose.Sensitive = isSensitive;
 			
+			TbNew.Sensitive = !isSensitive;
 			TbOpen.Sensitive = !isSensitive;
 			TbSaveFile.Sensitive = isSensitive;
 			TbSaveSim.Sensitive = isSensitive;
