@@ -118,13 +118,13 @@
     <None Include="Src\Qt_Files\ChangePinStatusDialog.ui" />
     <None Include="Src\Qt_Files\NewContactDialog.ui" />
     <None Include="Src\Qt_Files\SelectWriteModeDialog.ui" />
+    <None Include="..\resources\monosim.png">
+      <Link>Resources\monosim.png</Link>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\copying.gpl">
       <Link>copying.gpl</Link>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Src\Base_Components\" />
   </ItemGroup>
 </Project>

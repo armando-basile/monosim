@@ -21,7 +21,7 @@ BUILD AND INSTALL FROM TARBALL ON LINUX
      follow this instruction bo build and register component in GAC
      http://code.google.com/p/comex-project/wiki/Build_Comex#Build_and_install_from_tarballs
   3. use 
-     $ ./configure
+     $ ./configure --prefix=/usr
      $ make (build output will be generated in monosim-qt/bin/Debug folder)
      # make install (to install)
 
