@@ -78,7 +78,7 @@
 		<simwriteok>Scrittura contatti su sim terminata con successo</simwriteok>
 		
 		<infodesc><![CDATA[Applicazione cross platform scritta in C# per gestire i contatti su sim card utilizzando un lettore PC/SC o seriale (SmartMouse/Phoenix).<br> 
-		- Multilanguage (usando files di lingua xml nella cartella <i>Language</i>)<br> 
+		- Multilanguage (usando files di lingua xml nella cartella <i>Languages</i>)<br> 
 		- Gui (usando il binding GTK# delle librerie grafiche GTK e il binding Qyoto delle librerie grafiche QT)<br> 
 		- Debug/Trace (può essere inviato sia alla console che ad un file di log da consultare successivamente)<br> 
 <br> 
