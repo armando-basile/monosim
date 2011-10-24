@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'ChangePinStatusDialog.ui'
 **
-** Created: ven ott 21 23:55:04 2011
+** Created: lun ott 24 09:00:13 2011
 **      by: Qt User Interface Compiler for C# version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
