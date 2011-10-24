@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'MainWindow.ui'
 **
-** Created: ven ott 21 23:55:04 2011
+** Created: lun ott 24 09:00:13 2011
 **      by: Qt User Interface Compiler for C# version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -50,7 +50,7 @@ public class Ui_MainWindow
     QSize Size = new QSize(631, 570);
     Size = Size.ExpandedTo(MainWindow.MinimumSizeHint());
     MainWindow.Size = Size;
-    MainWindow.MinimumSize = new QSize(600, 550);
+    MainWindow.MinimumSize = new QSize(600, 450);
     MainWindow.WindowIcon = new QIcon(":/main/resources/monosim_128.png");
     MenuFileNew = new QAction(MainWindow);
     MenuFileNew.ObjectName = "MenuFileNew";
