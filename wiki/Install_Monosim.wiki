@@ -62,13 +62,5 @@ $ mono monosim-qt.exe
 <br />
  * *On Windows*
 
- To launch *GTK user interface* using:
-  <div>_to obtain help message_</div>
-{{{ 
-C:\...> comex-gtk.exe --help
-}}}
-  <div>_to launch without log_</div>
-{{{ 
-C:\...> comex-gtk.exe
-}}}
-  NOTE: _you need to install [http://www.go-mono.com/mono-downloads/download.html Gtk# for .NET] to use it_
+ To launch *GTK user interface* simple double click on monosim-gtk.exe <br />
+ _*NOTE*_: _you need to install [http://www.go-mono.com/mono-downloads/download.html Gtk# for .NET] to use it_
