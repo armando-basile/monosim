@@ -192,7 +192,18 @@ namespace monosimqt
 			}
 			
 		}
-
+		
+		
+		
+		/// <summary>
+		/// Enable only change pin1 and disconnect actions
+		/// </summary>
+		private void EnableSimPinControl()
+		{
+			mainwindow_Ui.MenuSimConnect.Enabled = false;
+			mainwindow_Ui.MenuSimPin.Enabled = true;
+			mainwindow_Ui.MenuSimDisconnect.Enabled = true;			
+		}
 		
 		
 		
@@ -304,10 +315,20 @@ namespace monosimqt
 			// check for error
 			if (retStr != "")
 			{
-				// error on reading contacts list
-				GlobalObj.CloseConnection();
-				MainClass.ShowMessage(this, "ERROR", retStr, MainClass.MessageType.Error);
-				return;
+				if (retStr == GlobalObjUI.LMan.GetString("needpindisable"))
+				{
+					// Pin1 enabled
+					MainClass.ShowMessage(this, "ERROR", retStr, MainClass.MessageType.Error);
+					EnableSimPinControl();
+					return;
+				}
+				else
+				{				
+					// error on reading contacts list
+					GlobalObj.CloseConnection();
+					MainClass.ShowMessage(this, "ERROR", retStr, MainClass.MessageType.Error);
+					return;
+				}
 			}
 			
 			ScanSimBefore();

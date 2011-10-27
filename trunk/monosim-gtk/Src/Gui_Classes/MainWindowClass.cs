@@ -285,10 +285,20 @@ namespace monosimgtk
 			// check for error
 			if (retStr != "")
 			{
-				// error on reading contacts list
-				GlobalObj.CloseConnection();
-				MainClass.ShowMessage(MainWindow, "ERROR", retStr, MessageType.Error);
-				return;
+				if (retStr == GlobalObjUI.LMan.GetString("needpindisable"))
+				{
+					// Pin1 enabled
+					MainClass.ShowMessage(MainWindow, "ERROR", retStr, MessageType.Error);
+					EnableSimPinControl();
+					return;
+				}
+				else
+				{					
+					// error on reading contacts list
+					GlobalObj.CloseConnection();
+					MainClass.ShowMessage(MainWindow, "ERROR", retStr, MessageType.Error);
+					return;
+				}
 			}
 			
 			ScanSimBefore();
@@ -645,7 +655,19 @@ namespace monosimgtk
 
 		
 		
-		
+		/// <summary>
+		/// Enable only change pin1 and disconnect controls
+		/// </summary>
+		private void EnableSimPinControl()
+		{
+			MenuSimConnect.Sensitive = false;
+			TbOpenSim.Sensitive = false;
+			MenuSimPin.Sensitive = true;
+			TbChangePin.Sensitive = true;
+			MenuSimDisconnect.Sensitive = true;			
+			TbCloseSim.Sensitive = true;
+			
+		}
 		
 
 		/// <summary>

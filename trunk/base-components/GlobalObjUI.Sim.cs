@@ -489,7 +489,7 @@ namespace monosimbase
 				retStr += fileBytes.Substring(d+1,1) + fileBytes.Substring(d,1);
 			}
 			
-			SimIccID = retStr;
+			SimIccID = retStr.Replace("F", "");
 			
 			return;
 		}
