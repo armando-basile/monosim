@@ -1,3 +1,8 @@
+2011-10-27  Armando Basile  <hmandevteam@gmail.com>
+
+	* MainWindowClass.cs: - fix: (qt) let to use change pin
+	feature when pin1 is enabled
+
 2011-10-18  Armando Basile  <hmandevteam@gmail.com>
 
 	* monosim-qt.sln:
