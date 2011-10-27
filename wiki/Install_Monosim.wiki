@@ -9,17 +9,16 @@ Before install Monosim you may want to try it, so you need to follow [#Use_binar
 
 = Install from your package manager =
  * *Mandriva/Rosa Linux*
- from Mandriva 2010.1 can use *urpmi* to install packages _(need to enable contrib/backports repository)_
+ <table><tr><td valign="middle" align="center" width="64"><img src="http://monosim.integrazioneweb.com/images/mandriva_mini.png" /></td>
+ <td valign="middle" align="left">from Mandriva 2010.1 can use *urpmi* to install packages _(need to enable contrib/backports repository)_</td></tr></table>
+
  * *Debian/Ubuntu Linux*
- work in progress
-<wiki:comment>
- can find packages [https://launchpad.net/~armando-basile/+archive/stable here]
-</wiki:comment>
+ <table><tr><td valign="middle" align="center" width="64"><img src="http://monosim.integrazioneweb.com/images/ubuntu_mini.png" /></td>
+ <td valign="middle" align="left">can find latest packages on [http://launchpad.net/~armando-basile/+archive/stable launchpad ppa]</td></tr></table>
+
  * *Opensuse Linux*
- work in progress
-<wiki:comment>
- can find packages [http://download.opensuse.org/repositories/home:/hmandevteam:/comex-project/openSUSE_11.4/ here]
-</wiki:comment>
+ <table><tr><td valign="middle" align="center" width="64"><img src="http://monosim.integrazioneweb.com/images/suse_mini.png" /></td>
+ <td valign="middle" align="left">work in progress</td></tr></table>
 
 <br />
 
