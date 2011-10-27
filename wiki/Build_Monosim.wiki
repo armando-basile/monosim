@@ -16,7 +16,7 @@ Can find tarballs in [http://code.google.com/p/monosim/downloads/list Downloads 
 Build Dependencies:
  * mono devel package
  * log4net devel package
- * comex-base devel (see [http://code.google.com/p/comex-project/Wiki/Build_Comex comex-base build])
+ * comex-base devel (see [http://code.google.com/p/comex-project/Wiki/Install_Comex comex-base install] or [http://code.google.com/p/comex-project/Wiki/Build_Comex comex-base build])
  * gtk-sharp2 devel package
  * glade-sharp2
 
@@ -33,7 +33,7 @@ To build and install can use:
 Build Dependencies:
  * mono devel package
  * log4net devel package
- * comex-base devel (see [http://code.google.com/p/comex-project/Wiki/Build_Comex comex-base build])
+ * comex-base devel (see [http://code.google.com/p/comex-project/Wiki/Install_Comex comex-base install] or [http://code.google.com/p/comex-project/Wiki/Build_Comex comex-base build])
  * qyoto devel package
  * qyoto
 
@@ -55,7 +55,7 @@ Need to obtain sources using checkout instructions contained in [http://code.goo
 Build Dependencies:
  * mono devel package
  * log4net devel package
- * comex-base devel (see [http://code.google.com/p/comex-project/Wiki/Build_Comex comex-base build])
+ * comex-base devel (see [http://code.google.com/p/comex-project/Wiki/Install_Comex comex-base install] or [http://code.google.com/p/comex-project/Wiki/Build_Comex comex-base build])
  * gtk-sharp2 devel package
  * glade-sharp2
 
@@ -74,7 +74,7 @@ build output will be generated in monosim-gtk/bin/Debug folder. Can run using
 Build Dependencies:
  * mono devel package
  * log4net devel package
- * comex-base devel (see [http://code.google.com/p/comex-project/Wiki/Build_Comex comex-base build])
+ * comex-base devel (see [http://code.google.com/p/comex-project/Wiki/Install_Comex comex-base install] or [http://code.google.com/p/comex-project/Wiki/Build_Comex comex-base build])
  * qyoto devel devel package
  * qyoto
 
