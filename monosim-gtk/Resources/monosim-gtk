@@ -1,13 +1,23 @@
 [Desktop Entry]
 Categories=Office;ContactManagement;GTK;GNOME;
 Comment=GTK application to manage sim card contacts
+Comment[it]=Applicazione GTK per gestire i contatti su sim card
 Comment[it_IT]=Applicazione GTK per gestire i contatti su sim card
 Encoding=UTF-8
 Exec=monosim-gtk
 GenericName=monosim-gtk
+GenericName[it]=monosim-gtk
+GenericName[it_IT]=monosim-gtk
 Icon=monosim-gtk
 Name=monosim-gtk
+Name[it]=monosim-gtk
 Name[it_IT]=monosim-gtk
+Path=
 StartupNotify=true
 Terminal=false
+TerminalOptions=
 Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=

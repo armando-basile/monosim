@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'MainWindow.ui'
 **
-** Created: lun ott 24 09:00:13 2011
+** Created: sab ott 29 23:38:41 2011
 **      by: Qt User Interface Compiler for C# version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -219,7 +219,7 @@ public class Ui_MainWindow
     MenuFileSaveFile.Text = QApplication.Translate("MainWindow", "SaveFile", null, QApplication.Encoding.UnicodeUTF8);
     MenuFileSaveSim.Text = QApplication.Translate("MainWindow", "SaveSim", null, QApplication.Encoding.UnicodeUTF8);
     MenuFileClose.Text = QApplication.Translate("MainWindow", "Close", null, QApplication.Encoding.UnicodeUTF8);
-    MenuFileClose.Shortcut = QApplication.Translate("MainWindow", "Ctrl+C", null, QApplication.Encoding.UnicodeUTF8);
+    MenuFileClose.Shortcut = QApplication.Translate("MainWindow", "Ctrl+W", null, QApplication.Encoding.UnicodeUTF8);
     MenuFileSettings.Text = QApplication.Translate("MainWindow", "Settings", null, QApplication.Encoding.UnicodeUTF8);
     MenuFileExit.Text = QApplication.Translate("MainWindow", "Exit", null, QApplication.Encoding.UnicodeUTF8);
     MenuFileExit.Shortcut = QApplication.Translate("MainWindow", "Ctrl+Q", null, QApplication.Encoding.UnicodeUTF8);

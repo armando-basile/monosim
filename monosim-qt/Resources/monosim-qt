@@ -1,13 +1,23 @@
 [Desktop Entry]
 Categories=Office;ContactManagement;Qt;KDE;
 Comment=Qt application to manage sim card contacts
+Comment[it]=Applicazione Qt per gestire i contatti su sim card
 Comment[it_IT]=Applicazione Qt per gestire i contatti su sim card
 Encoding=UTF-8
 Exec=monosim-qt
 GenericName=monosim-qt
+GenericName[it]=monosim-qt
+GenericName[it_IT]=monosim-qt
 Icon=monosim-qt
 Name=monosim-qt
+Name[it]=monosim-qt
 Name[it_IT]=monosim-qt
+Path=
 StartupNotify=true
 Terminal=false
+TerminalOptions=
 Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=

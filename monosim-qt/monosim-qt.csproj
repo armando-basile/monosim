@@ -94,11 +94,6 @@
     <Compile Include="Src\Gui_Classes\MainWindowClass.Popup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\monosim-qt.desktop">
-      <DeployService-TargetDirectoryId>Linux.DesktopApplications</DeployService-TargetDirectoryId>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Src\Qt_Files\AboutDialog.ui" />
     <None Include="Src\Qt_Files\SettingsDialog.ui" />
     <None Include="readme" />
@@ -120,6 +115,9 @@
     <None Include="Src\Qt_Files\SelectWriteModeDialog.ui" />
     <None Include="..\resources\monosim.png">
       <Link>Resources\monosim.png</Link>
+    </None>
+    <None Include="Resources\monosim-qt">
+      <DeployService-TargetDirectoryId>Linux.DesktopApplications</DeployService-TargetDirectoryId>
     </None>
   </ItemGroup>
   <ItemGroup>

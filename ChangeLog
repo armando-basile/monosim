@@ -1,3 +1,12 @@
+2011-10-29  Armando Basile  <hmandevteam@gmail.com>
+
+	* monosim-gtk.csproj:
+	* monosim-gtk:
+	* monosim-gtk.desktop: - (gtk) change desktop file name
+
+	* MainWindow.glade: - (gtk) change accelerator for close file,
+	set to CTRL + W
+
 2011-10-27  Armando Basile  <hmandevteam@gmail.com>
 
 	* MainWindowClass.cs: - fix: (qt) let to use change pin
