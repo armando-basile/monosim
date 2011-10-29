@@ -100,11 +100,6 @@
     <Compile Include="Src\Gui_Classes\SelectWriteModeDialogClass.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\monosim-gtk.desktop">
-      <DeployService-TargetDirectoryId>Linux.DesktopApplications</DeployService-TargetDirectoryId>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="..\copying.gpl">
       <Link>copying.gpl</Link>
     </None>
@@ -120,6 +115,9 @@
     <None Include="..\Languages\monosim-es-ES.xml">
       <Link>Languages\monosim-es-ES.xml</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\monosim-gtk">
+      <DeployService-TargetDirectoryId>Linux.DesktopApplications</DeployService-TargetDirectoryId>
     </None>
   </ItemGroup>
   <ItemGroup>

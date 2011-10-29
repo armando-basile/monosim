@@ -1,3 +1,19 @@
+2011-10-29  Armando Basile  <hmandevteam@gmail.com>
+
+	* monosim-qt.csproj:
+	* monosim-qt:
+	* monosim-qt.desktop: - (qt) change desktop file name
+
+	* MainWindow.ui:
+	* ResManager.cs:
+	* MainWindow.cs:
+	* AboutDialog.cs:
+	* SettingsDialog.cs:
+	* NewContactDialog.cs:
+	* SelectWriteModeDialog.cs:
+	* ChangePinStatusDialog.cs: - (qt) change accelerator for
+	close file, set to CTRL + W
+
 2011-10-22  Armando Basile  <hmandevteam@gmail.com>
 
 	* ResManager.cs:
