@@ -18,7 +18,7 @@ Before install Monosim you may want to try it, so you need to follow [#Use_binar
 
  * *Opensuse Linux*
  <table><tr><td valign="middle" align="center" width="64"><img src="http://monosim.integrazioneweb.com/images/suse_mini.png" /></td>
- <td valign="middle" align="left">work in progress</td></tr></table>
+ <td valign="middle" align="left">can find packages on [http://download.opensuse.org/repositories/home:/hmandevteam/ OpenSUSE Build System]</td></tr></table>
 
 <br />
 
