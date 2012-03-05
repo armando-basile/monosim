@@ -8,6 +8,10 @@ Before install Monosim you may want to try it, so you need to follow [#Use_binar
 
 
 = Install from your package manager =
+ * *Mageia Linux*
+ <table><tr><td valign="middle" align="center" width="64"><img src="http://comex-project.googlecode.com/svn/wiki/mageia_mini.png" /></td>
+ <td valign="middle" align="left">from Mageia 1 can use *urpmi* to install packages </td></tr></table>
+
  * *Mandriva/Rosa Linux*
  <table><tr><td valign="middle" align="center" width="64"><img src="http://monosim.integrazioneweb.com/images/mandriva_mini.png" /></td>
  <td valign="middle" align="left">from Mandriva 2010.1 can use *urpmi* to install packages _(need to enable contrib/backports repository)_</td></tr></table>
