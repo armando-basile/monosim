@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{7B8D3BDC-1003-4C8F-A947-CFD6BF1E4C6E}</ProjectGuid>
+    <ProjectGuid>{BB8D3BDC-1003-4C8F-A947-CFD6BF1E4C6E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>monosimgtk</RootNamespace>
     <AssemblyName>monosim-gtk</AssemblyName>
@@ -55,9 +55,6 @@
     <Reference Include="System">
     </Reference>
     <Reference Include="System.Xml" />
-    <Reference Include="comex-base">
-      <HintPath>..\comex-base.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -153,5 +150,11 @@
     <EmbeddedResource Include="Src\Glade_Files\SelectWriteModeDialog.glade">
       <LogicalName>SelectWriteModeDialog.glade</LogicalName>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dependencies\comex-project\comex-base\comex-base.csproj">
+      <Project>{1E5D7CAD-9D30-47DA-A699-CE1F5F4C7475}</Project>
+      <Name>comex-base</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

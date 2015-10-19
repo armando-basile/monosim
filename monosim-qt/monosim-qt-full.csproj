@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{59C0DA96-E4A2-4765-8FCC-A523EBAD2E69}</ProjectGuid>
+    <ProjectGuid>{AAC0DA96-E4A2-4765-8FCC-A523EBAD2E69}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>monosimqt</RootNamespace>
     <AssemblyName>monosim-qt</AssemblyName>
@@ -41,9 +41,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
-    <Reference Include="comex-base">
-      <HintPath>..\comex-base.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -118,5 +115,11 @@
     <None Include="..\copying.gpl">
       <Link>copying.gpl</Link>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dependencies\comex-project\comex-base\comex-base.csproj">
+      <Project>{1E5D7CAD-9D30-47DA-A699-CE1F5F4C7475}</Project>
+      <Name>comex-base</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
