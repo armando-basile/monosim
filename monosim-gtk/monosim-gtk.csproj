@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{7B8D3BDC-1003-4C8F-A947-CFD6BF1E4C6E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>monosimgtk</RootNamespace>
     <AssemblyName>monosim-gtk</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
-    <ReleaseVersion>2.0.0.0</ReleaseVersion>
+    <ReleaseVersion>2.0.1</ReleaseVersion>
     <ApplicationIcon>..\resources\monosim_win.ico</ApplicationIcon>
     <Description>GTK application to manage sim card contacts</Description>
   </PropertyGroup>
@@ -39,10 +36,7 @@
     <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="comex-base">
-      <SpecificVersion>False</SpecificVersion>
-      <Package>comex-base</Package>
-    </Reference>
+    <Reference Include="comex-base" />
     <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -55,9 +49,7 @@
     <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="log4net">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
+    <Reference Include="log4net" />
     <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
