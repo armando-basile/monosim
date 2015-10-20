@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "monosim-qt-full", "..\monosim-qt\monosim-qt-full.csproj", "{AAC0DA96-E4A2-4765-8FCC-A523EBAD2E69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "comex-base", "..\Dependencies\comex-project\comex-base\comex-base.csproj", "{1E5D7CAD-9D30-47DA-A699-CE1F5F4C7475}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E5D7CAD-9D30-47DA-A699-CE1F5F4C7475}.Debug|x86.ActiveCfg = Debug|x86
+		{1E5D7CAD-9D30-47DA-A699-CE1F5F4C7475}.Debug|x86.Build.0 = Debug|x86
+		{1E5D7CAD-9D30-47DA-A699-CE1F5F4C7475}.Release|x86.ActiveCfg = Release|x86
+		{1E5D7CAD-9D30-47DA-A699-CE1F5F4C7475}.Release|x86.Build.0 = Release|x86
+		{AAC0DA96-E4A2-4765-8FCC-A523EBAD2E69}.Debug|x86.ActiveCfg = Debug|x86
+		{AAC0DA96-E4A2-4765-8FCC-A523EBAD2E69}.Debug|x86.Build.0 = Debug|x86
+		{AAC0DA96-E4A2-4765-8FCC-A523EBAD2E69}.Release|x86.ActiveCfg = Release|x86
+		{AAC0DA96-E4A2-4765-8FCC-A523EBAD2E69}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = None
+		$1.ResourceNamePolicy = FileFormatDefault
+		$0.ChangeLogPolicy = $2
+		$2.UpdateMode = ProjectRoot
+		$2.MessageStyle = $3
+		$3.LineAlign = 0
+		$2.inheritsSet = Mono
+		description = Qt application to manage sim card contacts
+		version = 2.0.1
+	EndGlobalSection
+EndGlobal
