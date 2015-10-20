@@ -8,5 +8,5 @@ if [ $# -gt 0 ] ; then
 fi
 
 # Clean and Build
-xbuild /t:Rebuild /p:Configuration=$TARGET  ../monosim-gtk.sln
+xbuild /t:Rebuild /p:Configuration=$TARGET  ../solutions/monosim-gtk.sln
 
