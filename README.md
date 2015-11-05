@@ -1,4 +1,4 @@
-# Monosim
+# Monosim &nbsp;&nbsp;&nbsp;<img src='https://travis-ci.org/armando-basile/monosim.svg?branch=master' border='0' />
 **monosim** is a simple application cross platform, written in C# that can be used 
 to read, write, update, delete and backup your sim card contacts. It open and 
 save also .monosim files to manage contacts also in a text files. To connect monosim 
