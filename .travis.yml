@@ -9,4 +9,5 @@ mono:
   - 3.12.0
 
 script:    # build gtk gui
+  - ./build-linux/prepare.sh
   - ./build-linux/build-lnx-monosim-gtk-full.sh
