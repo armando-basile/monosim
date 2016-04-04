@@ -32,7 +32,7 @@ for build and run see [Wiki pages](https://github.com/armando-basile/monosim/wik
 
 
 
-Copyright (c) 2008-2015, Armando Basile
+Copyright (c) 2008-2016, Armando Basile
 
 
 

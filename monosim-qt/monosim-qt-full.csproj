@@ -10,6 +10,7 @@
     <Description>Qt application to manage sim card contacts</Description>
     <ReleaseVersion>2.0.1</ReleaseVersion>
     <ApplicationIcon>..\resources\monosim_win.ico</ApplicationIcon>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
