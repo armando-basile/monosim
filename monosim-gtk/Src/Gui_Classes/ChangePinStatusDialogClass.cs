@@ -73,7 +73,7 @@ namespace monosimgtk
 						                  GlobalObjUI.LMan.GetString("pinsimchk1"),
 						                  MessageType.Warning);
 				}
-				else if (pin1.Trim().Length != 4)
+				else if (pin1.Trim().Length > 8 || pin1.Trim().Length < 4)
 				{
 					// send warning message
 					MainClass.ShowMessage(mainWin, "ERROR", 
@@ -148,8 +148,9 @@ namespace monosimgtk
 			}
 			
 			// padd with 4 bytes to 0xFF
-			pinHexValue += new string('F', 8);
-			
+            if (pinValue.Length < 8) {
+                pinHexValue += new string('F', (8 - pinValue.Length)*2);
+            }
 			return pinHexValue;
 		}
 		
