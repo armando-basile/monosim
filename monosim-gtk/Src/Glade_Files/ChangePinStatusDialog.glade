@@ -124,7 +124,7 @@
                   <widget class="GtkEntry" id="TxtPin1">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="max_length">4</property>
+                    <property name="max_length">8</property>
                     <property name="visibility">False</property>
                     <property name="invisible_char_set">True</property>
                     <property name="primary_icon_activatable">False</property>
@@ -141,7 +141,7 @@
                   <widget class="GtkEntry" id="TxtPin1check">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="max_length">4</property>
+                    <property name="max_length">8</property>
                     <property name="visibility">False</property>
                     <property name="invisible_char_set">True</property>
                     <property name="primary_icon_activatable">False</property>
